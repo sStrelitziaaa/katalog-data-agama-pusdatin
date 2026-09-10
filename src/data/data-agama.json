@@ -1181,7 +1181,7 @@
     "nama": "Peristiwa Nikah",
     "kategori": "Layanan KUA & Keluarga",
     "agama": "Umum",
-    "bimas": "Sekretariat Jenderal / Pusdatin",
+    "bimas": "Setjen",
     "pic": "Inan Adnan",
     "terisi": true,
     "statusText": "Terisi / Terintegrasi",
@@ -1226,7 +1226,7 @@
     "tags": [
       "Layanan KUA & Keluarga",
       "Umum",
-      "Sekretariat Jenderal / Pusdatin",
+      "Setjen",
       "Inan Adnan",
       "Peristiwa / Pasang"
     ]
@@ -1573,7 +1573,7 @@
     "nama": "Bimbingan Keluarga Sakinah",
     "kategori": "Layanan KUA & Keluarga",
     "agama": "Umum",
-    "bimas": "Sekretariat Jenderal / Pusdatin",
+    "bimas": "Setjen",
     "pic": "Inan Adnan",
     "terisi": false,
     "statusText": "Dalam Proses",
@@ -1618,7 +1618,7 @@
     "tags": [
       "Layanan KUA & Keluarga",
       "Umum",
-      "Sekretariat Jenderal / Pusdatin",
+      "Setjen",
       "Inan Adnan",
       "Peristiwa / Pasang"
     ]
@@ -1629,7 +1629,7 @@
     "nama": "Bimbingan Remaja Usia Sekolah",
     "kategori": "Layanan KUA & Keluarga",
     "agama": "Umum",
-    "bimas": "Sekretariat Jenderal / Pusdatin",
+    "bimas": "Setjen",
     "pic": "Inan Adnan",
     "terisi": false,
     "statusText": "Dalam Proses",
@@ -1674,7 +1674,7 @@
     "tags": [
       "Layanan KUA & Keluarga",
       "Umum",
-      "Sekretariat Jenderal / Pusdatin",
+      "Setjen",
       "Inan Adnan",
       "Peristiwa / Pasang"
     ]
@@ -1741,7 +1741,7 @@
     "nama": "LAZ Berizin",
     "kategori": "Zakat & Pemberdayaan",
     "agama": "Umum",
-    "bimas": "Sekretariat Jenderal / Pusdatin",
+    "bimas": "Setjen",
     "pic": "Dessy",
     "terisi": false,
     "statusText": "Dalam Proses",
@@ -1786,7 +1786,7 @@
     "tags": [
       "Zakat & Pemberdayaan",
       "Umum",
-      "Sekretariat Jenderal / Pusdatin",
+      "Setjen",
       "Dessy",
       "Unit / Lokasi"
     ]
@@ -1797,7 +1797,7 @@
     "nama": "Pengumpulan ZIS dan Dana Sosial Keagamaan Lainnya",
     "kategori": "Zakat & Pemberdayaan",
     "agama": "Umum",
-    "bimas": "Sekretariat Jenderal / Pusdatin",
+    "bimas": "Setjen",
     "pic": "Dessy",
     "terisi": false,
     "statusText": "Dalam Proses",
@@ -1842,7 +1842,7 @@
     "tags": [
       "Zakat & Pemberdayaan",
       "Umum",
-      "Sekretariat Jenderal / Pusdatin",
+      "Setjen",
       "Dessy",
       "Rupiah (Miliar)"
     ]
@@ -1853,7 +1853,7 @@
     "nama": "Penyaluran ZIS dan Dana Sosial Keagamaan Lainnya",
     "kategori": "Zakat & Pemberdayaan",
     "agama": "Umum",
-    "bimas": "Sekretariat Jenderal / Pusdatin",
+    "bimas": "Setjen",
     "pic": "Dessy",
     "terisi": false,
     "statusText": "Dalam Proses",
@@ -1898,7 +1898,7 @@
     "tags": [
       "Zakat & Pemberdayaan",
       "Umum",
-      "Sekretariat Jenderal / Pusdatin",
+      "Setjen",
       "Dessy",
       "Rupiah (Miliar)"
     ]
@@ -2021,7 +2021,7 @@
     "nama": "Nazir",
     "kategori": "Wakaf",
     "agama": "Umum",
-    "bimas": "Sekretariat Jenderal / Pusdatin",
+    "bimas": "Setjen",
     "pic": "Dessy",
     "terisi": false,
     "statusText": "Dalam Proses",
@@ -2066,7 +2066,7 @@
     "tags": [
       "Wakaf",
       "Umum",
-      "Sekretariat Jenderal / Pusdatin",
+      "Setjen",
       "Dessy",
       "Jiwa / Orang"
     ]
@@ -2077,7 +2077,7 @@
     "nama": "Muzaki",
     "kategori": "Zakat & Pemberdayaan",
     "agama": "Umum",
-    "bimas": "Sekretariat Jenderal / Pusdatin",
+    "bimas": "Setjen",
     "pic": "Dessy",
     "terisi": false,
     "statusText": "Dalam Proses",
@@ -2122,7 +2122,7 @@
     "tags": [
       "Zakat & Pemberdayaan",
       "Umum",
-      "Sekretariat Jenderal / Pusdatin",
+      "Setjen",
       "Dessy",
       "Jiwa / Orang"
     ]
@@ -3029,7 +3029,7 @@
     "nama": "Dai 3T",
     "kategori": "Umum & Tata Kelola",
     "agama": "Umum",
-    "bimas": "Sekretariat Jenderal / Pusdatin",
+    "bimas": "Setjen",
     "pic": "Syamsudin",
     "terisi": false,
     "statusText": "Dalam Proses",
@@ -3074,7 +3074,7 @@
     "tags": [
       "Umum & Tata Kelola",
       "Umum",
-      "Sekretariat Jenderal / Pusdatin",
+      "Setjen",
       "Syamsudin",
       "Unit / Lokasi"
     ]
@@ -3085,7 +3085,7 @@
     "nama": "Bimtek Penceramah Agama",
     "kategori": "Da'i & Penceramah",
     "agama": "Umum",
-    "bimas": "Sekretariat Jenderal / Pusdatin",
+    "bimas": "Setjen",
     "pic": "Syamsudin",
     "terisi": false,
     "statusText": "Dalam Proses",
@@ -3130,7 +3130,7 @@
     "tags": [
       "Da'i & Penceramah",
       "Umum",
-      "Sekretariat Jenderal / Pusdatin",
+      "Setjen",
       "Syamsudin",
       "Unit / Lokasi"
     ]
@@ -4093,7 +4093,7 @@
     "nama": "BMN, Tanah",
     "kategori": "Tata Kelola BMN",
     "agama": "Umum",
-    "bimas": "Sekretariat Jenderal / Pusdatin",
+    "bimas": "Setjen",
     "pic": "Winda",
     "terisi": true,
     "statusText": "Terisi / Terintegrasi",
@@ -4138,7 +4138,7 @@
     "tags": [
       "Tata Kelola BMN",
       "Umum",
-      "Sekretariat Jenderal / Pusdatin",
+      "Setjen",
       "Winda",
       "Unit / Lokasi"
     ]
@@ -4149,7 +4149,7 @@
     "nama": "BMN, Bangunan",
     "kategori": "Tata Kelola BMN",
     "agama": "Umum",
-    "bimas": "Sekretariat Jenderal / Pusdatin",
+    "bimas": "Setjen",
     "pic": "Winda",
     "terisi": true,
     "statusText": "Terisi / Terintegrasi",
@@ -4194,7 +4194,7 @@
     "tags": [
       "Tata Kelola BMN",
       "Umum",
-      "Sekretariat Jenderal / Pusdatin",
+      "Setjen",
       "Winda",
       "Unit / Lokasi"
     ]
@@ -4205,7 +4205,7 @@
     "nama": "BMN, Rumah Dinas",
     "kategori": "Tata Kelola BMN",
     "agama": "Umum",
-    "bimas": "Sekretariat Jenderal / Pusdatin",
+    "bimas": "Setjen",
     "pic": "Winda",
     "terisi": true,
     "statusText": "Terisi / Terintegrasi",
@@ -4250,7 +4250,7 @@
     "tags": [
       "Tata Kelola BMN",
       "Umum",
-      "Sekretariat Jenderal / Pusdatin",
+      "Setjen",
       "Winda",
       "Unit / Lokasi"
     ]
@@ -4261,7 +4261,7 @@
     "nama": "BMN. Kendaraan Dinas",
     "kategori": "Tata Kelola BMN",
     "agama": "Umum",
-    "bimas": "Sekretariat Jenderal / Pusdatin",
+    "bimas": "Setjen",
     "pic": "Winda",
     "terisi": true,
     "statusText": "Terisi / Terintegrasi",
@@ -4306,7 +4306,7 @@
     "tags": [
       "Tata Kelola BMN",
       "Umum",
-      "Sekretariat Jenderal / Pusdatin",
+      "Setjen",
       "Winda",
       "Unit / Lokasi"
     ]
@@ -4317,7 +4317,7 @@
     "nama": "Jumlah P3K",
     "kategori": "Sumber Daya Manusia (SDM)",
     "agama": "Umum",
-    "bimas": "Sekretariat Jenderal / Pusdatin",
+    "bimas": "Setjen",
     "pic": "Winda",
     "terisi": true,
     "statusText": "Terisi / Terintegrasi",
@@ -4362,7 +4362,7 @@
     "tags": [
       "Sumber Daya Manusia (SDM)",
       "Umum",
-      "Sekretariat Jenderal / Pusdatin",
+      "Setjen",
       "Winda",
       "Jiwa / Orang"
     ]
@@ -4373,7 +4373,7 @@
     "nama": "Jumlh PNS",
     "kategori": "Sumber Daya Manusia (SDM)",
     "agama": "Umum",
-    "bimas": "Sekretariat Jenderal / Pusdatin",
+    "bimas": "Setjen",
     "pic": "Winda",
     "terisi": true,
     "statusText": "Terisi / Terintegrasi",
@@ -4418,7 +4418,7 @@
     "tags": [
       "Sumber Daya Manusia (SDM)",
       "Umum",
-      "Sekretariat Jenderal / Pusdatin",
+      "Setjen",
       "Winda",
       "Jiwa / Orang"
     ]
@@ -4429,7 +4429,7 @@
     "nama": "Anggaran (APBN)",
     "kategori": "Keuangan & Anggaran",
     "agama": "Umum",
-    "bimas": "Sekretariat Jenderal / Pusdatin",
+    "bimas": "Setjen",
     "pic": "Winda",
     "terisi": false,
     "statusText": "Dalam Proses",
@@ -4474,7 +4474,7 @@
     "tags": [
       "Keuangan & Anggaran",
       "Umum",
-      "Sekretariat Jenderal / Pusdatin",
+      "Setjen",
       "Winda",
       "Rupiah (Miliar)"
     ]
@@ -4485,7 +4485,7 @@
     "nama": "Realisasi Anggaran",
     "kategori": "Keuangan & Anggaran",
     "agama": "Umum",
-    "bimas": "Sekretariat Jenderal / Pusdatin",
+    "bimas": "Setjen",
     "pic": "Winda",
     "terisi": false,
     "statusText": "Dalam Proses",
@@ -4530,7 +4530,7 @@
     "tags": [
       "Keuangan & Anggaran",
       "Umum",
-      "Sekretariat Jenderal / Pusdatin",
+      "Setjen",
       "Winda",
       "Rupiah (Miliar)"
     ]
@@ -4541,7 +4541,7 @@
     "nama": "Alokasi Anggaran",
     "kategori": "Keuangan & Anggaran",
     "agama": "Umum",
-    "bimas": "Sekretariat Jenderal / Pusdatin",
+    "bimas": "Setjen",
     "pic": "Winda",
     "terisi": false,
     "statusText": "Dalam Proses",
@@ -4586,7 +4586,7 @@
     "tags": [
       "Keuangan & Anggaran",
       "Umum",
-      "Sekretariat Jenderal / Pusdatin",
+      "Setjen",
       "Winda",
       "Rupiah (Miliar)"
     ]

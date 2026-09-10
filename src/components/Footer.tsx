@@ -25,7 +25,7 @@ export default function Footer() {
 
           {/* Col 2 */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-gray-900 mb-3">Unit Bimas Pengampu</h4>
+            <h4 className="text-xs font-bold uppercase tracking-wider text-gray-900 mb-3">Unit Pengampu</h4>
             <ul className="space-y-1.5 text-xs text-gray-500">
               <li><Link href="/eksplorasi?bimas=Ditjen+Bimas+Islam" className="hover:text-emerald-700">Ditjen Bimas Islam</Link></li>
               <li><Link href="/eksplorasi?bimas=Ditjen+Bimas+Kristen" className="hover:text-emerald-700">Ditjen Bimas Kristen</Link></li>
@@ -33,6 +33,7 @@ export default function Footer() {
               <li><Link href="/eksplorasi?bimas=Ditjen+Bimas+Hindu" className="hover:text-emerald-700">Ditjen Bimas Hindu</Link></li>
               <li><Link href="/eksplorasi?bimas=Ditjen+Bimas+Buddha" className="hover:text-emerald-700">Ditjen Bimas Buddha</Link></li>
               <li><Link href="/eksplorasi?bimas=Pusbimdik+Khonghucu" className="hover:text-emerald-700">Pusbimdik Khonghucu</Link></li>
+              <li><Link href="/eksplorasi?bimas=Setjen" className="hover:text-emerald-700">Setjen</Link></li>
             </ul>
           </div>
 

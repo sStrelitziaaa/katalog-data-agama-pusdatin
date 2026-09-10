@@ -82,20 +82,20 @@ function resolveAgamaAndBimas(namaData, pic) {
   if (lower.includes('bmn') || lower.includes('anggaran') || lower.includes('pns') || lower.includes('p3k') || lower.includes('realisasi') || lower.includes('alokasi')) {
     return {
       agama: 'Umum',
-      bimas: 'Sekretariat Jenderal / Pusdatin'
+      bimas: 'Setjen'
     };
   }
 
   if (lower.includes('penduduk')) {
     return {
       agama: 'Semua Agama',
-      bimas: 'Sekretariat Jenderal / Pusdatin'
+      bimas: 'Setjen'
     };
   }
 
   return {
     agama: 'Umum',
-    bimas: 'Sekretariat Jenderal / Pusdatin'
+    bimas: 'Setjen'
   };
 }
 

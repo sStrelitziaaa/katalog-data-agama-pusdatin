@@ -81,15 +81,15 @@ export function getBimasSummaries(): BimasSummary[] {
     {
       nama: 'Pusbimdik Khonghucu',
       agama: 'Khonghucu',
-      shortName: 'Bimdik Khonghucu',
+      shortName: 'Pusbimdik Khonghucu',
       color: 'rose',
       iconName: 'BookOpen',
       deskripsi: 'Data kelenteng/litang, penyuluh, rohaniwan, bimbingan perkawinan, dan lembaga Khonghucu.',
     },
     {
-      nama: 'Sekretariat Jenderal / Pusdatin',
+      nama: 'Setjen',
       agama: 'Umum',
-      shortName: 'Sekjen / Pusdatin',
+      shortName: 'Setjen',
       color: 'teal',
       iconName: 'ShieldCheck',
       deskripsi: 'Data kependudukan agama terpadu, tata kelola BMN, SDM Aparatur, dan keuangan APBN.',
@@ -105,7 +105,10 @@ export function getBimasSummaries(): BimasSummary[] {
   ];
 
   return bimasDefinitions.map(def => {
-    const matched = indicators.filter(item => item.bimas === def.nama);
+    const matched = indicators.filter(item => 
+      item.bimas === def.nama || 
+      (def.nama === 'Setjen' && (item.bimas === 'Setjen' || item.bimas === 'Sekretariat Jenderal / Pusdatin'))
+    );
     const terisi = matched.filter(item => item.terisi).length;
     const persentase = matched.length > 0 ? Math.round((terisi / matched.length) * 100) : 0;
 

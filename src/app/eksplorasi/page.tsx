@@ -83,7 +83,8 @@ function EksplorasiContent() {
         const matchSumber = item.sumberData.toLowerCase().includes(query);
         const matchPic = item.pic.toLowerCase().includes(query);
         const matchId = item.id.toLowerCase().includes(query);
-        if (!matchName && !matchKategori && !matchSumber && !matchPic && !matchId) {
+        const matchBimas = item.bimas.toLowerCase().includes(query);
+        if (!matchName && !matchKategori && !matchSumber && !matchPic && !matchId && !matchBimas) {
           return false;
         }
       }
@@ -93,7 +94,11 @@ function EksplorasiContent() {
         const itemAgama = item.agama.toLowerCase();
         const itemBimas = item.bimas.toLowerCase();
         const filterAgama = filters.agama.toLowerCase();
-        if (!itemAgama.includes(filterAgama) && !itemBimas.includes(filterAgama)) {
+        const matchAgama = itemAgama.includes(filterAgama);
+        const matchBimas = itemBimas.includes(filterAgama) ||
+          (filterAgama === 'setjen' && (itemBimas.includes('sekretariat') || itemBimas.includes('pusdatin'))) ||
+          ((filterAgama.includes('khonghucu') || filterAgama.includes('konghucu')) && (itemAgama.includes('khonghucu') || itemAgama.includes('konghucu') || itemBimas.includes('khonghucu') || itemBimas.includes('pusbimdik')));
+        if (!matchAgama && !matchBimas) {
           return false;
         }
       }

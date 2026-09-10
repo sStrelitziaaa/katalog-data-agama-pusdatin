@@ -15,6 +15,7 @@ export type BimasType =
   | 'Ditjen Bimas Hindu'
   | 'Ditjen Bimas Buddha'
   | 'Pusbimdik Khonghucu'
+  | 'Setjen'
   | 'Sekretariat Jenderal / Pusdatin'
   | 'Pusat Kerukunan Umat Beragama (PKUB)';
 
