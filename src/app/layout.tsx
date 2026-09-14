@@ -10,6 +10,11 @@ export const metadata: Metadata = {
   title: 'Katalog & Repositori Data Agama - Pusdatin Kemenag RI',
   description: 'Aplikasi Web Katalog dan Repositori Data Agama dan Keagamaan Pusdatin Kementerian Agama RI. Klasifikasi Satu Data Agama, Bimas, dan Kerukunan.',
   keywords: ['Kemenag', 'Pusdatin', 'Data Agama', 'Satu Data', 'Bimas Islam', 'Bimas Kristen', 'Bimas Katolik', 'Bimas Hindu', 'Bimas Buddha', 'Khonghucu'],
+  icons: {
+    icon: '/logo-kemenag.png',
+    shortcut: '/logo-kemenag.png',
+    apple: '/logo-kemenag.png',
+  },
 };
 
 export default function RootLayout({

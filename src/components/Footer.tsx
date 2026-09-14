@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import { Database, Shield, ExternalLink, Heart } from 'lucide-react';
+import Image from 'next/image';
+import { Shield, ExternalLink, Heart } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -10,8 +11,14 @@ export default function Footer() {
           {/* Col 1 */}
           <div className="md:col-span-2 space-y-3">
             <div className="flex items-center space-x-2.5">
-              <div className="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center text-white">
-                <Database className="w-4 h-4" />
+              <div className="relative w-8 h-8 flex items-center justify-center shrink-0">
+                <Image
+                  src="/logo-kemenag.png"
+                  alt="Logo Kementerian Agama RI"
+                  width={32}
+                  height={32}
+                  className="object-contain w-auto h-8"
+                />
               </div>
               <span className="font-bold text-gray-900 text-base">Pusdatin Kemenag RI</span>
             </div>

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Database, BarChart3, Layers, BookOpen, Search } from 'lucide-react';
 
@@ -19,8 +20,15 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Brand Logo & Title */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-600 to-teal-700 flex items-center justify-center text-white shadow-md shadow-emerald-700/20 group-hover:scale-105 transition-transform">
-              <Database className="w-5 h-5 text-white" />
+            <div className="relative w-10 h-10 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+              <Image
+                src="/logo-kemenag.png"
+                alt="Logo Kementerian Agama RI"
+                width={40}
+                height={40}
+                className="object-contain w-auto h-10"
+                priority
+              />
             </div>
             <div>
               <div className="flex items-center space-x-2">
