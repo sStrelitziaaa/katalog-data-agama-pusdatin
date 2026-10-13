@@ -24,7 +24,7 @@ export default function HomePage() {
   const bimasList = getBimasSummaries();
   const categories = getAllCategories();
 
-  // Signature data.gov.sg floating category pills
+  // Produsen Data Bimas & Unit Kerja Kemenag
   const floatingPillsRow1 = [
     { label: 'Bimas Islam', icon: '🕌', href: '/eksplorasi?bimas=Islam' },
     { label: 'Bimas Kristen', icon: '⛪', href: '/eksplorasi?bimas=Kristen' },
@@ -37,29 +37,21 @@ export default function HomePage() {
     { label: 'Bimas Khonghucu', icon: '⛩️', href: '/eksplorasi?bimas=Khonghucu' },
     { label: 'Pendidikan Islam', icon: '📚', href: '/eksplorasi?kategori=Pendidikan%20Agama' },
     { label: 'Balitbang Diklat', icon: '🔬', href: '/eksplorasi?bimas=Sekretariat%20%26%20Badan' },
-    { label: 'Tren 2020–2024', icon: '📈', href: '/eksplorasi' },
-    { label: 'Data Terverifikasi', icon: '🛡️', href: '/eksplorasi?status=Terisi' },
+    { label: 'Sekretariat Jenderal', icon: '🏛️', href: '/eksplorasi?bimas=Setjen' },
+    { label: 'Kerukunan Umat Beragama', icon: '🤝', href: '/eksplorasi?bimas=Pusat%20Kerukunan%20Umat%20Beragama%20(PKUB)' },
   ];
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
       {/* ============================================================ */}
-      {/* 1. HERO SECTION (data.gov.sg Signature Look & Wave Landscape) */}
+      {/* 1. HERO SECTION (Simple & Modern)                            */}
       {/* ============================================================ */}
       <section className="relative overflow-hidden pt-12 sm:pt-20 pb-28 md:pb-36 bg-gradient-to-b from-white via-[#faf9ff] to-[#f4f0fd]">
         {/* Subtle radial ambient dots */}
         <div className="absolute inset-0 opacity-40 bg-[radial-gradient(#c7c1f7_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          {/* Official badge */}
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white border border-[#e4e1fb] shadow-2xs mb-6 hover:border-[#a89ff2] transition-colors">
-            <span className="w-2 h-2 rounded-full bg-[#6253e8] animate-pulse" />
-            <span className="text-xs font-bold text-[#44418b] tracking-wide">
-              Pusat Data dan Informasi (Pusdatin) Kemenag RI
-            </span>
-          </div>
-
-          {/* Dual-tone Headline (Singapore data.gov.sg heavy contrast) */}
+          {/* Dual-tone Headline */}
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-[#151523] leading-none mb-6">
             <span>Kementerian Agama</span>
             <br className="hidden sm:inline" />

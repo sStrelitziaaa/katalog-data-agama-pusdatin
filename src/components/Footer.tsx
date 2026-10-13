@@ -21,10 +21,10 @@ export default function Footer() {
             </div>
             <div>
               <span className="font-extrabold text-[#151523] text-base sm:text-lg tracking-tight block">
-                data<span className="text-[#6253e8]">.kemenag</span>.go.id
+                Kemenag
               </span>
               <p className="text-xs text-[#686868]">
-                Portal Resmi Satu Data Agama Kementerian Agama Republik Indonesia
+                Pusat Data dan Informasi (Pusdatin) • Data Agama dan Keagamaan
               </p>
             </div>
           </div>
