@@ -13,15 +13,20 @@ import {
   MapPin, 
   User, 
   Layers, 
-  Info,
-  TrendingUp,
-  Tag,
-  BarChart3,
-  FileText
+  Info, 
+  TrendingUp, 
+  Tag, 
+  BarChart3, 
+  FileText,
+  Download,
+  FileSpreadsheet,
+  Edit3
 } from 'lucide-react';
 import { IndicatorItem } from '@/types/indicator';
-import { getStoredIndicators } from '@/lib/storage-utils';
+import { getStoredIndicators, saveStoredIndicators } from '@/lib/storage-utils';
+import { downloadIndicatorTemplate } from '@/lib/excel-template-utils';
 import TrendChart from '@/components/TrendChart';
+import UploadExcelModal from '@/components/UploadExcelModal';
 
 interface IndicatorDetailViewProps {
   initialIndicator?: IndicatorItem;
@@ -36,6 +41,7 @@ export default function IndicatorDetailView({
 }: IndicatorDetailViewProps) {
   const [indicator, setIndicator] = useState<IndicatorItem | undefined>(initialIndicator);
   const [loading, setLoading] = useState(!initialIndicator);
+  const [isCMSModalOpen, setIsCMSModalOpen] = useState(false);
 
   useEffect(() => {
     if (!indicator && targetId) {
@@ -194,6 +200,33 @@ export default function IndicatorDetailView({
               {growthRate >= 0 ? `+${growthRate}%` : `${growthRate}%`}
             </strong>
           </div>
+        </div>
+
+        {/* Action Button: Download Template Khusus & CMS Update */}
+        <div className="flex flex-wrap items-center justify-between gap-3 mt-4 pt-4 border-t border-gray-100">
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              type="button"
+              onClick={() => downloadIndicatorTemplate(indicator)}
+              className="inline-flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-300 text-xs font-bold hover:bg-emerald-100/80 transition-all shadow-2xs"
+            >
+              <Download className="w-3.5 h-3.5 text-emerald-600" />
+              <span>Download Template Excel Indikator Ini</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setIsCMSModalOpen(true)}
+              className="inline-flex items-center space-x-1.5 px-3.5 py-2 rounded-xl bg-emerald-600 text-white text-xs font-bold hover:bg-emerald-700 transition-all shadow-xs"
+            >
+              <Edit3 className="w-3.5 h-3.5" />
+              <span>Kelola & Update Data (CMS)</span>
+            </button>
+          </div>
+
+          <span className="text-[11px] text-gray-400">
+            Terakhir dimutakhirkan: {indicator.terakhirDiperbarui}
+          </span>
         </div>
       </div>
 
@@ -359,6 +392,21 @@ export default function IndicatorDetailView({
           )}
         </div>
       </div>
+
+      {/* Modal CMS Unggah & Kelola Data */}
+      <UploadExcelModal
+        isOpen={isCMSModalOpen}
+        onClose={() => setIsCMSModalOpen(false)}
+        onImportSuccess={(imported) => {
+          saveStoredIndicators(imported, 'append', allIndicators);
+          const updated = imported.find(item => item.id.toLowerCase() === indicator.id.toLowerCase());
+          if (updated) {
+            setIndicator(updated);
+          }
+        }}
+        existingIndicators={allIndicators.length > 0 ? allIndicators : [indicator]}
+        initialIndicatorId={indicator.id}
+      />
     </div>
   );
 }

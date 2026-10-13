@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { 
   X, 
   UploadCloud, 
@@ -11,16 +11,30 @@ import {
   FileCheck, 
   Loader2,
   Layers,
-  ArrowRight
+  ArrowRight,
+  Filter,
+  SlidersHorizontal,
+  Edit3,
+  Calendar,
+  Building2,
+  Tag,
+  RotateCcw
 } from 'lucide-react';
-import { IndicatorItem } from '@/types/indicator';
-import { downloadExcelTemplate, parseUploadedExcel } from '@/lib/excel-template-utils';
+import { IndicatorItem, YearlyDataPoint } from '@/types/indicator';
+import { 
+  downloadExcelTemplate, 
+  downloadIndicatorTemplate, 
+  downloadCategoryTemplate,
+  parseUploadedExcel, 
+  parseSingleIndicatorExcel 
+} from '@/lib/excel-template-utils';
 
 interface UploadExcelModalProps {
   isOpen: boolean;
   onClose: () => void;
   onImportSuccess: (imported: IndicatorItem[], mode: 'append' | 'replace') => void;
   existingIndicators: IndicatorItem[];
+  initialIndicatorId?: string;
 }
 
 export default function UploadExcelModal({
@@ -28,21 +42,122 @@ export default function UploadExcelModal({
   onClose,
   onImportSuccess,
   existingIndicators,
+  initialIndicatorId,
 }: UploadExcelModalProps) {
+  // Tabs: 'single' (CMS per Indikator) | 'category' (Per Kategori) | 'bulk' (Impor Masal)
+  const [activeTab, setActiveTab] = useState<'single' | 'category' | 'bulk'>('single');
+
+  // State untuk Tab 1 (CMS per Indikator)
+  const [filterBimas, setFilterBimas] = useState<string>('');
+  const [selectedIndicatorId, setSelectedIndicatorId] = useState<string>(
+    initialIndicatorId || existingIndicators[0]?.id || ''
+  );
+  const [inlineValues, setInlineValues] = useState<Record<string, number>>({});
+  const [inlineStatus, setInlineStatus] = useState<boolean>(true);
+
+  // State untuk Tab 2 (Per Kategori)
+  const [selectedCategory, setSelectedCategory] = useState<string>('Rumah Ibadah');
+
+  // State File Upload & Preview
   const [dragActive, setDragActive] = useState(false);
   const [file, setFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
   const [previewData, setPreviewData] = useState<IndicatorItem[]>([]);
   const [errors, setErrors] = useState<string[]>([]);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [importMode, setImportMode] = useState<'append' | 'replace'>('append');
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  // Set initial indicator jika berubah
+  useEffect(() => {
+    if (initialIndicatorId) {
+      setSelectedIndicatorId(initialIndicatorId);
+      setActiveTab('single');
+    }
+  }, [initialIndicatorId]);
+
+  // Cari objek indikator terpilih
+  const currentIndicator = useMemo(() => {
+    return existingIndicators.find(item => item.id.toLowerCase() === selectedIndicatorId.toLowerCase()) 
+      || existingIndicators[0];
+  }, [existingIndicators, selectedIndicatorId]);
+
+  // Inisialisasi nilai form edit inline saat indikator berganti
+  useEffect(() => {
+    if (currentIndicator) {
+      const vals: Record<string, number> = {};
+      currentIndicator.trenData?.forEach(t => {
+        vals[t.tahun] = t.nilai;
+      });
+      setInlineValues(vals);
+      setInlineStatus(currentIndicator.terisi);
+    }
+  }, [currentIndicator]);
+
+  // Daftar unik Bimas & Kategori untuk dropdown
+  const bimasList = useMemo(() => {
+    return Array.from(new Set(existingIndicators.map(item => item.bimas))).sort();
+  }, [existingIndicators]);
+
+  const categoryList = useMemo(() => {
+    return Array.from(new Set(existingIndicators.map(item => item.kategori))).sort();
+  }, [existingIndicators]);
+
+  // Filter daftar indikator untuk dropdown Tab 1
+  const filteredIndicatorsForSelect = useMemo(() => {
+    return existingIndicators.filter(item => {
+      if (filterBimas && item.bimas !== filterBimas && item.kategori !== filterBimas) {
+        return false;
+      }
+      return true;
+    });
+  }, [existingIndicators, filterBimas]);
+
   if (!isOpen) return null;
 
-  const handleDownloadTemplate = () => {
+  // Handler Download Template
+  const handleDownloadSingleTemplate = () => {
+    if (currentIndicator) downloadIndicatorTemplate(currentIndicator);
+  };
+
+  const handleDownloadCategoryTemplate = () => {
+    const matched = existingIndicators.filter(item => item.kategori === selectedCategory);
+    downloadCategoryTemplate(selectedCategory, matched);
+  };
+
+  const handleDownloadBulkTemplate = () => {
     downloadExcelTemplate();
   };
 
+  // Handler Simpan Cepat (Inline CMS)
+  const handleSaveInline = () => {
+    if (!currentIndicator) return;
+
+    const years = ['2020', '2021', '2022', '2023', '2024'];
+    const newTrenData: YearlyDataPoint[] = years.map(yr => ({
+      tahun: yr,
+      nilai: inlineValues[yr] !== undefined ? Number(inlineValues[yr]) : 0,
+      satuan: currentIndicator.satuan,
+      catatan: inlineStatus ? 'Data terverifikasi' : 'Tahap verifikasi'
+    }));
+
+    const updated: IndicatorItem = {
+      ...currentIndicator,
+      terisi: inlineStatus,
+      statusText: inlineStatus ? 'Terisi / Terintegrasi' : 'Dalam Proses',
+      terakhirDiperbarui: new Date().toISOString().slice(0, 10),
+      trenData: newTrenData
+    };
+
+    onImportSuccess([updated], 'append');
+    setSuccessMessage(`Data indikator "${updated.nama}" berhasil diperbarui!`);
+    setTimeout(() => {
+      setSuccessMessage(null);
+      onClose();
+    }, 1500);
+  };
+
+  // Handler Upload Berkas Excel
   const processFile = async (selectedFile: File) => {
     if (!selectedFile.name.match(/\.(xlsx|xls)$/i)) {
       setErrors(['Format berkas harus berupa Excel (.xlsx atau .xls).']);
@@ -53,14 +168,26 @@ export default function UploadExcelModal({
     setLoading(true);
     setErrors([]);
     setPreviewData([]);
+    setSuccessMessage(null);
 
     try {
-      const result = await parseUploadedExcel(selectedFile, existingIndicators);
-      if (result.success) {
-        setPreviewData(result.imported);
-        setErrors(result.errors);
+      if (activeTab === 'single' && currentIndicator) {
+        // Mode 1: Parse file khusus untuk 1 indikator
+        const res = await parseSingleIndicatorExcel(selectedFile, currentIndicator);
+        if (res.success && res.updatedIndicator) {
+          setPreviewData([res.updatedIndicator]);
+        } else {
+          setErrors(res.errors.length > 0 ? res.errors : ['Gagal membaca data untuk indikator terpilih.']);
+        }
       } else {
-        setErrors(result.errors.length > 0 ? result.errors : ['Tidak ada data valid yang dapat dibaca dari file ini.']);
+        // Mode 2 & 3: Parse file umum / multi baris
+        const result = await parseUploadedExcel(selectedFile, existingIndicators);
+        if (result.success) {
+          setPreviewData(result.imported);
+          setErrors(result.errors);
+        } else {
+          setErrors(result.errors.length > 0 ? result.errors : ['Tidak ada data valid yang dapat dibaca dari file ini.']);
+        }
       }
     } catch (err: any) {
       setErrors([err?.message || 'Terjadi kesalahan saat memproses file Excel.']);
@@ -78,11 +205,8 @@ export default function UploadExcelModal({
   const handleDrag = (e: React.DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    if (e.type === 'dragenter' || e.type === 'dragover') {
-      setDragActive(true);
-    } else if (e.type === 'dragleave') {
-      setDragActive(false);
-    }
+    if (e.type === 'dragenter' || e.type === 'dragover') setDragActive(true);
+    else if (e.type === 'dragleave') setDragActive(false);
   };
 
   const handleDrop = (e: React.DragEvent) => {
@@ -94,10 +218,15 @@ export default function UploadExcelModal({
     }
   };
 
-  const handleApply = () => {
+  const handleApplyPreview = () => {
     if (previewData.length > 0) {
-      onImportSuccess(previewData, importMode);
-      onClose();
+      onImportSuccess(previewData, activeTab === 'single' ? 'append' : importMode);
+      setSuccessMessage(`Berhasil menerapkan ${previewData.length} data ke website!`);
+      setTimeout(() => {
+        setSuccessMessage(null);
+        resetState();
+        onClose();
+      }, 1200);
     }
   };
 
@@ -105,27 +234,32 @@ export default function UploadExcelModal({
     setFile(null);
     setPreviewData([]);
     setErrors([]);
+    setSuccessMessage(null);
     if (fileInputRef.current) fileInputRef.current.value = '';
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs overflow-y-auto animate-in fade-in duration-200">
-      <div className="relative w-full max-w-3xl bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden my-8">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-xs overflow-y-auto animate-in fade-in duration-200">
+      <div className="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden my-6">
+        
         {/* Header Modal */}
-        <div className="p-6 border-b border-gray-100 flex items-center justify-between bg-gradient-to-r from-emerald-50/50 to-teal-50/30">
-          <div>
-            <div className="flex items-center space-x-2">
-              <span className="p-2 rounded-xl bg-emerald-600 text-white shadow-xs">
-                <FileSpreadsheet className="w-5 h-5" />
-              </span>
-              <div>
-                <h3 className="text-lg font-bold text-gray-900">
-                  Unggah & Impor Data Excel
+        <div className="p-5 sm:p-6 border-b border-gray-100 flex items-center justify-between bg-gradient-to-r from-emerald-50/80 via-teal-50/40 to-white">
+          <div className="flex items-center space-x-3">
+            <span className="p-2.5 rounded-2xl bg-emerald-600 text-white shadow-md shadow-emerald-600/20">
+              <FileSpreadsheet className="w-5 h-5" />
+            </span>
+            <div>
+              <div className="flex items-center space-x-2">
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 tracking-tight">
+                  CMS Kelola & Unggah Data Agama
                 </h3>
-                <p className="text-xs text-gray-500">
-                  Satu Data Agama & Keagamaan • Pusdatin Kemenag RI
-                </p>
+                <span className="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold border border-emerald-200">
+                  Pusdatin Kemenag
+                </span>
               </div>
+              <p className="text-xs text-gray-500">
+                Pilih indikator data spesifik, unduh template khusus, atau unggah pembaharuan data Excel
+              </p>
             </div>
           </div>
 
@@ -137,87 +271,360 @@ export default function UploadExcelModal({
           </button>
         </div>
 
-        <div className="p-6 space-y-6 max-h-[75vh] overflow-y-auto">
-          {/* Template Download Banner */}
-          <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-            <div className="space-y-0.5">
-              <div className="flex items-center space-x-1.5 text-emerald-900 font-bold text-xs sm:text-sm">
-                <FileCheck className="w-4 h-4 text-emerald-600" />
-                <span>Belum punya format tabel yang sesuai?</span>
-              </div>
-              <p className="text-xs text-emerald-700/90 leading-relaxed">
-                Unduh template resmi kami dengan contoh pengisian data, pilihan agama/bimas resmi, dan kolom data tahun 2020–2024.
-              </p>
-            </div>
+        {/* Tab Selector Nav */}
+        <div className="px-6 pt-3 bg-gray-50/60 border-b border-gray-100 flex items-center space-x-2 overflow-x-auto">
+          <button
+            onClick={() => { setActiveTab('single'); resetState(); }}
+            className={`flex items-center space-x-2 px-4 py-2.5 text-xs font-bold border-b-2 transition-all whitespace-nowrap ${
+              activeTab === 'single'
+                ? 'border-emerald-600 text-emerald-700 bg-white rounded-t-xl shadow-2xs'
+                : 'border-transparent text-gray-500 hover:text-gray-900'
+            }`}
+          >
+            <Edit3 className="w-4 h-4" />
+            <span>1. CMS per Nama Indikator (Rekomendasi)</span>
+          </button>
 
-            <button
-              onClick={handleDownloadTemplate}
-              className="inline-flex items-center justify-center space-x-1.5 px-3.5 py-2 rounded-xl bg-emerald-700 text-white text-xs font-bold hover:bg-emerald-800 shadow-sm transition-all shrink-0"
-            >
-              <Download className="w-3.5 h-3.5" />
-              <span>Download Template Excel</span>
-            </button>
-          </div>
+          <button
+            onClick={() => { setActiveTab('category'); resetState(); }}
+            className={`flex items-center space-x-2 px-4 py-2.5 text-xs font-bold border-b-2 transition-all whitespace-nowrap ${
+              activeTab === 'category'
+                ? 'border-emerald-600 text-emerald-700 bg-white rounded-t-xl shadow-2xs'
+                : 'border-transparent text-gray-500 hover:text-gray-900'
+            }`}
+          >
+            <Layers className="w-4 h-4" />
+            <span>2. Template per Kategori Data</span>
+          </button>
 
-          {/* Upload Dropzone */}
-          <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">
-              Pilih Berkas Excel (.xlsx / .xls)
-            </label>
+          <button
+            onClick={() => { setActiveTab('bulk'); resetState(); }}
+            className={`flex items-center space-x-2 px-4 py-2.5 text-xs font-bold border-b-2 transition-all whitespace-nowrap ${
+              activeTab === 'bulk'
+                ? 'border-emerald-600 text-emerald-700 bg-white rounded-t-xl shadow-2xs'
+                : 'border-transparent text-gray-500 hover:text-gray-900'
+            }`}
+          >
+            <UploadCloud className="w-4 h-4" />
+            <span>3. Impor Masal (Banyak Data)</span>
+          </button>
+        </div>
 
-            <div
-              onDragEnter={handleDrag}
-              onDragLeave={handleDrag}
-              onDragOver={handleDrag}
-              onDrop={handleDrop}
-              onClick={() => fileInputRef.current?.click()}
-              className={`border-2 border-dashed rounded-2xl p-6 sm:p-8 text-center cursor-pointer transition-all ${
-                dragActive
-                  ? 'border-emerald-500 bg-emerald-50/50 scale-[0.99]'
-                  : 'border-gray-200 hover:border-emerald-300 hover:bg-gray-50/80'
-              }`}
-            >
-              <input
-                ref={fileInputRef}
-                type="file"
-                accept=".xlsx, .xls"
-                onChange={handleFileChange}
-                className="hidden"
-              />
+        {/* Modal Body */}
+        <div className="p-6 space-y-6 max-h-[70vh] overflow-y-auto">
+          
+          {/* ==================== TAB 1: CMS PER INDIKATOR ==================== */}
+          {activeTab === 'single' && (
+            <div className="space-y-6">
+              
+              {/* Filter & Dropdown Indikator */}
+              <div className="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  
+                  {/* Dropdown Filter Bimas/Kategori untuk mempersempit */}
+                  <div>
+                    <label className="block text-[11px] font-bold uppercase tracking-wider text-gray-500 mb-1.5">
+                      Filter Bimas / Kategori
+                    </label>
+                    <select
+                      value={filterBimas}
+                      onChange={e => setFilterBimas(e.target.value)}
+                      className="w-full text-xs rounded-xl border border-gray-200 bg-white px-3 py-2 text-gray-800 font-medium focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 shadow-2xs"
+                    >
+                      <option value="">Semua Ditjen Bimas & Kategori</option>
+                      <optgroup label="-- Ditjen Bimas / Unit --">
+                        {bimasList.map(b => (
+                          <option key={b} value={b}>{b}</option>
+                        ))}
+                      </optgroup>
+                      <optgroup label="-- Rumpun Kategori --">
+                        {categoryList.map(c => (
+                          <option key={c} value={c}>{c}</option>
+                        ))}
+                      </optgroup>
+                    </select>
+                  </div>
 
-              <div className="w-12 h-12 mx-auto rounded-2xl bg-emerald-100/80 text-emerald-700 flex items-center justify-center mb-3">
-                <UploadCloud className="w-6 h-6" />
-              </div>
-
-              {file ? (
-                <div>
-                  <p className="text-sm font-bold text-gray-900">{file.name}</p>
-                  <p className="text-xs text-gray-500 mt-0.5">
-                    {(file.size / 1024).toFixed(1)} KB • Klik untuk mengganti berkas
-                  </p>
+                  {/* Dropdown Utama: Nama Indikator */}
+                  <div className="sm:col-span-2">
+                    <label className="block text-[11px] font-bold uppercase tracking-wider text-gray-900 mb-1.5">
+                      Pilih Nama Indikator Data yang Ingin Dikelola:
+                    </label>
+                    <select
+                      value={selectedIndicatorId}
+                      onChange={e => setSelectedIndicatorId(e.target.value)}
+                      className="w-full text-xs font-semibold rounded-xl border-2 border-emerald-500/50 bg-white px-3.5 py-2 text-gray-900 focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 shadow-xs"
+                    >
+                      {filteredIndicatorsForSelect.map(item => (
+                        <option key={item.id} value={item.id}>
+                          [{item.id}] {item.nama} ({item.agama})
+                        </option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
-              ) : (
-                <div>
-                  <p className="text-sm font-bold text-gray-800">
-                    Klik untuk memilih berkas atau seret file ke sini
-                  </p>
-                  <p className="text-xs text-gray-400 mt-1">
-                    Mendukung format Microsoft Excel (.xlsx dan .xls)
-                  </p>
-                </div>
-              )}
-            </div>
-          </div>
 
-          {/* Loading State */}
-          {loading && (
-            <div className="p-6 text-center text-xs text-gray-500 flex items-center justify-center space-x-2">
-              <Loader2 className="w-5 h-5 animate-spin text-emerald-600" />
-              <span>Sedang memverifikasi struktur kolom dan membaca data Excel...</span>
+                {/* Info Card Indikator Terpilih */}
+                {currentIndicator && (
+                  <div className="p-3.5 rounded-xl bg-white border border-emerald-200/80 shadow-2xs flex flex-wrap items-center justify-between gap-3">
+                    <div className="space-y-0.5">
+                      <div className="flex items-center space-x-2">
+                        <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-gray-900 text-white">
+                          {currentIndicator.id}
+                        </span>
+                        <span className="text-xs font-bold text-gray-900">
+                          {currentIndicator.nama}
+                        </span>
+                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 font-semibold">
+                          {currentIndicator.agama}
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-gray-500">
+                        PIC: <strong className="text-gray-700">{currentIndicator.pic}</strong> • Satuan: <strong className="text-gray-700">{currentIndicator.satuan}</strong> • Sumber: <strong className="text-gray-700">{currentIndicator.sumberData}</strong>
+                      </p>
+                    </div>
+
+                    {/* Tombol Download Template Khusus Indikator Ini */}
+                    <button
+                      type="button"
+                      onClick={handleDownloadSingleTemplate}
+                      className="inline-flex items-center space-x-1.5 px-3.5 py-2 rounded-xl bg-emerald-700 text-white text-xs font-bold hover:bg-emerald-800 shadow-sm transition-all shrink-0"
+                    >
+                      <Download className="w-3.5 h-3.5" />
+                      <span>Download Template Excel Indikator Ini</span>
+                    </button>
+                  </div>
+                )}
+              </div>
+
+              {/* Pilihan Metode: A. Upload Excel Khusus, ATAU B. Input Cepat Langsung */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                
+                {/* Opsi A: Upload File Excel Khusus Indikator Ini */}
+                <div className="p-4 rounded-2xl border border-gray-200 bg-white space-y-3">
+                  <div className="flex items-center space-x-2">
+                    <span className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-[11px]">
+                      A
+                    </span>
+                    <h4 className="text-xs font-bold text-gray-900">
+                      Upload File Excel Indikator Ini
+                    </h4>
+                  </div>
+                  <p className="text-[11px] text-gray-500 leading-relaxed">
+                    Unggah file Excel template yang sudah Anda isi angka nilai tahunannya.
+                  </p>
+
+                  <div
+                    onDragEnter={handleDrag}
+                    onDragLeave={handleDrag}
+                    onDragOver={handleDrag}
+                    onDrop={handleDrop}
+                    onClick={() => fileInputRef.current?.click()}
+                    className="border-2 border-dashed border-gray-200 hover:border-emerald-300 rounded-xl p-4 text-center cursor-pointer transition-all hover:bg-gray-50/80"
+                  >
+                    <UploadCloud className="w-7 h-7 mx-auto text-emerald-600 mb-1" />
+                    <p className="text-xs font-bold text-gray-800">
+                      {file ? file.name : 'Pilih / Seret Berkas Excel'}
+                    </p>
+                    <p className="text-[10px] text-gray-400 mt-0.5">
+                      Otomatis memetakan angka tahun ke grafik
+                    </p>
+                  </div>
+                </div>
+
+                {/* Opsi B: Input Cepat Langsung di Browser (Inline CMS) */}
+                <div className="p-4 rounded-2xl border border-gray-200 bg-white space-y-3">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-2">
+                      <span className="w-5 h-5 rounded-full bg-teal-100 text-teal-800 flex items-center justify-center font-bold text-[11px]">
+                        B
+                      </span>
+                      <h4 className="text-xs font-bold text-gray-900">
+                        Atau Edit Angka Langsung di Web
+                      </h4>
+                    </div>
+                    <span className="text-[10px] text-gray-400">Tanpa buka Excel</span>
+                  </div>
+
+                  <p className="text-[11px] text-gray-500 leading-relaxed">
+                    Ubah nilai angka runtun waktu langsung di sini:
+                  </p>
+
+                  <div className="grid grid-cols-5 gap-1.5">
+                    {['2020', '2021', '2022', '2023', '2024'].map(yr => (
+                      <div key={yr}>
+                        <label className="text-[10px] font-bold text-gray-500 block mb-1 text-center">
+                          {yr}
+                        </label>
+                        <input
+                          type="number"
+                          value={inlineValues[yr] ?? 0}
+                          onChange={e => setInlineValues({ ...inlineValues, [yr]: parseFloat(e.target.value) || 0 })}
+                          className="w-full text-center text-xs font-bold rounded-lg border border-gray-200 px-1 py-1.5 text-gray-900 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500"
+                        />
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center justify-between pt-1">
+                    <label className="flex items-center space-x-2 text-xs cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={inlineStatus}
+                        onChange={e => setInlineStatus(e.target.checked)}
+                        className="rounded text-emerald-600 focus:ring-emerald-500"
+                      />
+                      <span className="text-gray-700 font-medium text-[11px]">Status Terisi & Terverifikasi</span>
+                    </label>
+
+                    <button
+                      type="button"
+                      onClick={handleSaveInline}
+                      className="px-3.5 py-1.5 rounded-xl bg-emerald-600 text-white text-xs font-bold hover:bg-emerald-700 shadow-xs transition-all"
+                    >
+                      Simpan Nilai
+                    </button>
+                  </div>
+                </div>
+
+              </div>
             </div>
           )}
 
-          {/* Error messages */}
+          {/* ==================== TAB 2: TEMPLATE PER KATEGORI ==================== */}
+          {activeTab === 'category' && (
+            <div className="space-y-5">
+              <div className="p-4 sm:p-5 rounded-2xl bg-emerald-50/70 border border-emerald-200/80 space-y-3">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-emerald-900">
+                  Pilih Rumpun Kategori yang Ingin Diisi:
+                </h4>
+                <div className="flex flex-col sm:flex-row items-center gap-3">
+                  <select
+                    value={selectedCategory}
+                    onChange={e => setSelectedCategory(e.target.value)}
+                    className="w-full text-xs font-semibold rounded-xl border border-gray-200 bg-white px-3.5 py-2.5 text-gray-900 focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 shadow-2xs"
+                  >
+                    {categoryList.map(cat => {
+                      const count = existingIndicators.filter(item => item.kategori === cat).length;
+                      return (
+                        <option key={cat} value={cat}>
+                          {cat} ({count} Indikator)
+                        </option>
+                      );
+                    })}
+                  </select>
+
+                  <button
+                    type="button"
+                    onClick={handleDownloadCategoryTemplate}
+                    className="w-full sm:w-auto inline-flex items-center justify-center space-x-1.5 px-4 py-2.5 rounded-xl bg-emerald-700 text-white text-xs font-bold hover:bg-emerald-800 shadow-sm transition-all shrink-0"
+                  >
+                    <Download className="w-3.5 h-3.5" />
+                    <span>Download Template Kategori "{selectedCategory}"</span>
+                  </button>
+                </div>
+                <p className="text-[11px] text-emerald-700">
+                  Template ini memuat seluruh nama indikator dalam kategori tersebut lengkap dengan kolom angka tahun 2020 s/d 2024.
+                </p>
+              </div>
+
+              {/* Dropzone Upload Kategori */}
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">
+                  Unggah Kembali File Excel Kategori Tersebut:
+                </label>
+                <div
+                  onDragEnter={handleDrag}
+                  onDragLeave={handleDrag}
+                  onDragOver={handleDrag}
+                  onDrop={handleDrop}
+                  onClick={() => fileInputRef.current?.click()}
+                  className="border-2 border-dashed border-gray-200 hover:border-emerald-300 rounded-2xl p-6 text-center cursor-pointer transition-all hover:bg-gray-50"
+                >
+                  <UploadCloud className="w-8 h-8 mx-auto text-emerald-600 mb-2" />
+                  <p className="text-xs font-bold text-gray-800">
+                    {file ? file.name : 'Pilih atau Seret Berkas Excel Kategori'}
+                  </p>
+                  <p className="text-[11px] text-gray-400 mt-0.5">
+                    Mendukung pembaruan multi-indikator sekaligus
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* ==================== TAB 3: IMPOR MASAL (BANYAK DATA) ==================== */}
+          {activeTab === 'bulk' && (
+            <div className="space-y-5">
+              <div className="p-4 rounded-2xl bg-gray-50 border border-gray-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div className="space-y-0.5">
+                  <span className="text-xs font-bold text-gray-900 block">
+                    Download Template Excel Kosong / Format Bebas
+                  </span>
+                  <p className="text-[11px] text-gray-500">
+                    Gunakan template ini untuk menambahkan data-data baru yang belum ada di daftar 82 indikator.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={handleDownloadBulkTemplate}
+                  className="inline-flex items-center space-x-1.5 px-3.5 py-2 rounded-xl bg-white border border-gray-300 text-gray-700 text-xs font-bold hover:bg-gray-100 shadow-2xs shrink-0"
+                >
+                  <Download className="w-3.5 h-3.5" />
+                  <span>Download Template Excel Lengkap</span>
+                </button>
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wider text-gray-700 mb-2">
+                  Pilih Berkas Excel untuk Diimpor:
+                </label>
+                <div
+                  onDragEnter={handleDrag}
+                  onDragLeave={handleDrag}
+                  onDragOver={handleDrag}
+                  onDrop={handleDrop}
+                  onClick={() => fileInputRef.current?.click()}
+                  className="border-2 border-dashed border-gray-200 hover:border-emerald-300 rounded-2xl p-6 text-center cursor-pointer transition-all hover:bg-gray-50"
+                >
+                  <UploadCloud className="w-8 h-8 mx-auto text-emerald-600 mb-2" />
+                  <p className="text-xs font-bold text-gray-800">
+                    {file ? file.name : 'Klik untuk memilih berkas atau seret file ke sini'}
+                  </p>
+                  <p className="text-[11px] text-gray-400 mt-0.5">
+                    Mendukung format Microsoft Excel (.xlsx dan .xls)
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Hidden File Input */}
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept=".xlsx, .xls"
+            onChange={handleFileChange}
+            className="hidden"
+          />
+
+          {/* Loading indicator */}
+          {loading && (
+            <div className="p-4 rounded-2xl bg-gray-50 text-center text-xs text-gray-600 flex items-center justify-center space-x-2">
+              <Loader2 className="w-4 h-4 animate-spin text-emerald-600" />
+              <span>Memvalidasi dan membaca data dari file Excel...</span>
+            </div>
+          )}
+
+          {/* Success message banner */}
+          {successMessage && (
+            <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs font-bold text-emerald-800 flex items-center space-x-2">
+              <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+              <span>{successMessage}</span>
+            </div>
+          )}
+
+          {/* Errors */}
           {errors.length > 0 && (
             <div className="p-4 rounded-2xl bg-amber-50 border border-amber-200 text-xs text-amber-900 space-y-1">
               <div className="flex items-center space-x-1.5 font-bold">
@@ -232,18 +639,18 @@ export default function UploadExcelModal({
             </div>
           )}
 
-          {/* Preview Table */}
+          {/* Preview Table if file parsed */}
           {previewData.length > 0 && (
-            <div className="space-y-3">
+            <div className="space-y-3 pt-2 border-t border-gray-100">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-1.5 text-xs text-emerald-800 font-bold">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                  <span>Ditemukan {previewData.length} indikator valid siap diimpor:</span>
+                  <span>Ditemukan {previewData.length} data valid siap diterapkan:</span>
                 </div>
-                <span className="text-[11px] text-gray-400">Pratinjau Data</span>
+                <span className="text-[10px] text-gray-400">Pratinjau Data</span>
               </div>
 
-              <div className="border border-gray-200 rounded-xl overflow-hidden max-h-48 overflow-y-auto">
+              <div className="border border-gray-200 rounded-xl overflow-hidden max-h-44 overflow-y-auto">
                 <table className="w-full text-left text-xs text-gray-600">
                   <thead className="bg-gray-50 text-[11px] font-semibold text-gray-500 uppercase sticky top-0 border-b border-gray-100">
                     <tr>
@@ -251,96 +658,90 @@ export default function UploadExcelModal({
                       <th className="px-3 py-2">Nama Indikator</th>
                       <th className="px-3 py-2">Agama</th>
                       <th className="px-3 py-2">Kategori</th>
-                      <th className="px-3 py-2">Status</th>
+                      <th className="px-3 py-2">Tahun Terbaru</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-100">
-                    {previewData.map((item, idx) => (
-                      <tr key={idx} className="hover:bg-gray-50">
-                        <td className="px-3 py-2 font-mono font-bold text-gray-800 text-[11px]">
-                          {item.id}
-                        </td>
-                        <td className="px-3 py-2 font-medium text-gray-900">
-                          {item.nama}
-                        </td>
-                        <td className="px-3 py-2 whitespace-nowrap">
-                          {item.agama}
-                        </td>
-                        <td className="px-3 py-2 whitespace-nowrap text-gray-500">
-                          {item.kategori}
-                        </td>
-                        <td className="px-3 py-2 whitespace-nowrap">
-                          {item.terisi ? (
-                            <span className="text-emerald-700 font-semibold text-[11px]">Terisi</span>
-                          ) : (
-                            <span className="text-amber-700 font-semibold text-[11px]">Proses</span>
-                          )}
-                        </td>
-                      </tr>
-                    ))}
+                    {previewData.map((item, idx) => {
+                      const latestPoint = item.trenData?.[item.trenData.length - 1];
+                      return (
+                        <tr key={idx} className="hover:bg-gray-50">
+                          <td className="px-3 py-2 font-mono font-bold text-gray-800 text-[11px]">
+                            {item.id}
+                          </td>
+                          <td className="px-3 py-2 font-medium text-gray-900">
+                            {item.nama}
+                          </td>
+                          <td className="px-3 py-2 whitespace-nowrap">
+                            {item.agama}
+                          </td>
+                          <td className="px-3 py-2 whitespace-nowrap text-gray-500">
+                            {item.kategori}
+                          </td>
+                          <td className="px-3 py-2 font-mono text-emerald-700 font-bold">
+                            {latestPoint ? `${latestPoint.tahun}: ${latestPoint.nilai.toLocaleString('id-ID')}` : '-'}
+                          </td>
+                        </tr>
+                      );
+                    })}
                   </tbody>
                 </table>
               </div>
 
-              {/* Mode Impor */}
-              <div className="p-3.5 rounded-2xl bg-gray-50 border border-gray-200 text-xs space-y-2">
-                <span className="font-bold text-gray-800 block">Metode Impor Data:</span>
-                <div className="space-y-1.5">
-                  <label className="flex items-center space-x-2 cursor-pointer">
+              {activeTab === 'bulk' && (
+                <div className="p-3 rounded-xl bg-gray-50 border border-gray-200 text-xs flex items-center space-x-4">
+                  <span className="font-bold text-gray-700">Metode:</span>
+                  <label className="flex items-center space-x-1.5 cursor-pointer">
                     <input
                       type="radio"
                       name="importMode"
                       value="append"
                       checked={importMode === 'append'}
                       onChange={() => setImportMode('append')}
-                      className="text-emerald-600 focus:ring-emerald-500"
+                      className="text-emerald-600"
                     />
-                    <span className="text-gray-700 font-medium">
-                      <strong>Tambahkan / Perbarui ke Katalog</strong> (Rekomendasi: menggabungkan dengan 82 data acuan yang ada)
-                    </span>
+                    <span className="text-gray-700 font-medium">Gabungkan / Update</span>
                   </label>
-                  <label className="flex items-center space-x-2 cursor-pointer">
+                  <label className="flex items-center space-x-1.5 cursor-pointer">
                     <input
                       type="radio"
                       name="importMode"
                       value="replace"
                       checked={importMode === 'replace'}
                       onChange={() => setImportMode('replace')}
-                      className="text-emerald-600 focus:ring-emerald-500"
+                      className="text-emerald-600"
                     />
-                    <span className="text-gray-700 font-medium">
-                      <strong>Ganti Seluruh Data Katalog</strong> (Hanya menampilkan data dari file Excel ini)
-                    </span>
+                    <span className="text-gray-700 font-medium">Ganti Seluruh Data</span>
                   </label>
                 </div>
-              </div>
+              )}
             </div>
           )}
+
         </div>
 
         {/* Footer Actions */}
-        <div className="p-5 border-t border-gray-100 flex items-center justify-between bg-gray-50/50">
+        <div className="p-4 sm:p-5 border-t border-gray-100 flex items-center justify-between bg-gray-50/50">
           <button
             type="button"
             onClick={() => { resetState(); onClose(); }}
-            className="px-4 py-2.5 rounded-xl border border-gray-200 text-xs font-semibold text-gray-600 hover:bg-gray-100 transition-colors"
+            className="px-4 py-2 rounded-xl border border-gray-200 text-xs font-semibold text-gray-600 hover:bg-gray-100 transition-colors"
           >
-            Batal
+            Tutup
           </button>
 
-          <div className="flex items-center space-x-2">
-            {previewData.length > 0 && (
-              <button
-                type="button"
-                onClick={handleApply}
-                className="inline-flex items-center space-x-1.5 px-5 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold hover:bg-emerald-700 shadow-md transition-all"
-              >
-                <span>Terapkan {previewData.length} Data ke Website</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            )}
-          </div>
+          {previewData.length > 0 && (
+            <button
+              type="button"
+              onClick={handleApplyPreview}
+              className="inline-flex items-center space-x-1.5 px-5 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold hover:bg-emerald-700 shadow-md transition-all"
+            >
+              <span>Terapkan {previewData.length} Data ke Website</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          )}
         </div>
+
       </div>
     </div>
   );

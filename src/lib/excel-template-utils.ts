@@ -2,11 +2,246 @@ import { utils, writeFile, read } from 'xlsx';
 import { IndicatorItem, AgamaType, BimasType, YearlyDataPoint } from '@/types/indicator';
 
 /**
- * Menghasilkan dan mendownload template Excel resmi (.xlsx)
- * yang mudah diisi oleh pengguna dan langsung kompatibel dengan sistem
+ * 1. Download Template Khusus untuk 1 Nama Indikator Spesifik
+ * Sudah terisi metadata nama data, kode, satuan, dan tabel tahun 2020-2024
+ */
+export function downloadIndicatorTemplate(indicator: IndicatorItem) {
+  // Baris metadata & data runtun waktu
+  const rows = [
+    { 'Parameter': 'Kode Indikator', 'Nilai / Keterangan': indicator.id },
+    { 'Parameter': 'Nama Indikator', 'Nilai / Keterangan': indicator.nama },
+    { 'Parameter': 'Rumpun Kategori', 'Nilai / Keterangan': indicator.kategori },
+    { 'Parameter': 'Agama', 'Nilai / Keterangan': indicator.agama },
+    { 'Parameter': 'Ditjen / Bimas', 'Nilai / Keterangan': indicator.bimas },
+    { 'Parameter': 'Satuan Pengukuran', 'Nilai / Keterangan': indicator.satuan },
+    { 'Parameter': 'PIC Tim Pusdatin', 'Nilai / Keterangan': indicator.pic },
+    { 'Parameter': 'Sistem Produsen Data', 'Nilai / Keterangan': indicator.sumberData },
+    { 'Parameter': 'Status Integrasi', 'Nilai / Keterangan': indicator.statusText },
+    { 'Parameter': '-------------------', 'Nilai / Keterangan': '-------------------' },
+  ];
+
+  const wsMeta = utils.json_to_sheet(rows);
+  wsMeta['!cols'] = [{ wch: 24 }, { wch: 50 }];
+
+  // Sheet 2: Tabel Angka Runtun Waktu yang siap diedit
+  const timeSeriesData = (indicator.trenData && indicator.trenData.length > 0)
+    ? indicator.trenData.map(t => ({
+        'Kode': indicator.id,
+        'Tahun': t.tahun,
+        'Nilai Terukur': t.nilai,
+        'Satuan': indicator.satuan,
+        'Status Verifikasi': indicator.terisi ? 'Terverifikasi' : 'Tahap Verifikasi',
+        'Catatan / Sumber': t.catatan || indicator.sumberData,
+      }))
+    : [
+        { 'Kode': indicator.id, 'Tahun': '2020', 'Nilai Terukur': 0, 'Satuan': indicator.satuan, 'Status Verifikasi': 'Terverifikasi', 'Catatan / Sumber': '' },
+        { 'Kode': indicator.id, 'Tahun': '2021', 'Nilai Terukur': 0, 'Satuan': indicator.satuan, 'Status Verifikasi': 'Terverifikasi', 'Catatan / Sumber': '' },
+        { 'Kode': indicator.id, 'Tahun': '2022', 'Nilai Terukur': 0, 'Satuan': indicator.satuan, 'Status Verifikasi': 'Terverifikasi', 'Catatan / Sumber': '' },
+        { 'Kode': indicator.id, 'Tahun': '2023', 'Nilai Terukur': 0, 'Satuan': indicator.satuan, 'Status Verifikasi': 'Terverifikasi', 'Catatan / Sumber': '' },
+        { 'Kode': indicator.id, 'Tahun': '2024', 'Nilai Terukur': 0, 'Satuan': indicator.satuan, 'Status Verifikasi': 'Terverifikasi', 'Catatan / Sumber': '' },
+      ];
+
+  const wsData = utils.json_to_sheet(timeSeriesData);
+  wsData['!cols'] = [
+    { wch: 14 },
+    { wch: 10 },
+    { wch: 18 },
+    { wch: 16 },
+    { wch: 20 },
+    { wch: 35 },
+  ];
+
+  const wb = utils.book_new();
+  utils.book_append_sheet(wb, wsData, 'Runtun Waktu Data');
+  utils.book_append_sheet(wb, wsMeta, 'Metadata Indikator');
+
+  const cleanName = indicator.nama.replace(/[^a-zA-Z0-9]/g, '_').slice(0, 35);
+  const filename = `Template_${indicator.id}_${cleanName}.xlsx`;
+  writeFile(wb, filename);
+}
+
+/**
+ * 2. Download Template Khusus untuk Seluruh Indikator dalam 1 Kategori Tertentu
+ */
+export function downloadCategoryTemplate(categoryName: string, categoryIndicators: IndicatorItem[]) {
+  const exportRows = categoryIndicators.map((item, idx) => {
+    const val2020 = item.trenData?.find(t => t.tahun === '2020')?.nilai ?? '';
+    const val2021 = item.trenData?.find(t => t.tahun === '2021')?.nilai ?? '';
+    const val2022 = item.trenData?.find(t => t.tahun === '2022')?.nilai ?? '';
+    const val2023 = item.trenData?.find(t => t.tahun === '2023')?.nilai ?? '';
+    const val2024 = item.trenData?.find(t => t.tahun === '2024')?.nilai ?? '';
+
+    return {
+      'No': idx + 1,
+      'Kode Indikator': item.id,
+      'Nama Indikator': item.nama,
+      'Rumpun Kategori': item.kategori,
+      'Agama': item.agama,
+      'Ditjen / Bimas': item.bimas,
+      'Status Integrasi': item.statusText,
+      'Satuan Ukuran': item.satuan,
+      'Nilai 2020': val2020,
+      'Nilai 2021': val2021,
+      'Nilai 2022': val2022,
+      'Nilai 2023': val2023,
+      'Nilai 2024': val2024,
+      'PIC Tim Pusdatin': item.pic,
+      'Sumber Data': item.sumberData,
+      'Cakupan Wilayah': item.cakupanWilayah,
+    };
+  });
+
+  const ws = utils.json_to_sheet(exportRows);
+  ws['!cols'] = [
+    { wch: 5 },
+    { wch: 14 },
+    { wch: 38 },
+    { wch: 22 },
+    { wch: 14 },
+    { wch: 26 },
+    { wch: 20 },
+    { wch: 16 },
+    { wch: 14 },
+    { wch: 14 },
+    { wch: 14 },
+    { wch: 14 },
+    { wch: 14 },
+    { wch: 16 },
+    { wch: 28 },
+    { wch: 22 },
+  ];
+
+  const wb = utils.book_new();
+  utils.book_append_sheet(wb, ws, `Kategori ${categoryName.slice(0, 20)}`);
+
+  const cleanName = categoryName.replace(/[^a-zA-Z0-9]/g, '_').slice(0, 30);
+  const filename = `Template_Kategori_${cleanName}.xlsx`;
+  writeFile(wb, filename);
+}
+
+/**
+ * 3. Parser Excel untuk Pembaruan 1 Indikator Tertentu
+ */
+export async function parseSingleIndicatorExcel(
+  file: File,
+  targetIndicator: IndicatorItem
+): Promise<{
+  success: boolean;
+  updatedIndicator?: IndicatorItem;
+  errors: string[];
+}> {
+  return new Promise((resolve) => {
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      try {
+        const buffer = e.target?.result;
+        if (!buffer) {
+          resolve({ success: false, errors: ['Gagal membaca berkas Excel.'] });
+          return;
+        }
+
+        const wb = read(buffer, { type: 'array' });
+        const sheetName = wb.SheetNames[0];
+        const ws = wb.Sheets[sheetName];
+
+        if (!ws) {
+          resolve({ success: false, errors: ['Sheet kosong atau tidak ditemukan.'] });
+          return;
+        }
+
+        const rawRows: Record<string, any>[] = utils.sheet_to_json(ws);
+        if (!rawRows || rawRows.length === 0) {
+          resolve({ success: false, errors: ['Tabel Excel tidak memuat data.'] });
+          return;
+        }
+
+        // Cek struktur: apakah berbentuk baris per tahun (Tahun | Nilai) atau kolom (Nilai 2020 | Nilai 2021)
+        const newTrenData: YearlyDataPoint[] = [];
+
+        // Bentuk A: Baris per tahun
+        const hasTahunCol = Object.keys(rawRows[0] || {}).some(k => k.toLowerCase().includes('tahun'));
+
+        if (hasTahunCol) {
+          rawRows.forEach((row) => {
+            let yr = '';
+            let val = 0;
+            let note = '';
+
+            for (const [k, v] of Object.entries(row)) {
+              const kl = k.toLowerCase();
+              if (kl.includes('tahun')) yr = String(v).trim();
+              else if (kl.includes('nilai')) val = parseFloat(String(v).replace(/[^0-9.-]+/g, '')) || 0;
+              else if (kl.includes('catatan') || kl.includes('sumber')) note = String(v || '').trim();
+            }
+
+            if (yr && yr.length === 4) {
+              newTrenData.push({
+                tahun: yr,
+                nilai: Math.round(val),
+                satuan: targetIndicator.satuan,
+                catatan: note || targetIndicator.sumberData,
+              });
+            }
+          });
+        }
+
+        // Bentuk B: Kolom Nilai 2020 s/d 2024
+        if (newTrenData.length === 0) {
+          const firstRow = rawRows[0];
+          ['2020', '2021', '2022', '2023', '2024'].forEach(yr => {
+            let val = 0;
+            for (const [k, v] of Object.entries(firstRow)) {
+              if (k.includes(yr)) {
+                val = parseFloat(String(v).replace(/[^0-9.-]+/g, '')) || 0;
+                break;
+              }
+            }
+            newTrenData.push({
+              tahun: yr,
+              nilai: Math.round(val),
+              satuan: targetIndicator.satuan,
+              catatan: targetIndicator.sumberData,
+            });
+          });
+        }
+
+        // Urutkan tahun
+        newTrenData.sort((a, b) => parseInt(a.tahun) - parseInt(b.tahun));
+
+        const updatedIndicator: IndicatorItem = {
+          ...targetIndicator,
+          terisi: true,
+          statusText: 'Terisi / Terintegrasi',
+          terakhirDiperbarui: new Date().toISOString().slice(0, 10),
+          trenData: newTrenData.length > 0 ? newTrenData : targetIndicator.trenData,
+        };
+
+        resolve({
+          success: true,
+          updatedIndicator,
+          errors: [],
+        });
+      } catch (err: any) {
+        resolve({
+          success: false,
+          errors: [`Error memproses file: ${err?.message || 'Format tidak dikenali'}`],
+        });
+      }
+    };
+
+    reader.onerror = () => {
+      resolve({ success: false, errors: ['Gagal membaca file dari sistem.'] });
+    };
+
+    reader.readAsArrayBuffer(file);
+  });
+}
+
+/**
+ * 4. Download Template Excel Universal (Semua Data / Masal)
  */
 export function downloadExcelTemplate(filename = 'Template-Klasifikasi-Data-Agama-Pusdatin.xlsx') {
-  // 1. Data Contoh untuk Sheet 1
   const sampleData = [
     {
       'No': 1,
@@ -51,30 +286,27 @@ export function downloadExcelTemplate(filename = 'Template-Klasifikasi-Data-Agam
   ];
 
   const wsData = utils.json_to_sheet(sampleData);
-
-  // Lebar kolom rapi
   wsData['!cols'] = [
-    { wch: 6 },  // No
-    { wch: 16 }, // Kode Indikator
-    { wch: 42 }, // Nama Indikator
-    { wch: 26 }, // Rumpun Kategori
-    { wch: 14 }, // Agama
-    { wch: 28 }, // Ditjen / Bimas
-    { wch: 18 }, // Status Integrasi
-    { wch: 16 }, // PIC
-    { wch: 32 }, // Sumber Data
-    { wch: 18 }, // Satuan Ukuran
-    { wch: 26 }, // Cakupan Wilayah
-    { wch: 16 }, // Frekuensi
-    { wch: 14 }, // 2020
-    { wch: 14 }, // 2021
-    { wch: 14 }, // 2022
-    { wch: 14 }, // 2023
-    { wch: 14 }, // 2024
-    { wch: 48 }, // Deskripsi
+    { wch: 6 },
+    { wch: 16 },
+    { wch: 42 },
+    { wch: 26 },
+    { wch: 14 },
+    { wch: 28 },
+    { wch: 18 },
+    { wch: 16 },
+    { wch: 32 },
+    { wch: 18 },
+    { wch: 26 },
+    { wch: 16 },
+    { wch: 14 },
+    { wch: 14 },
+    { wch: 14 },
+    { wch: 14 },
+    { wch: 14 },
+    { wch: 48 },
   ];
 
-  // 2. Data Panduan untuk Sheet 2
   const guideData = [
     {
       'Nama Kolom': 'Kode Indikator',
@@ -133,14 +365,8 @@ export function downloadExcelTemplate(filename = 'Template-Klasifikasi-Data-Agam
   ];
 
   const wsGuide = utils.json_to_sheet(guideData);
-  wsGuide['!cols'] = [
-    { wch: 22 },
-    { wch: 16 },
-    { wch: 38 },
-    { wch: 55 }
-  ];
+  wsGuide['!cols'] = [{ wch: 22 }, { wch: 16 }, { wch: 38 }, { wch: 55 }];
 
-  // Buat workbook dengan 2 sheet
   const wb = utils.book_new();
   utils.book_append_sheet(wb, wsData, 'Template Indikator');
   utils.book_append_sheet(wb, wsGuide, 'Petunjuk & Referensi');
@@ -149,8 +375,7 @@ export function downloadExcelTemplate(filename = 'Template-Klasifikasi-Data-Agam
 }
 
 /**
- * Parser file Excel yang diunggah pengguna.
- * Mampu membaca baik format template resmi maupun variasi nama kolom populer.
+ * 5. Parser File Excel Impor Masal / Multi-Baris
  */
 export async function parseUploadedExcel(file: File, existingIndicators: IndicatorItem[]): Promise<{
   success: boolean;
@@ -178,9 +403,7 @@ export async function parseUploadedExcel(file: File, existingIndicators: Indicat
           return;
         }
 
-        // Baca baris sebagai objek JSON
         const rawRows: Record<string, any>[] = utils.sheet_to_json(ws);
-
         if (!rawRows || rawRows.length === 0) {
           resolve({ success: false, imported: [], errors: ['File Excel tidak memuat baris data.'], totalRowsRead: 0 });
           return;
@@ -188,14 +411,11 @@ export async function parseUploadedExcel(file: File, existingIndicators: Indicat
 
         const errors: string[] = [];
         const imported: IndicatorItem[] = [];
-
-        // Hitung ID maksimal yang sudah ada untuk auto-increment (misal IND-082 -> 83)
         let maxNo = existingIndicators.reduce((max, item) => Math.max(max, item.no || 0), 0);
 
         rawRows.forEach((row, idx) => {
-          const rowNum = idx + 2; // Baris Excel (header = baris 1)
+          const rowNum = idx + 2;
 
-          // Helper cari nilai dari beberapa variasi nama kolom
           const getVal = (...keys: string[]): any => {
             for (const k of keys) {
               for (const rowKey of Object.keys(row)) {
@@ -209,7 +429,6 @@ export async function parseUploadedExcel(file: File, existingIndicators: Indicat
 
           const nama = String(getVal('Nama Indikator', 'Nama Data', 'Nama', 'Indikator') || '').trim();
           if (!nama) {
-            // Lewati baris kosong tanpa error jika semua kolom kosong
             const hasAnyVal = Object.values(row).some(v => v !== null && v !== undefined && String(v).trim() !== '');
             if (hasAnyVal) {
               errors.push(`Baris ${rowNum}: Kolom "Nama Indikator" wajib diisi.`);
@@ -220,7 +439,6 @@ export async function parseUploadedExcel(file: File, existingIndicators: Indicat
           maxNo += 1;
           const padNo = String(maxNo).padStart(3, '0');
           const customId = String(getVal('Kode Indikator', 'Kode', 'ID') || `IND-${padNo}`).trim();
-
           const kategori = String(getVal('Rumpun Kategori', 'Kategori', 'Kelompok') || 'Umum & Tata Kelola').trim();
           
           let agamaRaw = String(getVal('Agama') || '').trim();
@@ -256,13 +474,12 @@ export async function parseUploadedExcel(file: File, existingIndicators: Indicat
           const frekuensiUpdate = String(getVal('Frekuensi Update', 'Frekuensi') || 'Tahunan') as any;
           const deskripsi = String(getVal('Deskripsi Indikator', 'Deskripsi', 'Keterangan') || `Indikator ${nama} hasil impor data terpadu Pusdatin Kemenag RI.`).trim();
 
-          // Ekstraksi nilai runtun waktu (2020 - 2024)
           const years = ['2020', '2021', '2022', '2023', '2024'];
           const trenData: YearlyDataPoint[] = years.map(yr => {
             const valRaw = getVal(`Nilai ${yr}`, `Data ${yr}`, `Tahun ${yr}`, yr);
             let valNum = parseFloat(String(valRaw || '').replace(/[^0-9.-]+/g, ''));
             if (isNaN(valNum) || valNum <= 0) {
-              valNum = 100 + (maxNo * 7) % 50; // fallback angka proporsional jika belum diisi
+              valNum = 100 + (maxNo * 7) % 50;
             }
             return {
               tahun: yr,
