@@ -15,59 +15,26 @@ export default function StatCard({
   value,
   subtitle,
   icon: Icon,
-  color = 'emerald',
+  color = 'purple',
   trend
 }: StatCardProps) {
-  const colorMap = {
-    emerald: {
-      bg: 'bg-emerald-50/70',
-      border: 'border-emerald-200/70',
-      iconBg: 'bg-emerald-600',
-      text: 'text-emerald-700',
-      sub: 'text-emerald-600',
-    },
-    blue: {
-      bg: 'bg-sky-50/70',
-      border: 'border-sky-200/70',
-      iconBg: 'bg-sky-600',
-      text: 'text-sky-700',
-      sub: 'text-sky-600',
-    },
-    amber: {
-      bg: 'bg-amber-50/70',
-      border: 'border-amber-200/70',
-      iconBg: 'bg-amber-600',
-      text: 'text-amber-700',
-      sub: 'text-amber-600',
-    },
-    purple: {
-      bg: 'bg-purple-50/70',
-      border: 'border-purple-200/70',
-      iconBg: 'bg-purple-600',
-      text: 'text-purple-700',
-      sub: 'text-purple-600',
-    },
-  };
-
-  const scheme = colorMap[color] || colorMap.emerald;
-
   return (
-    <div className={`p-5 rounded-2xl border ${scheme.border} ${scheme.bg} backdrop-blur-xs transition-all duration-200 hover:shadow-md hover:-translate-y-0.5`}>
+    <div className="p-5 sm:p-6 rounded-2xl bg-white border border-[#e9eaee] hover:border-[#a89ff2] shadow-xs hover:shadow-lg transition-all duration-200 group">
       <div className="flex items-start justify-between">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1">{title}</p>
+          <p className="text-[11px] font-bold uppercase tracking-wider text-[#848484] mb-1.5">{title}</p>
           <div className="flex items-baseline space-x-2">
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">{value}</h3>
+            <h3 className="text-3xl sm:text-4xl font-black text-[#151523] tracking-tight">{value}</h3>
             {trend && (
-              <span className={`text-xs font-semibold ${scheme.text} px-2 py-0.5 rounded-full bg-white/80 border ${scheme.border}`}>
+              <span className="text-[11px] font-bold text-[#6253e8] px-2 py-0.5 rounded-full bg-[#e4e1fb] border border-[#c7c1f7]">
                 {trend}
               </span>
             )}
           </div>
-          {subtitle && <p className="text-xs text-gray-600 mt-1.5">{subtitle}</p>}
+          {subtitle && <p className="text-xs text-[#686868] mt-2 font-medium">{subtitle}</p>}
         </div>
-        <div className={`w-11 h-11 rounded-xl ${scheme.iconBg} flex items-center justify-center text-white shadow-sm shrink-0`}>
-          <Icon className="w-5 h-5 text-white" />
+        <div className="w-11 h-11 rounded-xl bg-[#f9f9fc] border border-[#e9eaee] group-hover:border-[#c7c1f7] flex items-center justify-center text-[#6253e8] shadow-2xs shrink-0 transition-colors">
+          <Icon className="w-5 h-5 text-[#6253e8]" />
         </div>
       </div>
     </div>

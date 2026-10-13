@@ -243,9 +243,9 @@ export default function UploadExcelModal({
       <div className="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden my-6">
         
         {/* Header Modal */}
-        <div className="p-5 sm:p-6 border-b border-gray-100 flex items-center justify-between bg-gradient-to-r from-emerald-50/80 via-teal-50/40 to-white">
+        <div className="p-5 sm:p-6 border-b border-[#f0f0f4] flex items-center justify-between bg-gradient-to-r from-[#e4e1fb]/60 via-[#faf9ff] to-white">
           <div className="flex items-center space-x-3">
-            <span className="p-2.5 rounded-2xl bg-emerald-600 text-white shadow-md shadow-emerald-600/20">
+            <span className="p-2.5 rounded-2xl bg-[#6253e8] text-white shadow-md shadow-[#6253e8]/20">
               <FileSpreadsheet className="w-5 h-5" />
             </span>
             <div>
@@ -253,7 +253,7 @@ export default function UploadExcelModal({
                 <h3 className="text-base sm:text-lg font-bold text-gray-900 tracking-tight">
                   CMS Kelola & Unggah Data Agama
                 </h3>
-                <span className="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold border border-emerald-200">
+                <span className="px-2 py-0.5 rounded-full bg-[#e4e1fb] text-[#44418b] text-[10px] font-bold border border-[#c7c1f7]">
                   Pusdatin Kemenag
                 </span>
               </div>
@@ -277,7 +277,7 @@ export default function UploadExcelModal({
             onClick={() => { setActiveTab('single'); resetState(); }}
             className={`flex items-center space-x-2 px-4 py-2.5 text-xs font-bold border-b-2 transition-all whitespace-nowrap ${
               activeTab === 'single'
-                ? 'border-emerald-600 text-emerald-700 bg-white rounded-t-xl shadow-2xs'
+                ? 'border-[#6253e8] text-[#44418b] bg-white rounded-t-xl shadow-2xs'
                 : 'border-transparent text-gray-500 hover:text-gray-900'
             }`}
           >
@@ -289,7 +289,7 @@ export default function UploadExcelModal({
             onClick={() => { setActiveTab('category'); resetState(); }}
             className={`flex items-center space-x-2 px-4 py-2.5 text-xs font-bold border-b-2 transition-all whitespace-nowrap ${
               activeTab === 'category'
-                ? 'border-emerald-600 text-emerald-700 bg-white rounded-t-xl shadow-2xs'
+                ? 'border-[#6253e8] text-[#44418b] bg-white rounded-t-xl shadow-2xs'
                 : 'border-transparent text-gray-500 hover:text-gray-900'
             }`}
           >
@@ -301,7 +301,7 @@ export default function UploadExcelModal({
             onClick={() => { setActiveTab('bulk'); resetState(); }}
             className={`flex items-center space-x-2 px-4 py-2.5 text-xs font-bold border-b-2 transition-all whitespace-nowrap ${
               activeTab === 'bulk'
-                ? 'border-emerald-600 text-emerald-700 bg-white rounded-t-xl shadow-2xs'
+                ? 'border-[#6253e8] text-[#44418b] bg-white rounded-t-xl shadow-2xs'
                 : 'border-transparent text-gray-500 hover:text-gray-900'
             }`}
           >
@@ -329,7 +329,7 @@ export default function UploadExcelModal({
                     <select
                       value={filterBimas}
                       onChange={e => setFilterBimas(e.target.value)}
-                      className="w-full text-xs rounded-xl border border-gray-200 bg-white px-3 py-2 text-gray-800 font-medium focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 shadow-2xs"
+                      className="w-full text-xs rounded-xl border border-gray-200 bg-white px-3 py-2 text-gray-800 font-medium focus:ring-2 focus:ring-[#6253e8]/20 focus:border-[#6253e8] shadow-2xs"
                     >
                       <option value="">Semua Ditjen Bimas & Kategori</option>
                       <optgroup label="-- Ditjen Bimas / Unit --">
@@ -353,7 +353,7 @@ export default function UploadExcelModal({
                     <select
                       value={selectedIndicatorId}
                       onChange={e => setSelectedIndicatorId(e.target.value)}
-                      className="w-full text-xs font-semibold rounded-xl border-2 border-emerald-500/50 bg-white px-3.5 py-2 text-gray-900 focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-600 shadow-xs"
+                      className="w-full text-xs font-semibold rounded-xl border-2 border-[#6253e8]/50 bg-white px-3.5 py-2 text-gray-900 focus:ring-2 focus:ring-[#6253e8]/20 focus:border-[#6253e8] shadow-xs"
                     >
                       {filteredIndicatorsForSelect.map(item => (
                         <option key={item.id} value={item.id}>
@@ -366,7 +366,7 @@ export default function UploadExcelModal({
 
                 {/* Info Card Indikator Terpilih */}
                 {currentIndicator && (
-                  <div className="p-3.5 rounded-xl bg-white border border-emerald-200/80 shadow-2xs flex flex-wrap items-center justify-between gap-3">
+                  <div className="p-3.5 rounded-xl bg-white border border-[#c7c1f7] shadow-2xs flex flex-wrap items-center justify-between gap-3">
                     <div className="space-y-0.5">
                       <div className="flex items-center space-x-2">
                         <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-gray-900 text-white">
@@ -375,7 +375,7 @@ export default function UploadExcelModal({
                         <span className="text-xs font-bold text-gray-900">
                           {currentIndicator.nama}
                         </span>
-                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 font-semibold">
+                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#e4e1fb]/60 text-[#44418b] border border-[#c7c1f7] font-semibold">
                           {currentIndicator.agama}
                         </span>
                       </div>
@@ -388,7 +388,7 @@ export default function UploadExcelModal({
                     <button
                       type="button"
                       onClick={handleDownloadSingleTemplate}
-                      className="inline-flex items-center space-x-1.5 px-3.5 py-2 rounded-xl bg-emerald-700 text-white text-xs font-bold hover:bg-emerald-800 shadow-sm transition-all shrink-0"
+                      className="inline-flex items-center space-x-1.5 px-3.5 py-2 rounded-xl bg-[#4e49a8] text-white text-xs font-bold hover:bg-[#44418b] shadow-sm transition-all shrink-0"
                     >
                       <Download className="w-3.5 h-3.5" />
                       <span>Download Template Excel Indikator Ini</span>
@@ -403,7 +403,7 @@ export default function UploadExcelModal({
                 {/* Opsi A: Upload File Excel Khusus Indikator Ini */}
                 <div className="p-4 rounded-2xl border border-gray-200 bg-white space-y-3">
                   <div className="flex items-center space-x-2">
-                    <span className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-[11px]">
+                    <span className="w-5 h-5 rounded-full bg-[#e4e1fb] text-[#44418b] flex items-center justify-center font-bold text-[11px]">
                       A
                     </span>
                     <h4 className="text-xs font-bold text-gray-900">
@@ -420,9 +420,9 @@ export default function UploadExcelModal({
                     onDragOver={handleDrag}
                     onDrop={handleDrop}
                     onClick={() => fileInputRef.current?.click()}
-                    className="border-2 border-dashed border-gray-200 hover:border-emerald-300 rounded-xl p-4 text-center cursor-pointer transition-all hover:bg-gray-50/80"
+                    className="border-2 border-dashed border-gray-200 hover:border-[#a89ff2] rounded-xl p-4 text-center cursor-pointer transition-all hover:bg-gray-50/80"
                   >
-                    <UploadCloud className="w-7 h-7 mx-auto text-emerald-600 mb-1" />
+                    <UploadCloud className="w-7 h-7 mx-auto text-[#6253e8] mb-1" />
                     <p className="text-xs font-bold text-gray-800">
                       {file ? file.name : 'Pilih / Seret Berkas Excel'}
                     </p>
@@ -460,7 +460,7 @@ export default function UploadExcelModal({
                           type="number"
                           value={inlineValues[yr] ?? 0}
                           onChange={e => setInlineValues({ ...inlineValues, [yr]: parseFloat(e.target.value) || 0 })}
-                          className="w-full text-center text-xs font-bold rounded-lg border border-gray-200 px-1 py-1.5 text-gray-900 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500"
+                          className="w-full text-center text-xs font-bold rounded-lg border border-gray-200 px-1 py-1.5 text-gray-900 focus:ring-1 focus:ring-[#6253e8] focus:border-[#6253e8]"
                         />
                       </div>
                     ))}
@@ -472,7 +472,7 @@ export default function UploadExcelModal({
                         type="checkbox"
                         checked={inlineStatus}
                         onChange={e => setInlineStatus(e.target.checked)}
-                        className="rounded text-emerald-600 focus:ring-emerald-500"
+                        className="rounded text-[#6253e8] focus:ring-[#6253e8]"
                       />
                       <span className="text-gray-700 font-medium text-[11px]">Status Terisi & Terverifikasi</span>
                     </label>
@@ -480,7 +480,7 @@ export default function UploadExcelModal({
                     <button
                       type="button"
                       onClick={handleSaveInline}
-                      className="px-3.5 py-1.5 rounded-xl bg-emerald-600 text-white text-xs font-bold hover:bg-emerald-700 shadow-xs transition-all"
+                      className="px-3.5 py-1.5 rounded-xl bg-[#6253e8] text-white text-xs font-bold hover:bg-[#4e49a8] shadow-xs transition-all"
                     >
                       Simpan Nilai
                     </button>
@@ -494,15 +494,15 @@ export default function UploadExcelModal({
           {/* ==================== TAB 2: TEMPLATE PER KATEGORI ==================== */}
           {activeTab === 'category' && (
             <div className="space-y-5">
-              <div className="p-4 sm:p-5 rounded-2xl bg-emerald-50/70 border border-emerald-200/80 space-y-3">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-emerald-900">
+              <div className="p-4 sm:p-5 rounded-2xl bg-[#faf9ff] border border-[#c7c1f7] space-y-3">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-[#151523]">
                   Pilih Rumpun Kategori yang Ingin Diisi:
                 </h4>
                 <div className="flex flex-col sm:flex-row items-center gap-3">
                   <select
                     value={selectedCategory}
                     onChange={e => setSelectedCategory(e.target.value)}
-                    className="w-full text-xs font-semibold rounded-xl border border-gray-200 bg-white px-3.5 py-2.5 text-gray-900 focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 shadow-2xs"
+                    className="w-full text-xs font-semibold rounded-xl border border-gray-200 bg-white px-3.5 py-2.5 text-gray-900 focus:ring-2 focus:ring-[#6253e8]/20 focus:border-[#6253e8] shadow-2xs"
                   >
                     {categoryList.map(cat => {
                       const count = existingIndicators.filter(item => item.kategori === cat).length;
@@ -517,13 +517,13 @@ export default function UploadExcelModal({
                   <button
                     type="button"
                     onClick={handleDownloadCategoryTemplate}
-                    className="w-full sm:w-auto inline-flex items-center justify-center space-x-1.5 px-4 py-2.5 rounded-xl bg-emerald-700 text-white text-xs font-bold hover:bg-emerald-800 shadow-sm transition-all shrink-0"
+                    className="w-full sm:w-auto inline-flex items-center justify-center space-x-1.5 px-4 py-2.5 rounded-xl bg-[#4e49a8] text-white text-xs font-bold hover:bg-[#44418b] shadow-sm transition-all shrink-0"
                   >
                     <Download className="w-3.5 h-3.5" />
                     <span>Download Template Kategori "{selectedCategory}"</span>
                   </button>
                 </div>
-                <p className="text-[11px] text-emerald-700">
+                <p className="text-[11px] text-[#44418b]">
                   Template ini memuat seluruh nama indikator dalam kategori tersebut lengkap dengan kolom angka tahun 2020 s/d 2024.
                 </p>
               </div>
@@ -539,9 +539,9 @@ export default function UploadExcelModal({
                   onDragOver={handleDrag}
                   onDrop={handleDrop}
                   onClick={() => fileInputRef.current?.click()}
-                  className="border-2 border-dashed border-gray-200 hover:border-emerald-300 rounded-2xl p-6 text-center cursor-pointer transition-all hover:bg-gray-50"
+                  className="border-2 border-dashed border-gray-200 hover:border-[#a89ff2] rounded-2xl p-6 text-center cursor-pointer transition-all hover:bg-gray-50"
                 >
-                  <UploadCloud className="w-8 h-8 mx-auto text-emerald-600 mb-2" />
+                  <UploadCloud className="w-8 h-8 mx-auto text-[#6253e8] mb-2" />
                   <p className="text-xs font-bold text-gray-800">
                     {file ? file.name : 'Pilih atau Seret Berkas Excel Kategori'}
                   </p>
@@ -585,9 +585,9 @@ export default function UploadExcelModal({
                   onDragOver={handleDrag}
                   onDrop={handleDrop}
                   onClick={() => fileInputRef.current?.click()}
-                  className="border-2 border-dashed border-gray-200 hover:border-emerald-300 rounded-2xl p-6 text-center cursor-pointer transition-all hover:bg-gray-50"
+                  className="border-2 border-dashed border-gray-200 hover:border-[#a89ff2] rounded-2xl p-6 text-center cursor-pointer transition-all hover:bg-gray-50"
                 >
-                  <UploadCloud className="w-8 h-8 mx-auto text-emerald-600 mb-2" />
+                  <UploadCloud className="w-8 h-8 mx-auto text-[#6253e8] mb-2" />
                   <p className="text-xs font-bold text-gray-800">
                     {file ? file.name : 'Klik untuk memilih berkas atau seret file ke sini'}
                   </p>
@@ -611,15 +611,15 @@ export default function UploadExcelModal({
           {/* Loading indicator */}
           {loading && (
             <div className="p-4 rounded-2xl bg-gray-50 text-center text-xs text-gray-600 flex items-center justify-center space-x-2">
-              <Loader2 className="w-4 h-4 animate-spin text-emerald-600" />
+              <Loader2 className="w-4 h-4 animate-spin text-[#6253e8]" />
               <span>Memvalidasi dan membaca data dari file Excel...</span>
             </div>
           )}
 
           {/* Success message banner */}
           {successMessage && (
-            <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs font-bold text-emerald-800 flex items-center space-x-2">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+            <div className="p-4 rounded-2xl bg-[#e4e1fb]/60 border border-[#c7c1f7] text-xs font-bold text-[#44418b] flex items-center space-x-2">
+              <CheckCircle2 className="w-4 h-4 text-[#6253e8]" />
               <span>{successMessage}</span>
             </div>
           )}
@@ -643,8 +643,8 @@ export default function UploadExcelModal({
           {previewData.length > 0 && (
             <div className="space-y-3 pt-2 border-t border-gray-100">
               <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-1.5 text-xs text-emerald-800 font-bold">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                <div className="flex items-center space-x-1.5 text-xs text-[#44418b] font-bold">
+                  <CheckCircle2 className="w-4 h-4 text-[#6253e8]" />
                   <span>Ditemukan {previewData.length} data valid siap diterapkan:</span>
                 </div>
                 <span className="text-[10px] text-gray-400">Pratinjau Data</span>
@@ -678,7 +678,7 @@ export default function UploadExcelModal({
                           <td className="px-3 py-2 whitespace-nowrap text-gray-500">
                             {item.kategori}
                           </td>
-                          <td className="px-3 py-2 font-mono text-emerald-700 font-bold">
+                          <td className="px-3 py-2 font-mono text-[#44418b] font-bold">
                             {latestPoint ? `${latestPoint.tahun}: ${latestPoint.nilai.toLocaleString('id-ID')}` : '-'}
                           </td>
                         </tr>
@@ -698,7 +698,7 @@ export default function UploadExcelModal({
                       value="append"
                       checked={importMode === 'append'}
                       onChange={() => setImportMode('append')}
-                      className="text-emerald-600"
+                      className="text-[#6253e8]"
                     />
                     <span className="text-gray-700 font-medium">Gabungkan / Update</span>
                   </label>
@@ -709,7 +709,7 @@ export default function UploadExcelModal({
                       value="replace"
                       checked={importMode === 'replace'}
                       onChange={() => setImportMode('replace')}
-                      className="text-emerald-600"
+                      className="text-[#6253e8]"
                     />
                     <span className="text-gray-700 font-medium">Ganti Seluruh Data</span>
                   </label>
@@ -734,7 +734,7 @@ export default function UploadExcelModal({
             <button
               type="button"
               onClick={handleApplyPreview}
-              className="inline-flex items-center space-x-1.5 px-5 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-bold hover:bg-emerald-700 shadow-md transition-all"
+              className="inline-flex items-center space-x-1.5 px-5 py-2.5 rounded-xl bg-[#6253e8] text-white text-xs font-bold hover:bg-[#4e49a8] shadow-md transition-all"
             >
               <span>Terapkan {previewData.length} Data ke Website</span>
               <ArrowRight className="w-4 h-4" />

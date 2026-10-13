@@ -1,78 +1,67 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Shield, ExternalLink, Heart } from 'lucide-react';
+import { ShieldCheck, ExternalLink } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-200 mt-20 text-gray-600">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Col 1 */}
-          <div className="md:col-span-2 space-y-3">
-            <div className="flex items-center space-x-2.5">
-              <div className="relative w-8 h-8 flex items-center justify-center shrink-0">
-                <Image
-                  src="/logo-kemenag.png"
-                  alt="Logo Kementerian Agama RI"
-                  width={32}
-                  height={32}
-                  className="object-contain w-auto h-8"
-                />
-              </div>
-              <span className="font-bold text-gray-900 text-base">Pusdatin Kemenag RI</span>
+    <footer className="border-t border-[#e9eaee] bg-white text-[#474747] py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          {/* Brand Logo & Name */}
+          <div className="flex items-center space-x-3">
+            <div className="relative w-9 h-9 flex items-center justify-center shrink-0">
+              <Image
+                src="/logo-kemenag.png"
+                alt="Logo Kementerian Agama RI"
+                width={36}
+                height={36}
+                className="object-contain w-auto h-9"
+              />
             </div>
-            <p className="text-xs text-gray-500 leading-relaxed max-w-md">
-              Pusat Data dan Informasi (Pusdatin) Kementerian Agama Republik Indonesia. Mengintegrasikan seluruh klasifikasi data agama dan keagamaan dari produsen data unit Eselon I / Ditjen Bimas ke dalam arsitektur Satu Data Terpadu.
-            </p>
-            <p className="text-[11px] text-gray-400">
-              Berdasarkan Klasifikasi Data Agama Pusdatin & Kepmen Terkait Tata Kelola Data Nasional.
-            </p>
+            <div>
+              <span className="font-extrabold text-[#151523] text-base sm:text-lg tracking-tight block">
+                data<span className="text-[#6253e8]">.kemenag</span>.go.id
+              </span>
+              <p className="text-xs text-[#686868]">
+                Portal Resmi Satu Data Agama Kementerian Agama Republik Indonesia
+              </p>
+            </div>
           </div>
 
-          {/* Col 2 */}
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-gray-900 mb-3">Unit Pengampu</h4>
-            <ul className="space-y-1.5 text-xs text-gray-500">
-              <li><Link href="/eksplorasi?bimas=Ditjen+Bimas+Islam" className="hover:text-emerald-700">Ditjen Bimas Islam</Link></li>
-              <li><Link href="/eksplorasi?bimas=Ditjen+Bimas+Kristen" className="hover:text-emerald-700">Ditjen Bimas Kristen</Link></li>
-              <li><Link href="/eksplorasi?bimas=Ditjen+Bimas+Katolik" className="hover:text-emerald-700">Ditjen Bimas Katolik</Link></li>
-              <li><Link href="/eksplorasi?bimas=Ditjen+Bimas+Hindu" className="hover:text-emerald-700">Ditjen Bimas Hindu</Link></li>
-              <li><Link href="/eksplorasi?bimas=Ditjen+Bimas+Buddha" className="hover:text-emerald-700">Ditjen Bimas Buddha</Link></li>
-              <li><Link href="/eksplorasi?bimas=Pusbimdik+Khonghucu" className="hover:text-emerald-700">Pusbimdik Khonghucu</Link></li>
-              <li><Link href="/eksplorasi?bimas=Setjen" className="hover:text-emerald-700">Setjen</Link></li>
-            </ul>
-          </div>
-
-          {/* Col 3 */}
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-gray-900 mb-3">Sistem Integrasi Terkait</h4>
-            <ul className="space-y-1.5 text-xs text-gray-500">
-              <li className="flex items-center space-x-1">
-                <span>SIMAS (Masjid/Musala)</span>
-              </li>
-              <li className="flex items-center space-x-1">
-                <span>SIMKAH (Layanan Nikah/KUA)</span>
-              </li>
-              <li className="flex items-center space-x-1">
-                <span>SIWAK (Tanah Wakaf)</span>
-              </li>
-              <li className="flex items-center space-x-1">
-                <span>BAZNAS & SIMZAT (Zakat)</span>
-              </li>
-              <li className="flex items-center space-x-1">
-                <span>EMIS Pendidikan Keagamaan</span>
-              </li>
-            </ul>
+          {/* Quick links */}
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs sm:text-sm font-semibold text-[#474747]">
+            <Link href="/" className="hover:text-[#6253e8] transition-colors">
+              Katalog
+            </Link>
+            <Link href="/eksplorasi" className="hover:text-[#6253e8] transition-colors">
+              Eksplorasi Data
+            </Link>
+            <Link href="/eksplorasi?status=Terisi" className="hover:text-[#6253e8] transition-colors">
+              Data Terverifikasi
+            </Link>
+            <a
+              href="https://kemenag.go.id"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#6253e8] transition-colors inline-flex items-center space-x-1"
+            >
+              <span>Portal Kemenag RI</span>
+              <ExternalLink className="w-3 h-3 text-[#848484]" />
+            </a>
           </div>
         </div>
 
-        <div className="border-t border-gray-100 mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400">
-          <p>© {new Date().getFullYear()} Pusat Data dan Informasi (Pusdatin) Kementerian Agama RI. All rights reserved.</p>
-          <div className="flex items-center space-x-4 mt-2 sm:mt-0">
-            <span>Katalog Repositori Terpadu</span>
+        <div className="border-t border-[#f0f0f4] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#848484]">
+          <p>
+            © {new Date().getFullYear()} Pusat Data dan Informasi (Pusdatin) Kementerian Agama RI.
+          </p>
+          <div className="flex items-center space-x-4 text-[11px]">
+            <span>Lisensi Data Terbuka</span>
             <span>•</span>
-            <span>Versi 1.0 (Next.js App Router)</span>
+            <span>Standar Satu Data Indonesia (SDI)</span>
+            <span>•</span>
+            <span>Versi Portal 2.0</span>
           </div>
         </div>
       </div>
