@@ -13,19 +13,33 @@ import {
   Home
 } from 'lucide-react';
 import Link from 'next/link';
-import { getAllIndicators, getAllCategories, getAllAgama, getAllPIC } from '@/lib/data-loader';
+import { getAllIndicators, getAllAgama } from '@/lib/data-loader';
+import { mergeWithStoredIndicators, saveStoredIndicators, resetStoredIndicators } from '@/lib/storage-utils';
 import FilterSidebar from '@/components/FilterSidebar';
 import DataTable from '@/components/DataTable';
+import UploadExcelModal from '@/components/UploadExcelModal';
 import { IndicatorItem } from '@/types/indicator';
 
 function EksplorasiContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  const allData = useMemo(() => getAllIndicators(), []);
-  const categories = useMemo(() => getAllCategories(), []);
+  const baseData = useMemo(() => getAllIndicators(), []);
+  const [allData, setAllData] = useState<IndicatorItem[]>(baseData);
+  const [customCount, setCustomCount] = useState<number>(0);
+  const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
+  const [notification, setNotification] = useState<string | null>(null);
+
+  // Sync dengan data yang diunggah di browser
+  useEffect(() => {
+    const { merged, customCount: count } = mergeWithStoredIndicators(baseData);
+    setAllData(merged);
+    setCustomCount(count);
+  }, [baseData]);
+
+  const categories = useMemo(() => Array.from(new Set(allData.map(item => item.kategori))).sort(), [allData]);
   const agamaList = useMemo(() => getAllAgama(), []);
-  const picList = useMemo(() => getAllPIC(), []);
+  const picList = useMemo(() => Array.from(new Set(allData.map(item => item.pic))).sort(), [allData]);
 
   // Initial states from URL query
   const [filters, setFilters] = useState({
@@ -70,6 +84,25 @@ function EksplorasiContent() {
       pic: '',
     });
     router.push('/eksplorasi');
+  };
+
+  const handleImportSuccess = (imported: IndicatorItem[], mode: 'append' | 'replace') => {
+    saveStoredIndicators(imported, mode, baseData);
+    const { merged, customCount: count } = mergeWithStoredIndicators(baseData);
+    setAllData(merged);
+    setCustomCount(count);
+    setNotification(`Berhasil mengimpor ${imported.length} indikator data ke katalog!`);
+    setTimeout(() => setNotification(null), 6000);
+  };
+
+  const handleResetCustomData = () => {
+    if (typeof window !== 'undefined' && window.confirm('Kembalikan data katalog ke 82 indikator acuan standar?')) {
+      resetStoredIndicators();
+      setAllData(baseData);
+      setCustomCount(0);
+      setNotification('Data katalog telah dikembalikan ke 82 indikator acuan standar.');
+      setTimeout(() => setNotification(null), 5000);
+    }
   };
 
   // Filter Data Logic
@@ -195,6 +228,22 @@ function EksplorasiContent() {
         </div>
       </div>
 
+      {/* Notification Toast / Banner */}
+      {notification && (
+        <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs font-semibold text-emerald-800 flex items-center justify-between shadow-xs animate-in fade-in slide-in-from-top-2">
+          <div className="flex items-center space-x-2">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span>{notification}</span>
+          </div>
+          <button
+            onClick={() => setNotification(null)}
+            className="text-emerald-700 hover:text-emerald-900 font-bold ml-4"
+          >
+            ✕
+          </button>
+        </div>
+      )}
+
       {/* Main Grid: Sidebar + Table */}
       <div className="flex flex-col lg:flex-row items-start gap-6">
         {/* Filter Sidebar */}
@@ -211,9 +260,23 @@ function EksplorasiContent() {
 
         {/* Table Container */}
         <div className="flex-1 w-full overflow-hidden">
-          <DataTable data={filteredData} totalRaw={allData.length} />
+          <DataTable 
+            data={filteredData} 
+            totalRaw={allData.length} 
+            onOpenUploadModal={() => setIsUploadModalOpen(true)}
+            customCount={customCount}
+            onResetCustomData={handleResetCustomData}
+          />
         </div>
       </div>
+
+      {/* Modal Upload Excel */}
+      <UploadExcelModal
+        isOpen={isUploadModalOpen}
+        onClose={() => setIsUploadModalOpen(false)}
+        onImportSuccess={handleImportSuccess}
+        existingIndicators={allData}
+      />
     </div>
   );
 }

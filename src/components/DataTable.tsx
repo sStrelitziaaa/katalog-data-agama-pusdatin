@@ -12,17 +12,30 @@ import {
   Clock, 
   Layers, 
   BarChart2,
-  FileText
+  FileText,
+  UploadCloud,
+  FileDown,
+  RotateCcw
 } from 'lucide-react';
 import { IndicatorItem } from '@/types/indicator';
 import { exportToExcel, exportToCSV } from '@/lib/export-utils';
+import { downloadExcelTemplate } from '@/lib/excel-template-utils';
 
 interface DataTableProps {
   data: IndicatorItem[];
   totalRaw: number;
+  onOpenUploadModal?: () => void;
+  customCount?: number;
+  onResetCustomData?: () => void;
 }
 
-export default function DataTable({ data, totalRaw }: DataTableProps) {
+export default function DataTable({ 
+  data, 
+  totalRaw, 
+  onOpenUploadModal,
+  customCount = 0,
+  onResetCustomData
+}: DataTableProps) {
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(15);
 
@@ -42,6 +55,10 @@ export default function DataTable({ data, totalRaw }: DataTableProps) {
 
   const handleExportCSV = () => {
     exportToCSV(data, `Katalog-Data-Agama-Pusdatin-${new Date().toISOString().slice(0, 10)}.csv`);
+  };
+
+  const handleDownloadTemplate = () => {
+    downloadExcelTemplate();
   };
 
   const getAgamaBadgeColor = (agama: string) => {
@@ -68,33 +85,75 @@ export default function DataTable({ data, totalRaw }: DataTableProps) {
       {/* Table Toolbar / Header */}
       <div className="p-4 sm:p-5 border-b border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h3 className="font-bold text-gray-900 text-sm sm:text-base">
-            Daftar Indikator Data Agama
-          </h3>
+          <div className="flex items-center space-x-2">
+            <h3 className="font-bold text-gray-900 text-sm sm:text-base">
+              Daftar Indikator Data Agama
+            </h3>
+            {customCount > 0 && (
+              <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300 text-[10px] font-bold">
+                <span>+{customCount} Data Diimpor</span>
+              </span>
+            )}
+          </div>
           <p className="text-xs text-gray-500 mt-0.5">
             Ditemukan <strong className="text-gray-900">{totalItems}</strong> indikator (dari total {totalRaw} klasifikasi data)
           </p>
         </div>
 
-        {/* Action Export Buttons */}
-        <div className="flex items-center space-x-2 shrink-0">
+        {/* Action Buttons: Upload, Template, Export */}
+        <div className="flex flex-wrap items-center gap-2 shrink-0">
+          {/* Tombol Upload Excel */}
+          {onOpenUploadModal && (
+            <button
+              onClick={onOpenUploadModal}
+              className="inline-flex items-center space-x-1.5 px-3.5 py-2 rounded-xl bg-emerald-600 text-white text-xs font-bold hover:bg-emerald-700 transition-all shadow-xs"
+              title="Unggah dan impor file data Excel"
+            >
+              <UploadCloud className="w-3.5 h-3.5" />
+              <span>Upload Excel</span>
+            </button>
+          )}
+
+          {/* Tombol Download Template */}
+          <button
+            onClick={handleDownloadTemplate}
+            className="inline-flex items-center space-x-1 px-2.5 py-2 rounded-xl bg-white text-emerald-700 border border-emerald-300 text-xs font-semibold hover:bg-emerald-50 transition-all shadow-2xs"
+            title="Download template tabel Excel kosong untuk diisi"
+          >
+            <FileDown className="w-3.5 h-3.5 text-emerald-600" />
+            <span className="hidden md:inline">Template Excel</span>
+          </button>
+
+          {/* Tombol Export Excel */}
           <button
             onClick={handleExportExcel}
             className="inline-flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-semibold hover:bg-emerald-100/80 transition-all shadow-2xs"
-            title="Download file Excel (.xlsx)"
+            title="Download file Excel (.xlsx) dari filter saat ini"
           >
             <FileSpreadsheet className="w-3.5 h-3.5 text-emerald-600" />
             <span>Export Excel</span>
           </button>
 
+          {/* Tombol Export CSV */}
           <button
             onClick={handleExportCSV}
-            className="inline-flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-gray-50 text-gray-700 border border-gray-200 text-xs font-semibold hover:bg-gray-100 transition-all shadow-2xs"
+            className="inline-flex items-center space-x-1.5 px-2.5 py-2 rounded-xl bg-gray-50 text-gray-700 border border-gray-200 text-xs font-semibold hover:bg-gray-100 transition-all shadow-2xs"
             title="Download file CSV (.csv)"
           >
             <Download className="w-3.5 h-3.5 text-gray-500" />
-            <span>Export CSV</span>
+            <span>CSV</span>
           </button>
+
+          {/* Reset custom data if active */}
+          {customCount > 0 && onResetCustomData && (
+            <button
+              onClick={onResetCustomData}
+              className="p-2 rounded-xl border border-gray-200 text-gray-400 hover:text-rose-600 hover:bg-rose-50 transition-colors"
+              title="Kembalikan data ke 82 indikator acuan bawaan"
+            >
+              <RotateCcw className="w-3.5 h-3.5" />
+            </button>
+          )}
         </div>
       </div>
 
