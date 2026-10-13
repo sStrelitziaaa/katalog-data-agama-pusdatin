@@ -79,22 +79,22 @@ export default function DataTable({
   };
 
   return (
-    <div className="bg-white rounded-2xl border border-[#e9eaee] shadow-xs overflow-hidden">
+    <div className="bg-white rounded-2xl border border-[#EBE5E0] shadow-xs overflow-hidden">
       {/* Table Toolbar / Header */}
-      <div className="p-4 sm:p-5 border-b border-[#f0f0f4] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="p-4 sm:p-5 border-b border-[#EBE5E0] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <div className="flex items-center space-x-2">
-            <h3 className="font-bold text-[#151523] text-sm sm:text-base">
+            <h3 className="font-bold text-[#2E231F] text-sm sm:text-base">
               Daftar Indikator Data Agama
             </h3>
             {customCount > 0 && (
-              <span className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full bg-[#e4e1fb] text-[#44418b] border border-[#c7c1f7] text-[10px] font-bold">
+              <span className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full bg-[#F4ECE7] text-[#744D3D] border border-[#E5D5CD] text-[10px] font-bold">
                 <span>+{customCount} Data Diperbarui</span>
               </span>
             )}
           </div>
-          <p className="text-xs text-[#686868] mt-0.5 font-medium">
-            Menampilkan <strong className="text-[#151523]">{totalItems}</strong> indikator (dari total {totalRaw} dataset terdaftar)
+          <p className="text-xs text-[#68605A] mt-0.5 font-medium">
+            Menampilkan <strong className="text-[#2E231F]">{totalItems}</strong> indikator (dari total {totalRaw} dataset terdaftar)
           </p>
         </div>
 
@@ -104,7 +104,7 @@ export default function DataTable({
           {onOpenUploadModal && (
             <button
               onClick={onOpenUploadModal}
-              className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-xl bg-[#6253e8] text-white text-xs font-bold hover:bg-[#4e49a8] active:bg-[#44418b] transition-all shadow-xs"
+              className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-xl bg-[#A47864] text-white text-xs font-bold hover:bg-[#8E614E] active:bg-[#744D3D] transition-all shadow-xs"
               title="Kelola dan perbarui data via CMS Excel"
             >
               <UploadCloud className="w-3.5 h-3.5" />
@@ -115,30 +115,30 @@ export default function DataTable({
           {/* Tombol Download Template */}
           <button
             onClick={handleDownloadTemplate}
-            className="inline-flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-[#f9f9fc] text-[#44418b] border border-[#c7c1f7] text-xs font-semibold hover:bg-[#e4e1fb] transition-all shadow-2xs"
+            className="inline-flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-[#FAF7F5] text-[#744D3D] border border-[#E5D5CD] text-xs font-semibold hover:bg-[#F4ECE7] transition-all shadow-2xs"
             title="Download template tabel Excel standar"
           >
-            <FileDown className="w-3.5 h-3.5 text-[#6253e8]" />
+            <FileDown className="w-3.5 h-3.5 text-[#A47864]" />
             <span className="hidden md:inline">Template Excel</span>
           </button>
 
           {/* Tombol Export Excel */}
           <button
             onClick={handleExportExcel}
-            className="inline-flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-white text-[#151523] border border-[#e9eaee] text-xs font-semibold hover:bg-[#f9f9fc] hover:border-[#a89ff2] transition-all shadow-2xs"
+            className="inline-flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-white text-[#2E231F] border border-[#EBE5E0] text-xs font-semibold hover:bg-[#FAF7F5] hover:border-[#BC9887] transition-all shadow-2xs"
             title="Download file Excel (.xlsx) dari filter saat ini"
           >
-            <FileSpreadsheet className="w-3.5 h-3.5 text-[#6253e8]" />
+            <FileSpreadsheet className="w-3.5 h-3.5 text-[#A47864]" />
             <span>Export Excel</span>
           </button>
 
           {/* Tombol Export CSV */}
           <button
             onClick={handleExportCSV}
-            className="inline-flex items-center space-x-1.5 px-2.5 py-2 rounded-xl bg-white text-[#474747] border border-[#e9eaee] text-xs font-semibold hover:bg-[#f9f9fc] transition-all shadow-2xs"
+            className="inline-flex items-center space-x-1.5 px-2.5 py-2 rounded-xl bg-white text-[#474747] border border-[#EBE5E0] text-xs font-semibold hover:bg-[#FAF7F5] transition-all shadow-2xs"
             title="Download file CSV (.csv)"
           >
-            <Download className="w-3.5 h-3.5 text-[#848484]" />
+            <Download className="w-3.5 h-3.5 text-[#8C8077]" />
             <span>CSV</span>
           </button>
 
@@ -146,7 +146,7 @@ export default function DataTable({
           {customCount > 0 && onResetCustomData && (
             <button
               onClick={onResetCustomData}
-              className="p-2 rounded-xl border border-[#e9eaee] text-[#848484] hover:text-rose-600 hover:bg-rose-50 transition-colors"
+              className="p-2 rounded-xl border border-[#EBE5E0] text-[#8C8077] hover:text-rose-600 hover:bg-rose-50 transition-colors"
               title="Kembalikan data ke 82 indikator acuan bawaan"
             >
               <RotateCcw className="w-3.5 h-3.5" />
@@ -158,7 +158,7 @@ export default function DataTable({
       {/* Table Element */}
       <div className="overflow-x-auto">
         <table className="w-full text-left text-xs text-[#474747]">
-          <thead className="bg-[#f9f9fc] text-[#686868] font-bold uppercase tracking-wider text-[11px] border-b border-[#e9eaee]">
+          <thead className="bg-[#FAF7F5] text-[#68605A] font-bold uppercase tracking-wider text-[11px] border-b border-[#EBE5E0]">
             <tr>
               <th scope="col" className="px-4 py-3.5 w-14 text-center">No</th>
               <th scope="col" className="px-4 py-3.5 w-24">Kode</th>
@@ -171,29 +171,29 @@ export default function DataTable({
               <th scope="col" className="px-4 py-3.5 text-center w-24">Aksi</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-[#f0f0f4] font-normal">
+          <tbody className="divide-y divide-[#EBE5E0] font-normal">
             {currentItems.length > 0 ? (
               currentItems.map((item, idx) => (
                 <tr 
                   key={item.id} 
-                  className="hover:bg-[#faf9ff] transition-colors group"
+                  className="hover:bg-[#FAF7F5] transition-colors group"
                 >
-                  <td className="px-4 py-3 text-center text-[#848484] font-mono text-[11px]">
+                  <td className="px-4 py-3 text-center text-[#8C8077] font-mono text-[11px]">
                     {startIndex + idx + 1}
                   </td>
-                  <td className="px-4 py-3 font-mono font-bold text-[#151523]">
-                    <span className="px-2 py-0.5 rounded-md bg-[#f0f0f4] text-[#44418b] border border-[#e9eaee] text-[11px]">
+                  <td className="px-4 py-3 font-mono font-bold text-[#2E231F]">
+                    <span className="px-2 py-0.5 rounded-md bg-[#FAF7F5] text-[#744D3D] border border-[#EBE5E0] text-[11px]">
                       {item.id}
                     </span>
                   </td>
                   <td className="px-4 py-3">
                     <Link
                       href={`/indikator/${item.id}`}
-                      className="font-bold text-[#151523] group-hover:text-[#6253e8] transition-colors block text-xs sm:text-sm"
+                      className="font-bold text-[#2E231F] group-hover:text-[#A47864] transition-colors block text-xs sm:text-sm"
                     >
                       {item.nama}
                     </Link>
-                    <span className="text-[11px] text-[#848484] block mt-0.5 font-medium">
+                    <span className="text-[11px] text-[#8C8077] block mt-0.5 font-medium">
                       Satuan: {item.satuan} • {item.cakupanWilayah}
                     </span>
                   </td>
@@ -201,12 +201,12 @@ export default function DataTable({
                     <span className={`inline-block px-2.5 py-0.5 rounded-full border text-[10px] font-semibold mb-1 ${getAgamaBadgeColor(item.agama)}`}>
                       {item.agama}
                     </span>
-                    <span className="text-[11px] text-[#686868] block truncate max-w-[140px]" title={item.bimas}>
+                    <span className="text-[11px] text-[#68605A] block truncate max-w-[140px]" title={item.bimas}>
                       {item.bimas.replace('Ditjen Bimas ', '')}
                     </span>
                   </td>
                   <td className="px-4 py-3 whitespace-nowrap">
-                    <span className="text-xs text-[#2e2e2e] font-semibold">
+                    <span className="text-xs text-[#2E231F] font-semibold">
                       {item.kategori}
                     </span>
                   </td>
@@ -223,18 +223,18 @@ export default function DataTable({
                       </span>
                     )}
                   </td>
-                  <td className="px-4 py-3 whitespace-nowrap font-medium text-[#2e2e2e]">
+                  <td className="px-4 py-3 whitespace-nowrap font-medium text-[#2E231F]">
                     {item.pic}
                   </td>
                   <td className="px-4 py-3">
-                    <span className="text-[11px] text-[#686868] truncate block max-w-[180px]" title={item.sumberData}>
+                    <span className="text-[11px] text-[#68605A] truncate block max-w-[180px]" title={item.sumberData}>
                       {item.sumberData}
                     </span>
                   </td>
                   <td className="px-4 py-3 text-center whitespace-nowrap">
                     <Link
                       href={`/indikator/${item.id}`}
-                      className="inline-flex items-center space-x-1 px-3 py-1.5 rounded-lg bg-[#e4e1fb] text-[#44418b] hover:bg-[#6253e8] hover:text-white transition-all font-bold text-xs shadow-2xs"
+                      className="inline-flex items-center space-x-1 px-3 py-1.5 rounded-lg bg-[#F4ECE7] text-[#744D3D] hover:bg-[#A47864] hover:text-white transition-all font-bold text-xs shadow-2xs"
                     >
                       <BarChart2 className="w-3.5 h-3.5" />
                       <span>Detail</span>
@@ -244,10 +244,10 @@ export default function DataTable({
               ))
             ) : (
               <tr>
-                <td colSpan={9} className="py-12 text-center text-[#848484]">
-                  <FileText className="w-8 h-8 mx-auto text-[#bfbfbf] mb-2" />
-                  <p className="font-semibold text-[#2e2e2e]">Tidak ada indikator yang cocok</p>
-                  <p className="text-xs text-[#848484] mt-1">
+                <td colSpan={9} className="py-12 text-center text-[#8C8077]">
+                  <FileText className="w-8 h-8 mx-auto text-[#CFC5BD] mb-2" />
+                  <p className="font-semibold text-[#2E231F]">Tidak ada indikator yang cocok</p>
+                  <p className="text-xs text-[#8C8077] mt-1">
                     Coba sesuaikan kata kunci pencarian atau ubah kombinasi filter Anda.
                   </p>
                 </td>
@@ -258,7 +258,7 @@ export default function DataTable({
       </div>
 
       {/* Pagination Footer */}
-      <div className="p-4 border-t border-[#f0f0f4] flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-[#686868]">
+      <div className="p-4 border-t border-[#EBE5E0] flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-[#68605A]">
         <div className="flex items-center space-x-2">
           <span>Menampilkan</span>
           <select
@@ -268,7 +268,7 @@ export default function DataTable({
               setCurrentPage(1);
             }}
             aria-label="Jumlah baris per halaman"
-            className="border border-[#e9eaee] rounded-lg px-2 py-1 text-[#2e2e2e] bg-white font-medium focus:outline-hidden focus:border-[#6253e8]"
+            className="border border-[#EBE5E0] rounded-lg px-2 py-1 text-[#2E231F] bg-white font-medium focus:outline-hidden focus:border-[#A47864]"
           >
             <option value={10}>10</option>
             <option value={15}>15</option>
@@ -283,7 +283,7 @@ export default function DataTable({
             <button
               onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
               disabled={validCurrentPage === 1}
-              className="p-1.5 rounded-lg border border-[#e9eaee] hover:bg-[#f9f9fc] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+              className="p-1.5 rounded-lg border border-[#EBE5E0] hover:bg-[#FAF7F5] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
@@ -300,8 +300,8 @@ export default function DataTable({
                   onClick={() => setCurrentPage(pageNum)}
                   className={`w-7 h-7 rounded-lg text-xs font-semibold transition-all ${
                     validCurrentPage === pageNum
-                      ? 'bg-[#6253e8] text-white shadow-xs'
-                      : 'border border-[#e9eaee] text-[#474747] hover:bg-[#f9f9fc]'
+                      ? 'bg-[#A47864] text-white shadow-xs'
+                      : 'border border-[#EBE5E0] text-[#474747] hover:bg-[#FAF7F5]'
                   }`}
                 >
                   {pageNum}
@@ -312,7 +312,7 @@ export default function DataTable({
             <button
               onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
               disabled={validCurrentPage === totalPages}
-              className="p-1.5 rounded-lg border border-[#e9eaee] hover:bg-[#f9f9fc] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+              className="p-1.5 rounded-lg border border-[#EBE5E0] hover:bg-[#FAF7F5] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
             >
               <ChevronRight className="w-4 h-4" />
             </button>

@@ -3,36 +3,36 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 46, 46, 46;
+  --foreground-rgb: 46, 35, 31;
   --background-rgb: 255, 255, 255;
-  --brand-primary: #6253e8;
+  --brand-primary: #A47864;
 }
 
 body {
-  color: #2e2e2e;
+  color: #2E231F;
   background-color: #ffffff;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Custom scrollbar matching data.gov.sg */
+/* Custom scrollbar matching Mocha Mousse theme */
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f9f9fc;
+  background: #FAF7F5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c7c1f7;
+  background: #D2B8AB;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #877cee;
+  background: #A47864;
 }
 
 @keyframes floatSlow {

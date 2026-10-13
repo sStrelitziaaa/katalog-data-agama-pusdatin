@@ -34,14 +34,14 @@ export default function TrendChart({ data, satuan, namaIndikator }: TrendChartPr
     if (active && payload && payload.length) {
       const point = payload[0].payload as YearlyDataPoint;
       return (
-        <div className="bg-[#151523] text-white p-3.5 rounded-xl shadow-xl border border-[#44418b] text-xs">
-          <p className="font-semibold text-[#c7c1f7] mb-1">Tahun {label}</p>
+        <div className="bg-[#2E231F] text-white p-3.5 rounded-xl shadow-xl border border-[#744D3D] text-xs">
+          <p className="font-semibold text-[#E5D5CD] mb-1">Tahun {label}</p>
           <div className="flex items-center space-x-1.5 font-bold text-base text-white">
             <span>{formatNumber(point.nilai)}</span>
-            <span className="text-xs text-[#a89ff2] font-normal">{satuan}</span>
+            <span className="text-xs text-[#D2B8AB] font-normal">{satuan}</span>
           </div>
           {point.catatan && (
-            <p className="text-[11px] text-gray-400 mt-1.5 border-t border-gray-700 pt-1.5">
+            <p className="text-[11px] text-[#D2B8AB]/80 mt-1.5 border-t border-[#5C3C2F] pt-1.5">
               {point.catatan}
             </p>
           )}
@@ -52,28 +52,28 @@ export default function TrendChart({ data, satuan, namaIndikator }: TrendChartPr
   };
 
   return (
-    <div className="bg-white rounded-2xl border border-[#e9eaee] p-5 sm:p-6 shadow-xs">
+    <div className="bg-white rounded-2xl border border-[#EBE5E0] p-5 sm:p-6 shadow-xs">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
         <div>
           <div className="flex items-center space-x-2">
-            <TrendingUp className="w-4 h-4 text-[#6253e8]" />
-            <h3 className="font-bold text-[#151523] text-sm sm:text-base">
+            <TrendingUp className="w-4 h-4 text-[#A47864]" />
+            <h3 className="font-bold text-[#2E231F] text-sm sm:text-base">
               Grafik Tren Runtun Waktu (2020 - 2024)
             </h3>
           </div>
-          <p className="text-xs text-[#686868] mt-0.5">
-            Satuan pengukuran: <strong className="text-[#151523]">{satuan}</strong>
+          <p className="text-xs text-[#68605A] mt-0.5">
+            Satuan pengukuran: <strong className="text-[#2E231F]">{satuan}</strong>
           </p>
         </div>
 
         {/* Switch Chart Type */}
-        <div className="inline-flex p-1 bg-[#f0f0f4] rounded-xl text-xs font-semibold self-start sm:self-auto">
+        <div className="inline-flex p-1 bg-[#FAF7F5] border border-[#EBE5E0] rounded-xl text-xs font-semibold self-start sm:self-auto">
           <button
             onClick={() => setChartType('area')}
             className={`flex items-center space-x-1 px-3 py-1.5 rounded-lg transition-all ${
               chartType === 'area'
-                ? 'bg-white text-[#6253e8] font-bold shadow-xs'
-                : 'text-[#686868] hover:text-[#151523]'
+                ? 'bg-white text-[#A47864] font-bold shadow-xs'
+                : 'text-[#68605A] hover:text-[#2E231F]'
             }`}
           >
             <Layers className="w-3.5 h-3.5" />
@@ -83,8 +83,8 @@ export default function TrendChart({ data, satuan, namaIndikator }: TrendChartPr
             onClick={() => setChartType('bar')}
             className={`flex items-center space-x-1 px-3 py-1.5 rounded-lg transition-all ${
               chartType === 'bar'
-                ? 'bg-white text-[#6253e8] font-bold shadow-xs'
-                : 'text-[#686868] hover:text-[#151523]'
+                ? 'bg-white text-[#A47864] font-bold shadow-xs'
+                : 'text-[#68605A] hover:text-[#2E231F]'
             }`}
           >
             <BarChart3 className="w-3.5 h-3.5" />
@@ -94,8 +94,8 @@ export default function TrendChart({ data, satuan, namaIndikator }: TrendChartPr
             onClick={() => setChartType('line')}
             className={`flex items-center space-x-1 px-3 py-1.5 rounded-lg transition-all ${
               chartType === 'line'
-                ? 'bg-white text-[#6253e8] font-bold shadow-xs'
-                : 'text-[#686868] hover:text-[#151523]'
+                ? 'bg-white text-[#A47864] font-bold shadow-xs'
+                : 'text-[#68605A] hover:text-[#2E231F]'
             }`}
           >
             <LineIcon className="w-3.5 h-3.5" />
@@ -110,20 +110,20 @@ export default function TrendChart({ data, satuan, namaIndikator }: TrendChartPr
           {chartType === 'area' ? (
             <AreaChart data={data} margin={{ top: 10, right: 10, left: 10, bottom: 0 }}>
               <defs>
-                <linearGradient id="violetGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#6253e8" stopOpacity={0.35} />
-                  <stop offset="95%" stopColor="#6253e8" stopOpacity={0.0} />
+                <linearGradient id="mochaGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="5%" stopColor="#A47864" stopOpacity={0.35} />
+                  <stop offset="95%" stopColor="#A47864" stopOpacity={0.0} />
                 </linearGradient>
               </defs>
-              <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f4" vertical={false} />
+              <CartesianGrid strokeDasharray="3 3" stroke="#F4ECE7" vertical={false} />
               <XAxis 
                 dataKey="tahun" 
-                tick={{ fill: '#686868', fontSize: 12 }} 
-                axisLine={{ stroke: '#e9eaee' }}
+                tick={{ fill: '#68605A', fontSize: 12 }} 
+                axisLine={{ stroke: '#EBE5E0' }}
                 tickLine={false}
               />
               <YAxis 
-                tick={{ fill: '#686868', fontSize: 11 }} 
+                tick={{ fill: '#68605A', fontSize: 11 }} 
                 axisLine={false}
                 tickLine={false}
                 tickFormatter={val => formatNumber(val)}
@@ -132,23 +132,23 @@ export default function TrendChart({ data, satuan, namaIndikator }: TrendChartPr
               <Area 
                 type="monotone" 
                 dataKey="nilai" 
-                stroke="#6253e8" 
+                stroke="#A47864" 
                 strokeWidth={2.5}
                 fillOpacity={1} 
-                fill="url(#violetGrad)" 
+                fill="url(#mochaGrad)" 
               />
             </AreaChart>
           ) : chartType === 'bar' ? (
             <BarChart data={data} margin={{ top: 10, right: 10, left: 10, bottom: 0 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f4" vertical={false} />
+              <CartesianGrid strokeDasharray="3 3" stroke="#F4ECE7" vertical={false} />
               <XAxis 
                 dataKey="tahun" 
-                tick={{ fill: '#686868', fontSize: 12 }} 
-                axisLine={{ stroke: '#e9eaee' }}
+                tick={{ fill: '#68605A', fontSize: 12 }} 
+                axisLine={{ stroke: '#EBE5E0' }}
                 tickLine={false}
               />
               <YAxis 
-                tick={{ fill: '#686868', fontSize: 11 }} 
+                tick={{ fill: '#68605A', fontSize: 11 }} 
                 axisLine={false}
                 tickLine={false}
                 tickFormatter={val => formatNumber(val)}
@@ -156,21 +156,21 @@ export default function TrendChart({ data, satuan, namaIndikator }: TrendChartPr
               <Tooltip content={<CustomTooltip />} />
               <Bar 
                 dataKey="nilai" 
-                fill="#6253e8" 
+                fill="#A47864" 
                 radius={[6, 6, 0, 0]} 
               />
             </BarChart>
           ) : (
             <LineChart data={data} margin={{ top: 10, right: 10, left: 10, bottom: 0 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f4" vertical={false} />
+              <CartesianGrid strokeDasharray="3 3" stroke="#F4ECE7" vertical={false} />
               <XAxis 
                 dataKey="tahun" 
-                tick={{ fill: '#686868', fontSize: 12 }} 
-                axisLine={{ stroke: '#e9eaee' }}
+                tick={{ fill: '#68605A', fontSize: 12 }} 
+                axisLine={{ stroke: '#EBE5E0' }}
                 tickLine={false}
               />
               <YAxis 
-                tick={{ fill: '#686868', fontSize: 11 }} 
+                tick={{ fill: '#68605A', fontSize: 11 }} 
                 axisLine={false}
                 tickLine={false}
                 tickFormatter={val => formatNumber(val)}
@@ -179,10 +179,10 @@ export default function TrendChart({ data, satuan, namaIndikator }: TrendChartPr
               <Line 
                 type="monotone" 
                 dataKey="nilai" 
-                stroke="#6253e8" 
+                stroke="#A47864" 
                 strokeWidth={3}
-                dot={{ fill: '#6253e8', r: 4, strokeWidth: 2, stroke: '#fff' }}
-                activeDot={{ r: 6, fill: '#44418b' }}
+                dot={{ fill: '#A47864', r: 4, strokeWidth: 2, stroke: '#fff' }}
+                activeDot={{ r: 6, fill: '#744D3D' }}
               />
             </LineChart>
           )}
@@ -190,14 +190,14 @@ export default function TrendChart({ data, satuan, namaIndikator }: TrendChartPr
       </div>
 
       {/* Runtun Waktu Cards */}
-      <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 mt-6 pt-5 border-t border-[#f0f0f4]">
+      <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 mt-6 pt-5 border-t border-[#EBE5E0]">
         {data.map(item => (
-          <div key={item.tahun} className="p-3 bg-[#f9f9fc] rounded-xl border border-[#e9eaee] text-center">
-            <span className="text-[11px] font-semibold text-[#848484] block">Tahun {item.tahun}</span>
-            <span className="text-sm sm:text-base font-extrabold text-[#151523] block mt-0.5">
+          <div key={item.tahun} className="p-3 bg-[#FAF7F5] rounded-xl border border-[#EBE5E0] text-center">
+            <span className="text-[11px] font-semibold text-[#8C8077] block">Tahun {item.tahun}</span>
+            <span className="text-sm sm:text-base font-extrabold text-[#2E231F] block mt-0.5">
               {formatNumber(item.nilai)}
             </span>
-            <span className="text-[10px] text-[#848484] block truncate">{satuan}</span>
+            <span className="text-[10px] text-[#8C8077] block truncate">{satuan}</span>
           </div>
         ))}
       </div>

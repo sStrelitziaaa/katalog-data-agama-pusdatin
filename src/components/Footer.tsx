@@ -5,7 +5,7 @@ import { ShieldCheck, ExternalLink } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#e9eaee] bg-white text-[#474747] py-12">
+    <footer className="border-t border-[#EBE5E0] bg-white text-[#474747] py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           {/* Brand Logo & Name */}
@@ -20,10 +20,10 @@ export default function Footer() {
               />
             </div>
             <div>
-              <span className="font-extrabold text-[#151523] text-base sm:text-lg tracking-tight block">
+              <span className="font-extrabold text-[#2E231F] text-base sm:text-lg tracking-tight block">
                 Kemenag
               </span>
-              <p className="text-xs text-[#686868]">
+              <p className="text-xs text-[#68605A]">
                 Pusat Data dan Informasi (Pusdatin) • Data Agama dan Keagamaan
               </p>
             </div>
@@ -31,28 +31,28 @@ export default function Footer() {
 
           {/* Quick links */}
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs sm:text-sm font-semibold text-[#474747]">
-            <Link href="/" className="hover:text-[#6253e8] transition-colors">
+            <Link href="/" className="hover:text-[#A47864] transition-colors">
               Katalog
             </Link>
-            <Link href="/eksplorasi" className="hover:text-[#6253e8] transition-colors">
+            <Link href="/eksplorasi" className="hover:text-[#A47864] transition-colors">
               Eksplorasi Data
             </Link>
-            <Link href="/eksplorasi?status=Terisi" className="hover:text-[#6253e8] transition-colors">
+            <Link href="/eksplorasi?status=Terisi" className="hover:text-[#A47864] transition-colors">
               Data Terverifikasi
             </Link>
             <a
               href="https://kemenag.go.id"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#6253e8] transition-colors inline-flex items-center space-x-1"
+              className="hover:text-[#A47864] transition-colors inline-flex items-center space-x-1"
             >
               <span>Portal Kemenag RI</span>
-              <ExternalLink className="w-3 h-3 text-[#848484]" />
+              <ExternalLink className="w-3 h-3 text-[#8C8077]" />
             </a>
           </div>
         </div>
 
-        <div className="border-t border-[#f0f0f4] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#848484]">
+        <div className="border-t border-[#EBE5E0] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#8C8077]">
           <p>
             © {new Date().getFullYear()} Pusat Data dan Informasi (Pusdatin) Kementerian Agama RI.
           </p>

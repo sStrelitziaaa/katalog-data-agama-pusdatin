@@ -15,7 +15,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#e9eaee] shadow-xs">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#EBE5E0] shadow-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-[4.5rem]">
           {/* Brand Logo & Title */}
@@ -31,10 +31,10 @@ export default function Navbar() {
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-base sm:text-xl font-black tracking-tight text-[#151523]">
+              <span className="text-base sm:text-xl font-black tracking-tight text-[#2E231F]">
                 Kemenag
               </span>
-              <p className="text-[11px] text-[#686868] font-medium hidden sm:block">
+              <p className="text-[11px] text-[#68605A] font-medium hidden sm:block">
                 Pusat Data dan Informasi (Pusdatin) • Data Agama dan Keagamaan
               </p>
             </div>
@@ -51,11 +51,11 @@ export default function Navbar() {
                   href={item.href}
                   className={`flex items-center space-x-2 px-3.5 py-2 rounded-lg text-sm font-semibold transition-all ${
                     isActive
-                      ? 'bg-[#e4e1fb] text-[#44418b]'
-                      : 'text-[#474747] hover:text-[#151523] hover:bg-[#f9f9fc]'
+                      ? 'bg-[#F4ECE7] text-[#744D3D]'
+                      : 'text-[#474747] hover:text-[#2E231F] hover:bg-[#FAF7F5]'
                   }`}
                 >
-                  <Icon className={`w-4 h-4 ${isActive ? 'text-[#6253e8]' : 'text-[#686868]'}`} />
+                  <Icon className={`w-4 h-4 ${isActive ? 'text-[#A47864]' : 'text-[#8C8077]'}`} />
                   <span>{item.label}</span>
                 </Link>
               );
@@ -63,7 +63,7 @@ export default function Navbar() {
 
             <Link
               href="/eksplorasi"
-              className="ml-2 inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-[#6253e8] text-white text-xs sm:text-sm font-bold hover:bg-[#4e49a8] shadow-sm hover:shadow-md transition-all active:scale-95"
+              className="ml-2 inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-[#A47864] text-white text-xs sm:text-sm font-bold hover:bg-[#8E614E] active:bg-[#744D3D] shadow-sm hover:shadow-md transition-all active:scale-95"
             >
               <Search className="w-4 h-4" />
               <span className="hidden sm:inline">Cari Dataset</span>

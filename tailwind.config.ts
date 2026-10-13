@@ -22,35 +22,35 @@ const config: Config = {
           900: '#064e3b',
           950: '#022c22',
         },
-        // data.gov.sg Singapore Open Data Portal palette
+        // Pantone Color of the Year 2025: PANTONE 17-1230 Mocha Mousse palette
         brand: {
-          50: '#f9f9fc',
-          100: '#e4e1fb',
-          200: '#c7c1f7',
-          300: '#a89ff2',
-          400: '#877cee',
-          500: '#6253e8', // Signature electric violet / primary brand
-          600: '#4e49a8', // hover
-          700: '#44418b', // active
-          800: '#2e2f55',
-          900: '#151523', // deep canvas inverse / dark headline
-          950: '#0c0d18',
+          50: '#FAF7F5',  // Warm Cream
+          100: '#F4ECE7', // Warm Latte Tint
+          200: '#E5D5CD', // Soft Mocha Border
+          300: '#D2B8AB', // Muted Warm Taupe
+          400: '#BC9887', // Mocha Accent
+          500: '#A47864', // Signature PANTONE 17-1230 Mocha Mousse (Primary)
+          600: '#8E614E', // Rich Mocha (Hover)
+          700: '#744D3D', // Deep Roasted Mocha (Active)
+          800: '#5C3C2F', // Dark Cocoa
+          900: '#3D261E', // Dark Espresso
+          950: '#241611', // Deep Charcoal Espresso
         },
         gov: {
           masthead: '#f0f0f0',
           canvas: '#ffffff',
-          canvasAlt: '#f9f9fc',
+          canvasAlt: '#FAF7F5',
           content: '#474747',
-          strong: '#2e2e2e',
-          medium: '#686868',
-          subtle: '#848484',
-          divider: '#e9eaee',
-          dividerStrong: '#bfbfbf',
+          strong: '#2E231F',
+          medium: '#68605A',
+          subtle: '#8C8077',
+          divider: '#EBE5E0',
+          dividerStrong: '#CFC5BD',
         },
       },
       boxShadow: {
         'sg-card': '0 4px 20px -2px rgba(15, 23, 42, 0.05)',
-        'sg-glow': '0 0 25px -4px rgba(98, 83, 232, 0.2)',
+        'sg-glow': '0 0 25px -4px rgba(164, 120, 100, 0.25)',
         'sg-pill': '0 2px 10px rgba(0, 0, 0, 0.04)',
       },
     },
