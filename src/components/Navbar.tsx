@@ -15,7 +15,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#EBE5E0] shadow-xs">
+    <header className="sticky top-0 z-50 bg-[#F0EEE9]/95 backdrop-blur-md border-b border-[#D3E4F1] shadow-2xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-[4.5rem]">
           {/* Brand Logo & Title */}
@@ -31,11 +31,11 @@ export default function Navbar() {
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-base sm:text-xl font-black tracking-tight text-[#2E231F]">
+              <span className="text-base sm:text-xl font-black tracking-tight text-[#181E24]">
                 Kemenag
               </span>
-              <p className="text-[11px] text-[#68605A] font-medium hidden sm:block">
-                Pusat Data dan Informasi (Pusdatin) • Data Agama dan Keagamaan
+              <p className="text-[11px] text-[#55606D] font-medium hidden sm:block">
+                Pusat Data dan Teknologi Informasi (Pusdatin) • Data Agama dan Keagamaan
               </p>
             </div>
           </Link>
@@ -49,23 +49,24 @@ export default function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`flex items-center space-x-2 px-3.5 py-2 rounded-lg text-sm font-semibold transition-all ${
+                  className={`flex items-center space-x-2 px-3.5 py-2 rounded-xl text-sm font-semibold transition-all ${
                     isActive
-                      ? 'bg-[#F4ECE7] text-[#744D3D]'
-                      : 'text-[#474747] hover:text-[#2E231F] hover:bg-[#FAF7F5]'
+                      ? 'bg-[#E7F1F8] text-[#1D4661] border border-[#D3E4F1] shadow-2xs'
+                      : 'text-[#55606D] hover:text-[#181E24] hover:bg-white/80'
                   }`}
                 >
-                  <Icon className={`w-4 h-4 ${isActive ? 'text-[#A47864]' : 'text-[#8C8077]'}`} />
+                  <Icon className={`w-4 h-4 ${isActive ? 'text-[#286084]' : 'text-[#7E8B99]'}`} />
                   <span>{item.label}</span>
                 </Link>
               );
             })}
 
+            {/* Highlight: Lemon Icing Button */}
             <Link
               href="/eksplorasi"
-              className="ml-2 inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-[#A47864] text-white text-xs sm:text-sm font-bold hover:bg-[#8E614E] active:bg-[#744D3D] shadow-sm hover:shadow-md transition-all active:scale-95"
+              className="ml-2 inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-[#F6EBC8] text-[#4D410E] hover:bg-[#EEDFA7] active:bg-[#E3CF7E] border border-[#E3CF7E] text-xs sm:text-sm font-bold shadow-2xs hover:shadow-md transition-all active:scale-95"
             >
-              <Search className="w-4 h-4" />
+              <Search className="w-4 h-4 text-[#4D410E]" />
               <span className="hidden sm:inline">Cari Dataset</span>
             </Link>
           </nav>

@@ -121,9 +121,37 @@ function EksplorasiContent() {
         }
       }
 
-      // 2. Agama / Bimas
-      if (filters.agama && item.agama !== filters.agama) {
-        return false;
+      // 2. Agama / Bimas / Produsen Data
+      if (filters.agama) {
+        const agQuery = filters.agama.toLowerCase().trim();
+        const itemAgama = item.agama.toLowerCase();
+        const itemBimas = item.bimas.toLowerCase();
+
+        if (agQuery.includes('islam')) {
+          if (!itemAgama.includes('islam') && !itemBimas.includes('islam')) return false;
+        } else if (agQuery.includes('kristen')) {
+          if (!itemAgama.includes('kristen') && !itemBimas.includes('kristen')) return false;
+        } else if (agQuery.includes('katolik')) {
+          if (!itemAgama.includes('katolik') && !itemBimas.includes('katolik')) return false;
+        } else if (agQuery.includes('hindu')) {
+          if (!itemAgama.includes('hindu') && !itemBimas.includes('hindu')) return false;
+        } else if (agQuery.includes('buddha')) {
+          if (!itemAgama.includes('buddha') && !itemBimas.includes('buddha')) return false;
+        } else if (agQuery.includes('khonghucu')) {
+          if (!itemAgama.includes('khonghucu') && !itemBimas.includes('khonghucu')) return false;
+        } else if (agQuery.includes('bmbpsdm') || agQuery.includes('balitbang') || agQuery.includes('diklat') || agQuery.includes('setjen')) {
+          if (!itemBimas.includes('setjen') && itemAgama !== 'umum' && !item.kategori.toLowerCase().includes('sdm') && !item.kategori.toLowerCase().includes('keuangan') && !item.kategori.toLowerCase().includes('bmn')) {
+            return false;
+          }
+        } else if (agQuery.includes('kerukunan') || agQuery.includes('pkub')) {
+          if (!itemBimas.includes('kerukunan') && !itemBimas.includes('pkub') && itemAgama !== 'semua agama') {
+            return false;
+          }
+        } else {
+          if (itemAgama !== agQuery && !itemBimas.includes(agQuery)) {
+            return false;
+          }
+        }
       }
 
       // 3. Kategori
@@ -158,28 +186,28 @@ function EksplorasiContent() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
       {/* Breadcrumb Navigation */}
-      <nav className="flex items-center space-x-2 text-xs text-[#8C8077] font-medium">
-        <Link href="/" className="hover:text-[#A47864] flex items-center space-x-1">
+      <nav className="flex items-center space-x-2 text-xs text-[#6A7B8C] font-medium">
+        <Link href="/" className="hover:text-[#286084] flex items-center space-x-1 transition-colors">
           <Home className="w-3.5 h-3.5" />
           <span>Katalog</span>
         </Link>
-        <ChevronRight className="w-3.5 h-3.5 text-[#CFC5BD]" />
-        <span className="text-[#2E231F] font-bold">Eksplorasi Dataset</span>
+        <ChevronRight className="w-3.5 h-3.5 text-[#A0B8C8]" />
+        <span className="text-[#132E40] font-bold">Eksplorasi Dataset</span>
       </nav>
 
-      {/* Header & Search Bar (Singapore Data.gov.sg Catalog Style) */}
-      <div className="bg-white rounded-3xl border border-[#EBE5E0] p-6 sm:p-8 shadow-xs">
+      {/* Header & Search Bar (Clean Singapore Portal Style) */}
+      <div className="bg-white rounded-3xl border border-[#D3E4F1] p-6 sm:p-8 shadow-xs">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
-            <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-[#F4ECE7] border border-[#E5D5CD] text-[#744D3D] text-xs font-bold mb-2">
-              <Database className="w-3.5 h-3.5 text-[#A47864]" />
-              <span>Satu Data Agama • Pusdatin Kemenag RI</span>
+            <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-[#F6EBC8] border border-[#EAD598] text-[#4D410E] text-xs font-bold mb-2">
+              <Database className="w-3.5 h-3.5 text-[#7A610A]" />
+              <span>Pusat Data dan Teknologi Informasi (Pusdatin) • Data Agama dan Keagamaan</span>
             </div>
-            <h1 className="text-2xl sm:text-3xl font-black text-[#2E231F] tracking-tight">
+            <h1 className="text-2xl sm:text-3xl font-black text-[#132E40] tracking-tight">
               Eksplorasi & Repositori Dataset Agama
             </h1>
-            <p className="text-xs sm:text-sm text-[#68605A] mt-1 font-medium">
-              Telusuri dataset berdasarkan kata kunci, rumpun kategori, unit bimas, cakupan wilayah, dan unduh data ke Excel atau CSV.
+            <p className="text-xs sm:text-sm text-[#55697A] mt-1 font-medium">
+              Telusuri dataset berdasarkan kata kunci, rumpun kategori, produsen data (Ditjen Bimas/Pusbimdik/BMBPSDM/PKUB), cakupan wilayah, dan unduh data ke Excel atau CSV.
             </p>
           </div>
 
@@ -187,7 +215,7 @@ function EksplorasiContent() {
           <div className="lg:hidden">
             <button
               onClick={() => setMobileFilterOpen(true)}
-              className="w-full inline-flex items-center justify-center space-x-2 px-4 py-2.5 rounded-xl bg-[#A47864] text-white font-bold text-xs shadow-xs"
+              className="w-full inline-flex items-center justify-center space-x-2 px-4 py-2.5 rounded-xl bg-[#286084] hover:bg-[#1f4e6d] text-white font-bold text-xs shadow-xs transition-colors"
             >
               <SlidersHorizontal className="w-4 h-4" />
               <span>Buka Filter Sidebar</span>
@@ -203,13 +231,13 @@ function EksplorasiContent() {
               value={filters.search}
               onChange={e => handleFilterChange({ search: e.target.value })}
               placeholder='Cari kata kunci (contoh: "Masjid", "Nikah", "Penyuluh", "Gereja", "Madrasah")...'
-              className="w-full text-xs sm:text-sm pl-11 pr-10 py-3.5 rounded-2xl border border-[#EBE5E0] bg-[#FAF7F5] focus:bg-white text-[#2E231F] focus:outline-hidden focus:ring-3 focus:ring-[#A47864]/20 focus:border-[#A47864] transition-all font-medium"
+              className="w-full text-xs sm:text-sm pl-11 pr-10 py-3.5 rounded-2xl border border-[#D3E4F1] bg-[#F0EEE9]/40 focus:bg-white text-[#132E40] focus:outline-hidden focus:ring-3 focus:ring-[#286084]/20 focus:border-[#5F9ECB] transition-all font-medium"
             />
-            <Search className="w-5 h-5 text-[#8C8077] absolute left-3.5 top-3.5 pointer-events-none" />
+            <Search className="w-5 h-5 text-[#7E8B99] absolute left-3.5 top-3.5 pointer-events-none" />
             {filters.search && (
               <button
                 onClick={() => handleFilterChange({ search: '' })}
-                className="absolute right-3.5 top-3.5 text-xs text-[#8C8077] hover:text-[#2E231F] font-semibold"
+                className="absolute right-3.5 top-3.5 text-xs text-[#7E8B99] hover:text-[#132E40] font-semibold"
               >
                 Hapus
               </button>
@@ -220,14 +248,14 @@ function EksplorasiContent() {
 
       {/* Notification Toast / Banner */}
       {notification && (
-        <div className="p-4 rounded-2xl bg-[#F4ECE7] border border-[#E5D5CD] text-xs font-semibold text-[#744D3D] flex items-center justify-between shadow-xs animate-in fade-in slide-in-from-top-2">
+        <div className="p-4 rounded-2xl bg-[#E7F1F8] border border-[#D3E4F1] text-xs font-semibold text-[#132E40] flex items-center justify-between shadow-xs animate-in fade-in slide-in-from-top-2">
           <div className="flex items-center space-x-2">
-            <CheckCircle2 className="w-4 h-4 text-[#A47864]" />
+            <CheckCircle2 className="w-4 h-4 text-[#286084]" />
             <span>{notification}</span>
           </div>
           <button
             onClick={() => setNotification(null)}
-            className="text-[#744D3D] hover:text-[#2E231F] font-bold ml-4"
+            className="text-[#286084] hover:text-[#132E40] font-bold ml-4"
           >
             ✕
           </button>

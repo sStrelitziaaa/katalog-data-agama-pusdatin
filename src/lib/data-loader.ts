@@ -97,7 +97,7 @@ export function getBimasSummaries(): BimasSummary[] {
     {
       nama: 'Pusat Kerukunan Umat Beragama (PKUB)',
       agama: 'Semua Agama',
-      shortName: 'PKUB',
+      shortName: 'Pusat Kerukunan Umat Beragama',
       color: 'purple',
       iconName: 'HeartHandshake',
       deskripsi: 'Data Forum Kerukunan Umat Beragama (FKUB), kantor sekretariat, dan Desa Sadar Kerukunan.',

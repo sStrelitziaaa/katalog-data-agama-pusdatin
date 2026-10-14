@@ -51,16 +51,16 @@ export default function FilterSidebar({
   const sidebarContent = (
     <div className="space-y-6">
       {/* Header Filter */}
-      <div className="flex items-center justify-between pb-3 border-b border-[#EBE5E0]">
-        <div className="flex items-center space-x-2 text-[#2E231F]">
-          <Filter className="w-4 h-4 text-[#A47864]" />
+      <div className="flex items-center justify-between pb-3 border-b border-[#D3E4F1]">
+        <div className="flex items-center space-x-2 text-[#181E24]">
+          <Filter className="w-4 h-4 text-[#286084]" />
           <h3 className="font-bold text-sm tracking-tight">Filter Dataset</h3>
         </div>
 
         {hasActiveFilters && (
           <button
             onClick={onResetFilters}
-            className="flex items-center space-x-1 text-xs font-semibold text-[#A47864] hover:text-[#744D3D] transition-colors"
+            className="flex items-center space-x-1 text-xs font-semibold text-[#286084] hover:text-[#1D4661] transition-colors"
           >
             <RotateCcw className="w-3 h-3" />
             <span>Reset</span>
@@ -70,14 +70,14 @@ export default function FilterSidebar({
 
       {/* 1. Filter Agama */}
       <div>
-        <label className="block text-xs font-bold uppercase tracking-wider text-[#68605A] mb-2">
+        <label className="block text-xs font-bold uppercase tracking-wider text-[#55606D] mb-2">
           Agama / Bimas
         </label>
         <select
           value={filters.agama}
           onChange={e => onFilterChange({ agama: e.target.value })}
           aria-label="Filter Agama / Ditjen Bimas"
-          className="w-full text-xs rounded-xl border border-[#EBE5E0] bg-white px-3 py-2.5 text-[#2E231F] focus:outline-hidden focus:ring-2 focus:ring-[#A47864]/20 focus:border-[#A47864] shadow-2xs font-medium"
+          className="w-full text-xs rounded-xl border border-[#D3E4F1] bg-white px-3 py-2.5 text-[#181E24] focus:outline-hidden focus:ring-2 focus:ring-[#D3E4F1]/40 focus:border-[#5F9ECB] shadow-2xs font-medium"
         >
           <option value="">Semua Agama / Bimas</option>
           {agamaList.map(item => (
@@ -90,14 +90,14 @@ export default function FilterSidebar({
 
       {/* 2. Filter Kategori */}
       <div>
-        <label className="block text-xs font-bold uppercase tracking-wider text-[#68605A] mb-2">
+        <label className="block text-xs font-bold uppercase tracking-wider text-[#55606D] mb-2">
           Rumpun Kategori
         </label>
         <select
           value={filters.kategori}
           onChange={e => onFilterChange({ kategori: e.target.value })}
           aria-label="Filter Rumpun Kategori"
-          className="w-full text-xs rounded-xl border border-[#EBE5E0] bg-white px-3 py-2.5 text-[#2E231F] focus:outline-hidden focus:ring-2 focus:ring-[#A47864]/20 focus:border-[#A47864] shadow-2xs font-medium"
+          className="w-full text-xs rounded-xl border border-[#D3E4F1] bg-white px-3 py-2.5 text-[#181E24] focus:outline-hidden focus:ring-2 focus:ring-[#D3E4F1]/40 focus:border-[#5F9ECB] shadow-2xs font-medium"
         >
           <option value="">Semua Rumpun Kategori</option>
           {categories.map(item => (
@@ -110,17 +110,17 @@ export default function FilterSidebar({
 
       {/* 3. Filter Status Keterisian */}
       <div>
-        <label className="block text-xs font-bold uppercase tracking-wider text-[#68605A] mb-2">
+        <label className="block text-xs font-bold uppercase tracking-wider text-[#55606D] mb-2">
           Status Integrasi
         </label>
-        <div className="grid grid-cols-3 gap-1.5 p-1 bg-[#FAF7F5] border border-[#EBE5E0] rounded-xl text-xs font-medium">
+        <div className="grid grid-cols-3 gap-1.5 p-1 bg-[#E7F1F8] border border-[#D3E4F1] rounded-xl text-xs font-medium">
           <button
             type="button"
             onClick={() => onFilterChange({ status: 'all' })}
             className={`py-1.5 rounded-lg transition-all text-center ${
               filters.status === 'all'
-                ? 'bg-white text-[#2E231F] font-bold shadow-xs'
-                : 'text-[#68605A] hover:text-[#2E231F]'
+                ? 'bg-white text-[#181E24] font-bold shadow-xs'
+                : 'text-[#55606D] hover:text-[#181E24]'
             }`}
           >
             Semua
@@ -130,8 +130,8 @@ export default function FilterSidebar({
             onClick={() => onFilterChange({ status: 'terisi' })}
             className={`py-1.5 rounded-lg transition-all text-center ${
               filters.status === 'terisi'
-                ? 'bg-[#A47864] text-white font-bold shadow-xs'
-                : 'text-[#68605A] hover:text-[#A47864]'
+                ? 'bg-[#286084] text-white font-bold shadow-xs'
+                : 'text-[#55606D] hover:text-[#286084]'
             }`}
           >
             Terisi
@@ -142,7 +142,7 @@ export default function FilterSidebar({
             className={`py-1.5 rounded-lg transition-all text-center ${
               filters.status === 'pending'
                 ? 'bg-amber-600 text-white font-bold shadow-xs'
-                : 'text-[#68605A] hover:text-amber-700'
+                : 'text-[#55606D] hover:text-amber-700'
             }`}
           >
             Proses
@@ -152,14 +152,14 @@ export default function FilterSidebar({
 
       {/* 4. Filter Cakupan Wilayah */}
       <div>
-        <label className="block text-xs font-bold uppercase tracking-wider text-[#68605A] mb-2">
+        <label className="block text-xs font-bold uppercase tracking-wider text-[#55606D] mb-2">
           Cakupan Wilayah
         </label>
         <select
           value={filters.cakupanWilayah}
           onChange={e => onFilterChange({ cakupanWilayah: e.target.value })}
           aria-label="Filter Cakupan Wilayah"
-          className="w-full text-xs rounded-xl border border-[#EBE5E0] bg-white px-3 py-2.5 text-[#2E231F] focus:outline-hidden focus:ring-2 focus:ring-[#A47864]/20 focus:border-[#A47864] shadow-2xs font-medium"
+          className="w-full text-xs rounded-xl border border-[#D3E4F1] bg-white px-3 py-2.5 text-[#181E24] focus:outline-hidden focus:ring-2 focus:ring-[#D3E4F1]/40 focus:border-[#5F9ECB] shadow-2xs font-medium"
         >
           {wilayahlList.map(item => (
             <option key={item} value={item === 'Semua Wilayah' ? '' : item}>
@@ -171,14 +171,14 @@ export default function FilterSidebar({
 
       {/* 5. Filter Tahun Data */}
       <div>
-        <label className="block text-xs font-bold uppercase tracking-wider text-[#68605A] mb-2">
+        <label className="block text-xs font-bold uppercase tracking-wider text-[#55606D] mb-2">
           Periode Tahun
         </label>
         <select
           value={filters.tahun}
           onChange={e => onFilterChange({ tahun: e.target.value })}
           aria-label="Filter Periode Tahun"
-          className="w-full text-xs rounded-xl border border-[#EBE5E0] bg-white px-3 py-2.5 text-[#2E231F] focus:outline-hidden focus:ring-2 focus:ring-[#A47864]/20 focus:border-[#A47864] shadow-2xs font-medium"
+          className="w-full text-xs rounded-xl border border-[#D3E4F1] bg-white px-3 py-2.5 text-[#181E24] focus:outline-hidden focus:ring-2 focus:ring-[#D3E4F1]/40 focus:border-[#5F9ECB] shadow-2xs font-medium"
         >
           {tahunList.map(item => (
             <option key={item} value={item === 'Semua Tahun' ? '' : item}>
@@ -190,14 +190,14 @@ export default function FilterSidebar({
 
       {/* 6. Filter PIC Pengelola */}
       <div>
-        <label className="block text-xs font-bold uppercase tracking-wider text-[#68605A] mb-2">
+        <label className="block text-xs font-bold uppercase tracking-wider text-[#55606D] mb-2">
           PIC Tim Pusdatin
         </label>
         <select
           value={filters.pic}
           onChange={e => onFilterChange({ pic: e.target.value })}
           aria-label="Filter PIC Tim Pusdatin"
-          className="w-full text-xs rounded-xl border border-[#EBE5E0] bg-white px-3 py-2.5 text-[#2E231F] focus:outline-hidden focus:ring-2 focus:ring-[#A47864]/20 focus:border-[#A47864] shadow-2xs font-medium"
+          className="w-full text-xs rounded-xl border border-[#D3E4F1] bg-white px-3 py-2.5 text-[#181E24] focus:outline-hidden focus:ring-2 focus:ring-[#D3E4F1]/40 focus:border-[#5F9ECB] shadow-2xs font-medium"
         >
           <option value="">Semua PIC</option>
           {picList.map(item => (
@@ -214,7 +214,7 @@ export default function FilterSidebar({
     <>
       {/* Desktop Sidebar */}
       <aside className="hidden lg:block w-72 shrink-0">
-        <div className="sticky top-28 bg-white rounded-2xl border border-[#EBE5E0] p-5 shadow-xs">
+        <div className="sticky top-28 bg-white rounded-2xl border border-[#D3E4F1] p-5 shadow-xs">
           {sidebarContent}
         </div>
       </aside>
@@ -228,8 +228,8 @@ export default function FilterSidebar({
           />
           <div className="relative ml-auto w-full max-w-xs bg-white h-full p-6 shadow-xl overflow-y-auto flex flex-col justify-between">
             <div>
-              <div className="flex items-center justify-between pb-4 border-b border-[#EBE5E0] mb-4">
-                <span className="font-bold text-[#2E231F]">Filter Indikator</span>
+              <div className="flex items-center justify-between pb-4 border-b border-[#D3E4F1] mb-4">
+                <span className="font-bold text-[#181E24]">Filter Indikator</span>
                 <button
                   onClick={onCloseMobile}
                   className="p-1.5 rounded-lg text-gray-400 hover:text-gray-700 hover:bg-gray-100"
@@ -240,10 +240,10 @@ export default function FilterSidebar({
               {sidebarContent}
             </div>
 
-            <div className="pt-6 border-t border-[#EBE5E0] mt-6">
+            <div className="pt-6 border-t border-[#D3E4F1] mt-6">
               <button
                 onClick={onCloseMobile}
-                className="w-full py-2.5 rounded-xl bg-[#A47864] text-white font-bold text-xs shadow-sm hover:bg-[#8E614E]"
+                className="w-full py-2.5 rounded-xl bg-[#286084] text-white font-bold text-xs shadow-sm hover:bg-[#1D4661]"
               >
                 Terapkan Filter
               </button>

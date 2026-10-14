@@ -3,36 +3,38 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 46, 35, 31;
-  --background-rgb: 255, 255, 255;
-  --brand-primary: #A47864;
+  --foreground-rgb: 24, 30, 36;
+  --background-rgb: 240, 238, 233;
+  --color-cloud-dancer: #F0EEE9;
+  --color-lemon-icing: #F6EBC8;
+  --color-ice-melt: #D3E4F1;
 }
 
 body {
-  color: #2E231F;
-  background-color: #ffffff;
+  color: #181E24;
+  background-color: #F0EEE9;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Custom scrollbar matching Mocha Mousse theme */
+/* Custom scrollbar matching Cloud Dancer & Ice Melt theme */
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #FAF7F5;
+  background: #F0EEE9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #D2B8AB;
+  background: #B5D3E8;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #A47864;
+  background: #5F9ECB;
 }
 
 @keyframes floatSlow {

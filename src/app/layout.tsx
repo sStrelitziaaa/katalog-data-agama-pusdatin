@@ -7,9 +7,9 @@ import Footer from '@/components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Katalog & Repositori Data Agama - Pusdatin Kemenag RI',
-  description: 'Aplikasi Web Katalog dan Repositori Data Agama dan Keagamaan Pusdatin Kementerian Agama RI. Klasifikasi Satu Data Agama, Bimas, dan Kerukunan.',
-  keywords: ['Kemenag', 'Pusdatin', 'Data Agama', 'Satu Data', 'Bimas Islam', 'Bimas Kristen', 'Bimas Katolik', 'Bimas Hindu', 'Bimas Buddha', 'Khonghucu'],
+  title: 'Data Agama dan Keagamaan - Pusat Data dan Teknologi Informasi Kemenag RI',
+  description: 'Aplikasi Web Katalog dan Repositori Data Agama dan Keagamaan Pusat Data dan Teknologi Informasi (Pusdatin) Kementerian Agama RI. Klasifikasi Satu Data Agama, Ditjen Bimas, Pusbimdik Khonghucu, BMBPSDM, dan Pusat Kerukunan Umat Beragama.',
+  keywords: ['Kemenag', 'Pusdatin', 'Pusat Data dan Teknologi Informasi', 'Data Agama', 'Satu Data', 'Bimas Islam', 'Bimas Kristen', 'Bimas Katolik', 'Bimas Hindu', 'Bimas Buddha', 'Pusbimdik Khonghucu', 'BMBPSDM', 'Pusat Kerukunan Umat Beragama'],
   icons: {
     icon: '/logo-kemenag.png',
     shortcut: '/logo-kemenag.png',
@@ -24,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id" className="scroll-smooth">
-      <body className={`${inter.className} flex flex-col min-h-screen antialiased bg-slate-50 text-slate-900`}>
+      <body className={`${inter.className} flex flex-col min-h-screen antialiased bg-[#F0EEE9] text-[#181E24]`}>
         <Navbar />
         <main className="flex-grow">
           {children}
