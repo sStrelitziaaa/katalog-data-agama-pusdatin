@@ -42,6 +42,7 @@ export default function DataTable({
 
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(15);
+  const [density, setDensity] = useState<'compact' | 'normal'>('compact');
 
   // Pagination calculation
   const totalItems = data.length;
@@ -85,9 +86,9 @@ export default function DataTable({
   };
 
   return (
-    <div className="bg-white rounded-2xl border border-[#D3E4F1] shadow-xs overflow-hidden">
+    <div className="bg-white rounded-2xl border border-[#D3E4F1] shadow-xs overflow-hidden w-full">
       {/* Table Toolbar / Header */}
-      <div className="p-4 sm:p-5 border-b border-[#D3E4F1] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="p-3.5 sm:p-4 border-b border-[#D3E4F1] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
           <div className="flex items-center space-x-2">
             <h3 className="font-bold text-[#181E24] text-sm sm:text-base">
@@ -99,18 +100,44 @@ export default function DataTable({
               </span>
             )}
           </div>
-          <p className="text-xs text-[#55606D] mt-0.5 font-medium">
+          <p className="text-[11px] sm:text-xs text-[#55606D] mt-0.5 font-medium">
             Menampilkan <strong className="text-[#181E24]">{totalItems}</strong> indikator (dari total {totalRaw} dataset terdaftar)
           </p>
         </div>
 
-        {/* Action Buttons: Export (Public) & CMS Upload (Admin Only) */}
+        {/* Action Buttons: Density Toggle, Export (Public) & CMS Upload (Admin Only) */}
         <div className="flex flex-wrap items-center gap-2 shrink-0">
+          {/* Density Toggle (Kompak vs Normal) */}
+          <div className="inline-flex items-center rounded-xl border border-[#D3E4F1] bg-[#F0EEE9]/60 p-0.5" title="Kerapatan tampilan baris tabel">
+            <button
+              type="button"
+              onClick={() => setDensity('compact')}
+              className={`px-2.5 py-1 rounded-lg text-[11px] font-bold transition-all ${
+                density === 'compact'
+                  ? 'bg-white text-[#181E24] shadow-2xs'
+                  : 'text-[#7E8B99] hover:text-[#181E24]'
+              }`}
+            >
+              Kompak
+            </button>
+            <button
+              type="button"
+              onClick={() => setDensity('normal')}
+              className={`px-2.5 py-1 rounded-lg text-[11px] font-bold transition-all ${
+                density === 'normal'
+                  ? 'bg-white text-[#181E24] shadow-2xs'
+                  : 'text-[#7E8B99] hover:text-[#181E24]'
+              }`}
+            >
+              Normal
+            </button>
+          </div>
+
           {/* Tombol Upload Excel / CMS (HANYA UNTUK ADMIN) */}
           {effectiveIsAdmin && onOpenUploadModal && (
             <button
               onClick={onOpenUploadModal}
-              className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-xl bg-[#286084] text-white text-xs font-bold hover:bg-[#1D4661] active:bg-[#132E40] transition-all shadow-xs"
+              className="inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-xl bg-[#286084] text-white text-xs font-bold hover:bg-[#1D4661] active:bg-[#132E40] transition-all shadow-xs"
               title="Kelola dan perbarui data via CMS Excel (Mode Admin)"
             >
               <UploadCloud className="w-3.5 h-3.5" />
@@ -122,7 +149,7 @@ export default function DataTable({
           {effectiveIsAdmin && (
             <button
               onClick={handleDownloadTemplate}
-              className="inline-flex items-center space-x-1.5 px-3.5 py-2 rounded-xl bg-[#F6EBC8] text-[#4D410E] border border-[#E3CF7E] text-xs font-bold hover:bg-[#EEDFA7] active:bg-[#E3CF7E] transition-all shadow-2xs"
+              className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-[#F6EBC8] text-[#4D410E] border border-[#E3CF7E] text-xs font-bold hover:bg-[#EEDFA7] active:bg-[#E3CF7E] transition-all shadow-2xs"
               title="Download template tabel Excel standar"
             >
               <FileDown className="w-3.5 h-3.5 text-[#4D410E]" />
@@ -133,7 +160,7 @@ export default function DataTable({
           {/* Tombol Export Excel (TERSEDIA UNTUK PUBLIK & ADMIN) */}
           <button
             onClick={handleExportExcel}
-            className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-xl bg-[#F6EBC8] text-[#4D410E] border border-[#E3CF7E] text-xs font-bold hover:bg-[#EEDFA7] active:bg-[#E3CF7E] transition-all shadow-2xs"
+            className="inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-xl bg-[#F6EBC8] text-[#4D410E] border border-[#E3CF7E] text-xs font-bold hover:bg-[#EEDFA7] active:bg-[#E3CF7E] transition-all shadow-2xs"
             title="Download file Excel (.xlsx) dari filter saat ini"
           >
             <FileSpreadsheet className="w-3.5 h-3.5 text-[#4D410E]" />
@@ -143,7 +170,7 @@ export default function DataTable({
           {/* Tombol Export CSV (TERSEDIA UNTUK PUBLIK & ADMIN) */}
           <button
             onClick={handleExportCSV}
-            className="inline-flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-white text-[#181E24] border border-[#D3E4F1] text-xs font-semibold hover:bg-[#F5F9FD] hover:border-[#8EBEDE] transition-all shadow-2xs"
+            className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-white text-[#181E24] border border-[#D3E4F1] text-xs font-semibold hover:bg-[#F5F9FD] hover:border-[#8EBEDE] transition-all shadow-2xs"
             title="Download file CSV (.csv)"
           >
             <Download className="w-3.5 h-3.5 text-[#286084]" />
@@ -154,7 +181,7 @@ export default function DataTable({
           {effectiveIsAdmin && customCount > 0 && onResetCustomData && (
             <button
               onClick={onResetCustomData}
-              className="p-2 rounded-xl border border-[#D3E4F1] text-[#7E8B99] hover:text-rose-600 hover:bg-rose-50 transition-colors"
+              className="p-1.5 rounded-xl border border-[#D3E4F1] text-[#7E8B99] hover:text-rose-600 hover:bg-rose-50 transition-colors"
               title="Kembalikan data ke 82 indikator acuan bawaan"
             >
               <RotateCcw className="w-3.5 h-3.5" />
@@ -163,96 +190,118 @@ export default function DataTable({
         </div>
       </div>
 
-      {/* Table Element */}
-      <div className="overflow-x-auto">
-        <table className="w-full text-left text-xs text-[#55606D]">
+      {/* Table Element (Fluid, Wide Text, Anti-Scrollbar on Default Zoom) */}
+      <div className="w-full overflow-x-auto">
+        <table className="w-full text-left text-xs text-[#55606D] table-auto">
           <thead className="bg-[#E7F1F8] text-[#1D4661] font-bold uppercase tracking-wider text-[11px] border-b border-[#D3E4F1]">
             <tr>
-              <th scope="col" className="px-4 py-3.5 w-14 text-center">No</th>
-              <th scope="col" className="px-4 py-3.5 w-24">Kode</th>
-              <th scope="col" className="px-4 py-3.5">Nama Indikator</th>
-              <th scope="col" className="px-4 py-3.5">Agama & Bimas</th>
-              <th scope="col" className="px-4 py-3.5">Rumpun Kategori</th>
-              <th scope="col" className="px-4 py-3.5">Status</th>
-              <th scope="col" className="px-4 py-3.5">PIC</th>
-              <th scope="col" className="px-4 py-3.5">Sumber Data</th>
-              <th scope="col" className="px-4 py-3.5 text-center w-24">Aksi</th>
+              <th scope="col" className="px-3 py-2.5 w-10 sm:w-12 text-center">No</th>
+              <th scope="col" className="px-3 py-2.5 min-w-[240px]">Indikator & Metadata</th>
+              <th scope="col" className="px-3 py-2.5 whitespace-nowrap">Agama & Produsen</th>
+              <th scope="col" className="px-3 py-2.5 whitespace-nowrap">Kategori</th>
+              <th scope="col" className="px-3 py-2.5 whitespace-nowrap text-center">Status</th>
+              <th scope="col" className="px-3 py-2.5 hidden xl:table-cell">Sumber & PIC</th>
+              <th scope="col" className="px-3 py-2.5 text-center w-20">Aksi</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-[#D3E4F1] font-normal">
+          <tbody className="divide-y divide-[#D3E4F1]/60 font-normal">
             {currentItems.length > 0 ? (
-              currentItems.map((item, idx) => (
-                <tr 
-                  key={item.id} 
-                  className="hover:bg-[#F5F9FD] transition-colors group"
-                >
-                  <td className="px-4 py-3 text-center text-[#7E8B99] font-mono text-[11px]">
-                    {startIndex + idx + 1}
-                  </td>
-                  <td className="px-4 py-3 font-mono font-bold text-[#181E24]">
-                    <span className="px-2 py-0.5 rounded-md bg-[#E7F1F8] text-[#1D4661] border border-[#D3E4F1] text-[11px]">
-                      {item.id}
-                    </span>
-                  </td>
-                  <td className="px-4 py-3">
-                    <Link
-                      href={`/indikator/${item.id}`}
-                      className="font-bold text-[#181E24] group-hover:text-[#286084] transition-colors block text-xs sm:text-sm"
-                    >
-                      {item.nama}
-                    </Link>
-                    <span className="text-[11px] text-[#7E8B99] block mt-0.5 font-medium">
-                      Satuan: {item.satuan} • {item.cakupanWilayah}
-                    </span>
-                  </td>
-                  <td className="px-4 py-3 whitespace-nowrap">
-                    <span className={`inline-block px-2.5 py-0.5 rounded-full border text-[10px] font-semibold mb-1 ${getAgamaBadgeColor(item.agama)}`}>
-                      {item.agama}
-                    </span>
-                    <span className="text-[11px] text-[#55606D] block truncate max-w-[140px]" title={item.bimas}>
-                      {item.bimas.replace('Ditjen Bimas ', '')}
-                    </span>
-                  </td>
-                  <td className="px-4 py-3 whitespace-nowrap">
-                    <span className="text-xs text-[#181E24] font-semibold">
-                      {item.kategori}
-                    </span>
-                  </td>
-                  <td className="px-4 py-3 whitespace-nowrap">
-                    {item.terisi ? (
-                      <span className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-[11px] font-semibold">
-                        <CheckCircle2 className="w-3 h-3 text-emerald-600" />
-                        <span>Terisi</span>
+              currentItems.map((item, idx) => {
+                const isCompact = density === 'compact';
+                return (
+                  <tr 
+                    key={item.id} 
+                    className="hover:bg-[#F5F9FD]/80 transition-colors group"
+                  >
+                    {/* 1. No */}
+                    <td className={`px-3 ${isCompact ? 'py-2' : 'py-3'} text-center text-[#7E8B99] font-mono text-[11px] align-top sm:align-middle`}>
+                      {startIndex + idx + 1}
+                    </td>
+
+                    {/* 2. Indikator & Metadata (Wide Text, Space-Efficient) */}
+                    <td className={`px-3 ${isCompact ? 'py-2' : 'py-3'} align-top sm:align-middle`}>
+                      <div className="flex items-baseline space-x-2">
+                        <span className="px-1.5 py-0.5 rounded font-mono text-[10px] font-bold bg-[#E7F1F8] text-[#1D4661] border border-[#D3E4F1] shrink-0">
+                          {item.id}
+                        </span>
+                        <Link
+                          href={`/indikator/${item.id}`}
+                          className="font-bold text-[#181E24] group-hover:text-[#286084] transition-colors text-xs sm:text-[13px] leading-snug"
+                          title={item.nama}
+                        >
+                          {item.nama}
+                        </Link>
+                      </div>
+
+                      {/* Subtitle Horizontal Fleksibel */}
+                      <div className="text-[11px] text-[#7E8B99] flex flex-wrap items-center gap-x-2 gap-y-0.5 mt-0.5 font-normal leading-tight">
+                        <span>Satuan: <strong className="text-[#55606D] font-medium">{item.satuan}</strong></span>
+                        <span>•</span>
+                        <span>{item.cakupanWilayah}</span>
+                        <span className="xl:hidden">• Sumber: <span className="text-[#55606D]">{item.sumberData}</span> (PIC: {item.pic})</span>
+                      </div>
+                    </td>
+
+                    {/* 3. Agama & Produsen (Horizontal Compact) */}
+                    <td className={`px-3 ${isCompact ? 'py-2' : 'py-3'} whitespace-nowrap align-top sm:align-middle`}>
+                      <div className="flex items-center space-x-1.5">
+                        <span className={`px-2 py-0.5 rounded-full border text-[10px] font-semibold ${getAgamaBadgeColor(item.agama)}`}>
+                          {item.agama}
+                        </span>
+                        <span className="text-[11px] text-[#55606D] font-medium hidden sm:inline truncate max-w-[120px]" title={item.bimas}>
+                          {item.bimas.replace('Ditjen Bimas ', '')}
+                        </span>
+                      </div>
+                    </td>
+
+                    {/* 4. Rumpun Kategori */}
+                    <td className={`px-3 ${isCompact ? 'py-2' : 'py-3'} whitespace-nowrap align-top sm:align-middle`}>
+                      <span className="text-xs text-[#181E24] font-medium">
+                        {item.kategori}
                       </span>
-                    ) : (
-                      <span className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200 text-[11px] font-semibold">
-                        <Clock className="w-3 h-3 text-amber-600" />
-                        <span>Proses</span>
+                    </td>
+
+                    {/* 5. Status Data */}
+                    <td className={`px-3 ${isCompact ? 'py-2' : 'py-3'} whitespace-nowrap text-center align-top sm:align-middle`}>
+                      {item.terisi ? (
+                        <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 text-[10px] font-bold">
+                          <CheckCircle2 className="w-3 h-3 text-emerald-600" />
+                          <span>Terisi</span>
+                        </span>
+                      ) : (
+                        <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200 text-[10px] font-bold">
+                          <Clock className="w-3 h-3 text-amber-600" />
+                          <span>Proses</span>
+                        </span>
+                      )}
+                    </td>
+
+                    {/* 6. Sumber & PIC (Tampil di Layar Lebih Lebar / Zoom Out) */}
+                    <td className={`px-3 ${isCompact ? 'py-2' : 'py-3'} hidden xl:table-cell align-top sm:align-middle`}>
+                      <span className="text-[11px] text-[#55606D] truncate block max-w-[160px]" title={item.sumberData}>
+                        {item.sumberData}
                       </span>
-                    )}
-                  </td>
-                  <td className="px-4 py-3 whitespace-nowrap font-medium text-[#181E24]">
-                    {item.pic}
-                  </td>
-                  <td className="px-4 py-3">
-                    <span className="text-[11px] text-[#55606D] truncate block max-w-[180px]" title={item.sumberData}>
-                      {item.sumberData}
-                    </span>
-                  </td>
-                  <td className="px-4 py-3 text-center whitespace-nowrap">
-                    <Link
-                      href={`/indikator/${item.id}`}
-                      className="inline-flex items-center space-x-1 px-3 py-1.5 rounded-lg bg-[#E7F1F8] text-[#1D4661] hover:bg-[#286084] hover:text-white transition-all font-bold text-xs shadow-2xs border border-[#D3E4F1]"
-                    >
-                      <BarChart2 className="w-3.5 h-3.5" />
-                      <span>Detail</span>
-                    </Link>
-                  </td>
-                </tr>
-              ))
+                      <span className="text-[10px] text-[#7E8B99] block">
+                        PIC: {item.pic}
+                      </span>
+                    </td>
+
+                    {/* 7. Tombol Aksi */}
+                    <td className={`px-3 ${isCompact ? 'py-2' : 'py-3'} text-center whitespace-nowrap w-20 align-top sm:align-middle`}>
+                      <Link
+                        href={`/indikator/${item.id}`}
+                        className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-lg bg-[#E7F1F8] text-[#1D4661] hover:bg-[#286084] hover:text-white transition-all font-bold text-xs shadow-2xs border border-[#D3E4F1]"
+                      >
+                        <BarChart2 className="w-3 h-3" />
+                        <span>Detail</span>
+                      </Link>
+                    </td>
+                  </tr>
+                );
+              })
             ) : (
               <tr>
-                <td colSpan={9} className="py-12 text-center text-[#7E8B99]">
+                <td colSpan={7} className="py-12 text-center text-[#7E8B99]">
                   <FileText className="w-8 h-8 mx-auto text-[#B5D3E8] mb-2" />
                   <p className="font-semibold text-[#181E24]">Tidak ada indikator yang cocok</p>
                   <p className="text-xs text-[#7E8B99] mt-1">
