@@ -11,7 +11,6 @@ import {
   ShieldCheck, 
   Download, 
   FileSpreadsheet, 
-  Sparkles,
   Compass,
   TrendingUp,
   FileText
@@ -51,12 +50,6 @@ export default function HomePage() {
         <div className="absolute inset-0 opacity-45 bg-[radial-gradient(#B5D3E8_1.2px,transparent_1.2px)] [background-size:24px_24px] pointer-events-none" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          {/* Highlight Badge: Lemon Icing (#F6EBC8) */}
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#F6EBC8] border border-[#E3CF7E] text-[#4D410E] text-xs font-bold shadow-2xs mb-5">
-            <Sparkles className="w-3.5 h-3.5 text-[#A99030]" />
-            <span>Data Agama dan Keagamaan • Edisi 2025</span>
-          </div>
-
           {/* Dual-tone Headline */}
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-[#181E24] leading-none mb-6">
             <span>Kementerian Agama</span>
