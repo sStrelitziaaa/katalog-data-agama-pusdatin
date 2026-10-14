@@ -40,6 +40,9 @@ export default function Footer() {
             <Link href="/eksplorasi?status=Terisi" className="hover:text-[#286084] transition-colors">
               Data Terverifikasi
             </Link>
+            <Link href="/admin" className="hover:text-[#286084] transition-colors">
+              Portal Admin (CMS)
+            </Link>
             <a
               href="https://kemenag.go.id"
               target="_blank"

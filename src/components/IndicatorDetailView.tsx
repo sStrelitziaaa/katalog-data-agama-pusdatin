@@ -25,6 +25,8 @@ import {
 import { IndicatorItem } from '@/types/indicator';
 import { getStoredIndicators, saveStoredIndicators } from '@/lib/storage-utils';
 import { downloadIndicatorTemplate } from '@/lib/excel-template-utils';
+import { exportSingleIndicatorToExcel } from '@/lib/export-utils';
+import { useAdminAuth } from '@/lib/admin-auth';
 import TrendChart from '@/components/TrendChart';
 import UploadExcelModal from '@/components/UploadExcelModal';
 
@@ -39,6 +41,7 @@ export default function IndicatorDetailView({
   targetId,
   allIndicators = []
 }: IndicatorDetailViewProps) {
+  const { isAdmin } = useAdminAuth();
   const [indicator, setIndicator] = useState<IndicatorItem | undefined>(initialIndicator);
   const [loading, setLoading] = useState(!initialIndicator);
   const [isCMSModalOpen, setIsCMSModalOpen] = useState(false);
@@ -202,26 +205,44 @@ export default function IndicatorDetailView({
           </div>
         </div>
 
-        {/* Action Button: Download Template Khusus (Lemon Icing) & CMS Update (Deep Ice Melt) */}
+        {/* Action Button: Unduh Data (.xlsx) untuk Publik & CMS Khusus Admin */}
         <div className="flex flex-wrap items-center justify-between gap-3 mt-5 pt-5 border-t border-[#D3E4F1]">
           <div className="flex flex-wrap items-center gap-2.5">
+            {/* Tombol Unduh Data Indikator ke Excel (TERSEDIA UNTUK PUBLIK & ADMIN) */}
             <button
               type="button"
-              onClick={() => downloadIndicatorTemplate(indicator)}
-              className="inline-flex items-center space-x-1.5 px-3.5 py-2.5 rounded-xl bg-[#F6EBC8] text-[#4D410E] border border-[#E3CF7E] text-xs font-bold hover:bg-[#EEDFA7] active:bg-[#E3CF7E] transition-all shadow-2xs"
+              onClick={() => exportSingleIndicatorToExcel(indicator)}
+              className="inline-flex items-center space-x-1.5 px-4 py-2.5 rounded-xl bg-[#F6EBC8] text-[#4D410E] border border-[#E3CF7E] text-xs font-bold hover:bg-[#EEDFA7] active:bg-[#E3CF7E] transition-all shadow-2xs"
+              title="Download ringkasan dan data deret waktu indikator ini ke format Excel (.xlsx)"
             >
-              <Download className="w-3.5 h-3.5 text-[#4D410E]" />
-              <span>Download Template Excel Indikator Ini</span>
+              <FileSpreadsheet className="w-3.5 h-3.5 text-[#4D410E]" />
+              <span>Unduh Data Indikator (.xlsx)</span>
             </button>
 
-            <button
-              type="button"
-              onClick={() => setIsCMSModalOpen(true)}
-              className="inline-flex items-center space-x-1.5 px-4 py-2.5 rounded-xl bg-[#286084] text-white text-xs font-bold hover:bg-[#1D4661] active:bg-[#132E40] transition-all shadow-xs"
-            >
-              <Edit3 className="w-3.5 h-3.5" />
-              <span>Kelola & Update Data (CMS)</span>
-            </button>
+            {/* OPSI KHUSUS ADMINISTRATOR PUSDATIN */}
+            {isAdmin && (
+              <>
+                <button
+                  type="button"
+                  onClick={() => downloadIndicatorTemplate(indicator)}
+                  className="inline-flex items-center space-x-1.5 px-3.5 py-2.5 rounded-xl bg-white text-[#181E24] border border-[#D3E4F1] text-xs font-bold hover:bg-[#F5F9FD] active:bg-[#D3E4F1] transition-all shadow-2xs"
+                  title="Unduh template Excel resmi untuk pengisian nilai indikator ini"
+                >
+                  <Download className="w-3.5 h-3.5 text-[#286084]" />
+                  <span>Template Excel</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setIsCMSModalOpen(true)}
+                  className="inline-flex items-center space-x-1.5 px-4 py-2.5 rounded-xl bg-[#286084] text-white text-xs font-bold hover:bg-[#1D4661] active:bg-[#132E40] transition-all shadow-xs"
+                  title="Masuk CMS untuk memperbarui nilai indikator ini"
+                >
+                  <Edit3 className="w-3.5 h-3.5" />
+                  <span>Kelola & Update Data (CMS)</span>
+                </button>
+              </>
+            )}
           </div>
 
           <span className="text-[11px] text-[#7E8B99] font-medium">

@@ -9,11 +9,13 @@ import {
   SlidersHorizontal,
   ChevronRight,
   Home,
-  CheckCircle2
+  CheckCircle2,
+  ShieldCheck
 } from 'lucide-react';
 import Link from 'next/link';
 import { getAllIndicators, getAllAgama } from '@/lib/data-loader';
 import { mergeWithStoredIndicators, saveStoredIndicators, resetStoredIndicators } from '@/lib/storage-utils';
+import { useAdminAuth } from '@/lib/admin-auth';
 import FilterSidebar from '@/components/FilterSidebar';
 import DataTable from '@/components/DataTable';
 import UploadExcelModal from '@/components/UploadExcelModal';
@@ -22,6 +24,7 @@ import { IndicatorItem } from '@/types/indicator';
 function EksplorasiContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
+  const { isAdmin } = useAdminAuth();
 
   const baseData = useMemo(() => getAllIndicators(), []);
   const [allData, setAllData] = useState<IndicatorItem[]>(baseData);
@@ -195,6 +198,24 @@ function EksplorasiContent() {
         <span className="text-[#132E40] font-bold">Eksplorasi Dataset</span>
       </nav>
 
+      {/* Administrator Status Bar (Hanya tampil jika admin login) */}
+      {isAdmin && (
+        <div className="p-3 sm:p-4 rounded-2xl bg-[#E7F1F8] border border-[#D3E4F1] text-xs font-semibold text-[#132E40] flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-2xs">
+          <div className="flex items-center space-x-2">
+            <ShieldCheck className="w-4 h-4 text-[#286084] shrink-0" />
+            <span>Mode Administrator Aktif (Pusdatin) — Anda memiliki akses CMS untuk mengunggah dan memutakhirkan dataset Excel.</span>
+          </div>
+          <div className="flex items-center space-x-2 shrink-0">
+            <Link
+              href="/admin"
+              className="px-3 py-1.5 rounded-xl bg-[#286084] text-white text-xs font-bold hover:bg-[#1D4661] transition-colors"
+            >
+              Dashboard Admin
+            </Link>
+          </div>
+        </div>
+      )}
+
       {/* Header & Search Bar (Clean Singapore Portal Style) */}
       <div className="bg-white rounded-3xl border border-[#D3E4F1] p-6 sm:p-8 shadow-xs">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -281,20 +302,23 @@ function EksplorasiContent() {
           <DataTable 
             data={filteredData} 
             totalRaw={allData.length} 
-            onOpenUploadModal={() => setIsUploadModalOpen(true)}
+            onOpenUploadModal={isAdmin ? () => setIsUploadModalOpen(true) : undefined}
             customCount={customCount}
             onResetCustomData={handleResetCustomData}
+            isAdmin={isAdmin}
           />
         </div>
       </div>
 
-      {/* Modal Upload Excel */}
-      <UploadExcelModal
-        isOpen={isUploadModalOpen}
-        onClose={() => setIsUploadModalOpen(false)}
-        onImportSuccess={handleImportSuccess}
-        existingIndicators={allData}
-      />
+      {/* Modal Upload Excel (Hanya aktif untuk Administrator) */}
+      {isAdmin && (
+        <UploadExcelModal
+          isOpen={isUploadModalOpen}
+          onClose={() => setIsUploadModalOpen(false)}
+          onImportSuccess={handleImportSuccess}
+          existingIndicators={allData}
+        />
+      )}
     </div>
   );
 }

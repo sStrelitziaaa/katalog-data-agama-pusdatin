@@ -298,7 +298,7 @@ export default function HomePage() {
       </section>
 
       {/* ============================================================ */}
-      {/* 5. CMS & EXCEL INTEGRATION BANNER (Deep Ice Melt & Lemon Icing) */}
+      {/* 5. OPEN DATA EXPORT & PORTAL ADMIN BANNER (Deep Ice Melt & Lemon Icing) */}
       {/* ============================================================ */}
       <section className="py-16 sm:py-20 bg-[#F0EEE9]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -311,13 +311,13 @@ export default function HomePage() {
               <div className="space-y-4 text-center lg:text-left max-w-2xl">
                 <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-[#F6EBC8] border border-[#E3CF7E] text-xs font-bold text-[#4D410E]">
                   <FileSpreadsheet className="w-3.5 h-3.5 text-[#7E6B1D]" />
-                  <span>Sistem CMS & Pembaruan Data Excel</span>
+                  <span>Akses Data Terbuka & Ekspor Resmi</span>
                 </div>
                 <h3 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
-                  Template Excel Khusus Per Indikator & Impor Cepat
+                  Eksplorasi Lengkap & Ekspor Dataset ke Excel atau CSV
                 </h3>
                 <p className="text-sm sm:text-base text-white/85 leading-relaxed">
-                  Produsen data dapat mengunduh format Excel resmi yang disesuaikan untuk masing-masing nama indikator, melakukan pembaruan nilai 2020–2024, dan menyinkronkan kembali ke portal data secara langsung.
+                  Masyarakat, akademisi, dan instansi dapat melihat seluruh indikator keagamaan secara transparan, melihat visualisasi tren 5 tahun, dan mengunduh data dalam format Microsoft Excel (.xlsx) atau CSV secara bebas.
                 </p>
               </div>
 
@@ -327,13 +327,14 @@ export default function HomePage() {
                   className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-[#F6EBC8] hover:bg-[#EEDFA7] active:bg-[#E3CF7E] text-[#4D410E] text-sm font-extrabold shadow-lg shadow-[#F6EBC8]/25 transition-all text-center flex items-center justify-center space-x-2"
                 >
                   <Download className="w-4 h-4 text-[#4D410E]" />
-                  <span>Kelola & Unduh Template</span>
+                  <span>Buka Eksplorasi & Unduh Data</span>
                 </Link>
                 <Link
-                  href="/eksplorasi"
-                  className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white text-sm font-bold transition-all text-center"
+                  href="/admin"
+                  className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white text-sm font-bold transition-all text-center flex items-center justify-center space-x-2"
                 >
-                  Buka Eksplorasi Data
+                  <ShieldCheck className="w-4 h-4 text-[#B5D3E8]" />
+                  <span>Portal Admin (CMS)</span>
                 </Link>
               </div>
             </div>

@@ -18,6 +18,7 @@ import {
 import { IndicatorItem } from '@/types/indicator';
 import { exportToExcel, exportToCSV } from '@/lib/export-utils';
 import { downloadExcelTemplate } from '@/lib/excel-template-utils';
+import { useAdminAuth } from '@/lib/admin-auth';
 
 interface DataTableProps {
   data: IndicatorItem[];
@@ -25,6 +26,7 @@ interface DataTableProps {
   onOpenUploadModal?: () => void;
   customCount?: number;
   onResetCustomData?: () => void;
+  isAdmin?: boolean;
 }
 
 export default function DataTable({ 
@@ -32,8 +34,12 @@ export default function DataTable({
   totalRaw, 
   onOpenUploadModal,
   customCount = 0,
-  onResetCustomData
+  onResetCustomData,
+  isAdmin: propIsAdmin
 }: DataTableProps) {
+  const { isAdmin: authIsAdmin } = useAdminAuth();
+  const effectiveIsAdmin = propIsAdmin !== undefined ? propIsAdmin : authIsAdmin;
+
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(15);
 
@@ -98,52 +104,54 @@ export default function DataTable({
           </p>
         </div>
 
-        {/* Action Buttons: Upload, Template, Export */}
+        {/* Action Buttons: Export (Public) & CMS Upload (Admin Only) */}
         <div className="flex flex-wrap items-center gap-2 shrink-0">
-          {/* Tombol Upload Excel / CMS */}
-          {onOpenUploadModal && (
+          {/* Tombol Upload Excel / CMS (HANYA UNTUK ADMIN) */}
+          {effectiveIsAdmin && onOpenUploadModal && (
             <button
               onClick={onOpenUploadModal}
               className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-xl bg-[#286084] text-white text-xs font-bold hover:bg-[#1D4661] active:bg-[#132E40] transition-all shadow-xs"
-              title="Kelola dan perbarui data via CMS Excel"
+              title="Kelola dan perbarui data via CMS Excel (Mode Admin)"
             >
               <UploadCloud className="w-3.5 h-3.5" />
-              <span>Kelola / CMS</span>
+              <span>Unggah Excel (CMS)</span>
             </button>
           )}
 
-          {/* Tombol Download Template (Highlight Lemon Icing) */}
-          <button
-            onClick={handleDownloadTemplate}
-            className="inline-flex items-center space-x-1.5 px-3.5 py-2 rounded-xl bg-[#F6EBC8] text-[#4D410E] border border-[#E3CF7E] text-xs font-bold hover:bg-[#EEDFA7] active:bg-[#E3CF7E] transition-all shadow-2xs"
-            title="Download template tabel Excel standar"
-          >
-            <FileDown className="w-3.5 h-3.5 text-[#4D410E]" />
-            <span className="hidden md:inline">Template Excel</span>
-          </button>
+          {/* Tombol Download Template (Khusus Admin / Tim Pengelola) */}
+          {effectiveIsAdmin && (
+            <button
+              onClick={handleDownloadTemplate}
+              className="inline-flex items-center space-x-1.5 px-3.5 py-2 rounded-xl bg-[#F6EBC8] text-[#4D410E] border border-[#E3CF7E] text-xs font-bold hover:bg-[#EEDFA7] active:bg-[#E3CF7E] transition-all shadow-2xs"
+              title="Download template tabel Excel standar"
+            >
+              <FileDown className="w-3.5 h-3.5 text-[#4D410E]" />
+              <span className="hidden md:inline">Template Excel</span>
+            </button>
+          )}
 
-          {/* Tombol Export Excel */}
+          {/* Tombol Export Excel (TERSEDIA UNTUK PUBLIK & ADMIN) */}
           <button
             onClick={handleExportExcel}
-            className="inline-flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-white text-[#181E24] border border-[#D3E4F1] text-xs font-semibold hover:bg-[#F5F9FD] hover:border-[#8EBEDE] transition-all shadow-2xs"
+            className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-xl bg-[#F6EBC8] text-[#4D410E] border border-[#E3CF7E] text-xs font-bold hover:bg-[#EEDFA7] active:bg-[#E3CF7E] transition-all shadow-2xs"
             title="Download file Excel (.xlsx) dari filter saat ini"
           >
-            <FileSpreadsheet className="w-3.5 h-3.5 text-[#286084]" />
-            <span>Export Excel</span>
+            <FileSpreadsheet className="w-3.5 h-3.5 text-[#4D410E]" />
+            <span>Unduh Excel (.xlsx)</span>
           </button>
 
-          {/* Tombol Export CSV */}
+          {/* Tombol Export CSV (TERSEDIA UNTUK PUBLIK & ADMIN) */}
           <button
             onClick={handleExportCSV}
-            className="inline-flex items-center space-x-1.5 px-2.5 py-2 rounded-xl bg-white text-[#55606D] border border-[#D3E4F1] text-xs font-semibold hover:bg-[#F5F9FD] transition-all shadow-2xs"
+            className="inline-flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-white text-[#181E24] border border-[#D3E4F1] text-xs font-semibold hover:bg-[#F5F9FD] hover:border-[#8EBEDE] transition-all shadow-2xs"
             title="Download file CSV (.csv)"
           >
-            <Download className="w-3.5 h-3.5 text-[#7E8B99]" />
-            <span>CSV</span>
+            <Download className="w-3.5 h-3.5 text-[#286084]" />
+            <span>Unduh CSV</span>
           </button>
 
-          {/* Reset custom data if active */}
-          {customCount > 0 && onResetCustomData && (
+          {/* Reset custom data if active (HANYA UNTUK ADMIN) */}
+          {effectiveIsAdmin && customCount > 0 && onResetCustomData && (
             <button
               onClick={onResetCustomData}
               className="p-2 rounded-xl border border-[#D3E4F1] text-[#7E8B99] hover:text-rose-600 hover:bg-rose-50 transition-colors"

@@ -4,10 +4,12 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Database, Layers, Search } from 'lucide-react';
+import { Database, Layers, Search, Lock, ShieldCheck } from 'lucide-react';
+import { useAdminAuth } from '@/lib/admin-auth';
 
 export default function Navbar() {
   const pathname = usePathname();
+  const { isAdmin } = useAdminAuth();
 
   const navItems = [
     { label: 'Katalog Data', href: '/', icon: Layers },
@@ -64,10 +66,35 @@ export default function Navbar() {
             {/* Highlight: Lemon Icing Button */}
             <Link
               href="/eksplorasi"
-              className="ml-2 inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-[#F6EBC8] text-[#4D410E] hover:bg-[#EEDFA7] active:bg-[#E3CF7E] border border-[#E3CF7E] text-xs sm:text-sm font-bold shadow-2xs hover:shadow-md transition-all active:scale-95"
+              className="ml-1 sm:ml-2 inline-flex items-center space-x-2 px-3.5 sm:px-4 py-2 rounded-full bg-[#F6EBC8] text-[#4D410E] hover:bg-[#EEDFA7] active:bg-[#E3CF7E] border border-[#E3CF7E] text-xs sm:text-sm font-bold shadow-2xs hover:shadow-md transition-all active:scale-95"
             >
-              <Search className="w-4 h-4 text-[#4D410E]" />
+              <Search className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-[#4D410E]" />
               <span className="hidden sm:inline">Cari Dataset</span>
+            </Link>
+
+            {/* Portal Admin / CMS */}
+            <Link
+              href="/admin"
+              className={`ml-1 flex items-center space-x-1 px-2.5 py-2 rounded-xl text-xs font-semibold transition-all ${
+                pathname === '/admin'
+                  ? 'bg-[#E7F1F8] text-[#1D4661] border border-[#D3E4F1]'
+                  : isAdmin
+                  ? 'text-emerald-700 bg-emerald-50 border border-emerald-200'
+                  : 'text-[#7E8B99] hover:text-[#181E24] hover:bg-white/80'
+              }`}
+              title={isAdmin ? "Dashboard Administrator Aktif" : "Portal Administrator (CMS)"}
+            >
+              {isAdmin ? (
+                <>
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                  <span className="hidden md:inline font-bold">Admin</span>
+                </>
+              ) : (
+                <>
+                  <Lock className="w-3.5 h-3.5 text-[#7E8B99]" />
+                  <span className="hidden md:inline">Admin</span>
+                </>
+              )}
             </Link>
           </nav>
         </div>
