@@ -56,14 +56,14 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-[#D3E4F1] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#7E8B99]">
-          <p>
+          <p className="text-center sm:text-left">
             © {new Date().getFullYear()} Pusat Data dan Teknologi Informasi (Pusdatin) Kementerian Agama RI.
           </p>
-          <div className="flex items-center space-x-4 text-[11px]">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-3 gap-y-1 text-[11px]">
             <span>Lisensi Data Terbuka</span>
-            <span>•</span>
+            <span className="hidden sm:inline">•</span>
             <span>Standar Satu Data Indonesia (SDI)</span>
-            <span>•</span>
+            <span className="hidden sm:inline">•</span>
             <span>Versi Portal 2.0</span>
           </div>
         </div>

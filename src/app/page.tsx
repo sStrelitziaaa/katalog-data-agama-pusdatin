@@ -51,31 +51,30 @@ export default function HomePage() {
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Dual-tone Headline */}
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-[#181E24] leading-none mb-6">
-            <span>Kementerian Agama</span>
-            <br className="hidden sm:inline" />
-            <span className="text-[#286084] font-extrabold sm:ml-3">open data portal</span>
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-[#181E24] leading-tight mb-5 sm:mb-6">
+            <span className="block">Kementerian Agama</span>
+            <span className="text-[#286084] font-extrabold block sm:inline">open data portal</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="max-w-2xl mx-auto text-base sm:text-lg text-[#55606D] font-normal leading-relaxed mb-8">
+          <p className="max-w-2xl mx-auto text-sm sm:text-lg text-[#55606D] font-normal leading-relaxed mb-6 sm:mb-8 px-2 sm:px-0">
             Eksplorasi dataset nasional dan indikator statistik keagamaan terpadu. Terbuka, terverifikasi, dan siap pakai untuk inovasi publik.
           </p>
 
           {/* Giant Elongated Pill Search Bar with Lemon Icing Button */}
-          <div className="max-w-xl mx-auto mb-10">
+          <div className="max-w-xl mx-auto mb-8 sm:mb-10 px-1 sm:px-0">
             <form action="/eksplorasi" method="GET" className="relative group">
-              <div className="flex items-center w-full h-13 sm:h-14 pl-6 pr-2 rounded-full bg-white border-2 border-[#D3E4F1] hover:border-[#8EBEDE] focus-within:border-[#5F9ECB] focus-within:ring-4 focus-within:ring-[#D3E4F1]/40 shadow-md transition-all">
+              <div className="flex items-center w-full h-12 sm:h-14 pl-4 sm:pl-6 pr-1.5 sm:pr-2 rounded-full bg-white border-2 border-[#D3E4F1] hover:border-[#8EBEDE] focus-within:border-[#5F9ECB] focus-within:ring-4 focus-within:ring-[#D3E4F1]/40 shadow-md transition-all">
                 <input
                   type="text"
                   name="q"
-                  placeholder='Cari kata kunci: "Masjid", "Nikah", "Penyuluh", "Gereja"...'
-                  className="w-full bg-transparent text-sm sm:text-base text-[#181E24] placeholder-[#7E8B99] outline-none font-medium pr-3"
+                  placeholder='Cari kata kunci: "Masjid", "Nikah", "Penyuluh"...'
+                  className="w-full bg-transparent text-xs sm:text-base text-[#181E24] placeholder-[#7E8B99] outline-none font-medium pr-2 sm:pr-3"
                 />
                 <button
                   type="submit"
                   aria-label="Cari Data"
-                  className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#F6EBC8] hover:bg-[#EEDFA7] active:bg-[#E3CF7E] border border-[#E3CF7E] text-[#4D410E] flex items-center justify-center shrink-0 shadow-sm transition-all hover:scale-105"
+                  className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#F6EBC8] hover:bg-[#EEDFA7] active:bg-[#E3CF7E] border border-[#E3CF7E] text-[#4D410E] flex items-center justify-center shrink-0 shadow-sm transition-all hover:scale-105"
                 >
                   <Search className="w-4 h-4 sm:w-5 sm:h-5 text-[#4D410E]" />
                 </button>
@@ -84,30 +83,30 @@ export default function HomePage() {
           </div>
 
           {/* Signature 2-Row Floating Category Pills */}
-          <div className="space-y-3 pt-2">
+          <div className="space-y-2.5 sm:space-y-3 pt-1 max-w-full">
             {/* Row 1 */}
-            <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
+            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
               {floatingPillsRow1.map(pill => (
                 <Link
                   key={pill.label}
                   href={pill.href}
-                  className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-white border border-[#D3E4F1] text-xs sm:text-sm font-semibold text-[#181E24] shadow-2xs hover:shadow-md hover:border-[#8EBEDE] hover:bg-[#F5F9FD] hover:text-[#286084] hover:-translate-y-0.5 transition-all active:scale-95"
+                  className="inline-flex items-center space-x-1.5 sm:space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white border border-[#D3E4F1] text-xs sm:text-sm font-semibold text-[#181E24] shadow-2xs hover:shadow-md hover:border-[#8EBEDE] hover:bg-[#F5F9FD] hover:text-[#286084] hover:-translate-y-0.5 transition-all active:scale-95"
                 >
-                  <span className="text-sm">{pill.icon}</span>
+                  <span className="text-xs sm:text-sm">{pill.icon}</span>
                   <span>{pill.label}</span>
                 </Link>
               ))}
             </div>
 
             {/* Row 2 */}
-            <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
+            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
               {floatingPillsRow2.map(pill => (
                 <Link
                   key={pill.label}
                   href={pill.href}
-                  className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-white border border-[#D3E4F1] text-xs sm:text-sm font-semibold text-[#181E24] shadow-2xs hover:shadow-md hover:border-[#8EBEDE] hover:bg-[#F5F9FD] hover:text-[#286084] hover:-translate-y-0.5 transition-all active:scale-95"
+                  className="inline-flex items-center space-x-1.5 sm:space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white border border-[#D3E4F1] text-xs sm:text-sm font-semibold text-[#181E24] shadow-2xs hover:shadow-md hover:border-[#8EBEDE] hover:bg-[#F5F9FD] hover:text-[#286084] hover:-translate-y-0.5 transition-all active:scale-95"
                 >
-                  <span className="text-sm">{pill.icon}</span>
+                  <span className="text-xs sm:text-sm">{pill.icon}</span>
                   <span>{pill.label}</span>
                 </Link>
               ))}

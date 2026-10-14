@@ -26,7 +26,7 @@ export default function RootLayout({
     <html lang="id" className="scroll-smooth">
       <body className={`${inter.className} flex flex-col min-h-screen antialiased bg-[#F0EEE9] text-[#181E24]`}>
         <Navbar />
-        <main className="flex-grow">
+        <main className="flex-grow w-full max-w-full overflow-x-hidden">
           {children}
         </main>
         <Footer />
