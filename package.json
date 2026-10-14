@@ -8,12 +8,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "extract": "node scripts/extract-data.mjs"
+    "extract": "node scripts/extract-data.mjs",
+    "db:seed": "node scripts/seed-database.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",
     "lucide-react": "^1.16.0",
     "next": "^15.1.0",
+    "pg": "^8.23.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "recharts": "^2.15.0",
@@ -22,6 +24,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.10.1",
+    "@types/pg": "^8.23.1",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.1",
     "autoprefixer": "^10.4.20",

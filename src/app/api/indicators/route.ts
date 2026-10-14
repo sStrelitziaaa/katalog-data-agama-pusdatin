@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
-import { getAllIndicators, getCatalogStats, getBimasSummaries } from '@/lib/data-loader';
+import { getIndicatorsWithFallback } from '@/lib/db/indicators';
+import { getCatalogStats } from '@/lib/data-loader';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -8,7 +9,7 @@ export async function GET(request: Request) {
   const kategori = searchParams.get('kategori');
   const terisi = searchParams.get('terisi');
 
-  let indicators = getAllIndicators();
+  let indicators = await getIndicatorsWithFallback();
 
   if (q) {
     indicators = indicators.filter(
@@ -33,10 +34,17 @@ export async function GET(request: Request) {
     indicators = indicators.filter(item => item.terisi === isTerisi);
   }
 
-  return NextResponse.json({
-    status: 'success',
-    total: indicators.length,
-    stats: getCatalogStats(),
-    data: indicators,
-  });
+  return NextResponse.json(
+    {
+      status: 'success',
+      total: indicators.length,
+      stats: getCatalogStats(),
+      data: indicators,
+    },
+    {
+      headers: {
+        'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
+      },
+    }
+  );
 }

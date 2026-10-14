@@ -222,6 +222,22 @@ export default function UploadExcelModal({
     if (previewData.length > 0) {
       onImportSuccess(previewData, activeTab === 'single' ? 'append' : importMode);
       setSuccessMessage(`Berhasil menerapkan ${previewData.length} data ke website!`);
+
+      // Kirim berkas ke backend API jika database terhubung
+      if (file) {
+        const formData = new FormData();
+        formData.append('file', file);
+        fetch('/api/admin/upload-excel', {
+          method: 'POST',
+          headers: {
+            'x-admin-auth': 'true'
+          },
+          body: formData,
+        }).catch(err => {
+          console.warn('[Database Sync]: Berjalan dalam mode lokal.', err);
+        });
+      }
+
       setTimeout(() => {
         setSuccessMessage(null);
         resetState();
