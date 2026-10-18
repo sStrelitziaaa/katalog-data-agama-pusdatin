@@ -60,9 +60,24 @@ export async function getIndicatorsWithFallback(): Promise<IndicatorItem[]> {
       }
 
       // 3. Gabungkan menjadi objek IndicatorItem
-      const indicators: IndicatorItem[] = indicatorsResult.rows.map(row => ({
-        ...row,
+      const indicators: IndicatorItem[] = indicatorsResult.rows.map((row: any): IndicatorItem => ({
+        id: String(row.id),
+        no: Number(row.no || 0),
+        nama: String(row.nama || ''),
+        kategori: String(row.kategori || ''),
+        agama: row.agama,
+        bimas: row.bimas,
+        satuan: String(row.satuan || ''),
+        cakupanWilayah: row.cakupanWilayah || 'Nasional',
+        frekuensiUpdate: row.frekuensiUpdate || 'Tahunan',
+        sumberData: String(row.sumberData || ''),
+        deskripsi: String(row.deskripsi || ''),
+        pic: String(row.pic || ''),
+        terisi: Boolean(row.terisi),
+        statusText: row.statusText || (row.terisi ? 'Terisi / Terintegrasi' : 'Dalam Proses'),
+        terakhirDiperbarui: String(row.terakhirDiperbarui || '2025-01-01'),
         trenData: yearlyMap.get(row.id) || [],
+        tags: [row.kategori, row.agama, row.bimas].filter(Boolean),
       }));
 
       return indicators;

@@ -1,12 +1,15 @@
-import { Pool, PoolConfig } from 'pg';
+import pg from 'pg';
+import type { Pool as PgPool, PoolConfig } from 'pg';
 
-let pool: Pool | null = null;
+const { Pool } = pg;
+
+let pool: PgPool | null = null;
 
 /**
  * Mendapatkan instance connection pool PostgreSQL secara singleton.
  * Dilengkapi pembatas koneksi (max 20) agar database tidak kewalahan saat traffic tinggi.
  */
-export function getDbPool(): Pool | null {
+export function getDbPool(): PgPool | null {
   const connectionString = process.env.DATABASE_URL;
 
   // Jika URL database belum disetel, kembalikan null (sistem akan fallback otomatis ke data JSON)

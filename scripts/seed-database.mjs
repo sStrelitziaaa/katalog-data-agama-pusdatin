@@ -35,9 +35,9 @@ function loadEnv() {
 
 loadEnv();
 
-const dbUrl = process.env.DATABASE_URL;
+const dbUrl = process.env.DATABASE_URL_UNPOOLED || process.env.DATABASE_URL;
 if (!dbUrl) {
-  console.error('\n❌ ERROR: DATABASE_URL tidak ditemukan.');
+  console.error('\n❌ ERROR: DATABASE_URL / DATABASE_URL_UNPOOLED tidak ditemukan.');
   console.error('Silakan isi variabel DATABASE_URL di file .env atau .env.local terlebih dahulu.');
   console.error('Contoh: DATABASE_URL="postgresql://postgres:password@localhost:5432/kemenag_data_agama?sslmode=disable"\n');
   process.exit(1);
