@@ -39,6 +39,7 @@ export function downloadIndicatorTemplate(indicator: IndicatorItem) {
         { 'Kode': indicator.id, 'Tahun': '2022', 'Nilai Terukur': 0, 'Satuan': indicator.satuan, 'Status Verifikasi': 'Terverifikasi', 'Catatan / Sumber': '' },
         { 'Kode': indicator.id, 'Tahun': '2023', 'Nilai Terukur': 0, 'Satuan': indicator.satuan, 'Status Verifikasi': 'Terverifikasi', 'Catatan / Sumber': '' },
         { 'Kode': indicator.id, 'Tahun': '2024', 'Nilai Terukur': 0, 'Satuan': indicator.satuan, 'Status Verifikasi': 'Terverifikasi', 'Catatan / Sumber': '' },
+        { 'Kode': indicator.id, 'Tahun': '2025', 'Nilai Terukur': 0, 'Satuan': indicator.satuan, 'Status Verifikasi': 'Terverifikasi', 'Catatan / Sumber': '' },
       ];
 
   const wsData = utils.json_to_sheet(timeSeriesData);
@@ -70,6 +71,7 @@ export function downloadCategoryTemplate(categoryName: string, categoryIndicator
     const val2022 = item.trenData?.find(t => t.tahun === '2022')?.nilai ?? '';
     const val2023 = item.trenData?.find(t => t.tahun === '2023')?.nilai ?? '';
     const val2024 = item.trenData?.find(t => t.tahun === '2024')?.nilai ?? '';
+    const val2025 = item.trenData?.find(t => t.tahun === '2025')?.nilai ?? '';
 
     return {
       'No': idx + 1,
@@ -85,6 +87,7 @@ export function downloadCategoryTemplate(categoryName: string, categoryIndicator
       'Nilai 2022': val2022,
       'Nilai 2023': val2023,
       'Nilai 2024': val2024,
+      'Nilai 2025': val2025,
       'PIC Tim Pusdatin': item.pic,
       'Sumber Data': item.sumberData,
       'Cakupan Wilayah': item.cakupanWilayah,
@@ -186,10 +189,10 @@ export async function parseSingleIndicatorExcel(
           });
         }
 
-        // Bentuk B: Kolom Nilai 2020 s/d 2024
+        // Bentuk B: Kolom Nilai 2020 s/d 2025
         if (newTrenData.length === 0) {
           const firstRow = rawRows[0];
-          ['2020', '2021', '2022', '2023', '2024'].forEach(yr => {
+          ['2020', '2021', '2022', '2023', '2024', '2025'].forEach(yr => {
             let val = 0;
             for (const [k, v] of Object.entries(firstRow)) {
               if (k.includes(yr)) {
@@ -261,6 +264,7 @@ export function downloadExcelTemplate(filename = 'Template-Klasifikasi-Data-Agam
       'Nilai 2022': 142800,
       'Nilai 2023': 151500,
       'Nilai 2024': 160300,
+      'Nilai 2025': 169000,
       'Deskripsi Indikator': 'Data agregat lembaga LPQ resmi terdaftar di EMIS Kementerian Agama RI.'
     },
     {
@@ -281,6 +285,7 @@ export function downloadExcelTemplate(filename = 'Template-Klasifikasi-Data-Agam
       'Nilai 2022': 980,
       'Nilai 2023': 1050,
       'Nilai 2024': 1120,
+      'Nilai 2025': 1190,
       'Deskripsi Indikator': 'Data persebaran Sekolah Minggu Buddha di seluruh provinsi di Indonesia.'
     }
   ];
@@ -357,7 +362,7 @@ export function downloadExcelTemplate(filename = 'Template-Klasifikasi-Data-Agam
       'Keterangan': 'Aplikasi atau sistem produsen asal data.'
     },
     {
-      'Nama Kolom': 'Nilai 2020 s/d 2024',
+      'Nama Kolom': 'Nilai 2020 s/d 2025',
       'Kewajiban': 'Opsional (Angka)',
       'Contoh Nilai': '150000',
       'Keterangan': 'Angka runtun waktu tahunan untuk visualisasi grafik Recharts.'
@@ -474,7 +479,7 @@ export async function parseUploadedExcel(file: File, existingIndicators: Indicat
           const frekuensiUpdate = String(getVal('Frekuensi Update', 'Frekuensi') || 'Tahunan') as any;
           const deskripsi = String(getVal('Deskripsi Indikator', 'Deskripsi', 'Keterangan') || `Indikator ${nama} hasil impor data terpadu Pusdatin Kemenag RI.`).trim();
 
-          const years = ['2020', '2021', '2022', '2023', '2024'];
+          const years = ['2020', '2021', '2022', '2023', '2024', '2025'];
           const trenData: YearlyDataPoint[] = years.map(yr => {
             const valRaw = getVal(`Nilai ${yr}`, `Data ${yr}`, `Tahun ${yr}`, yr);
             let valNum = parseFloat(String(valRaw || '').replace(/[^0-9.-]+/g, ''));

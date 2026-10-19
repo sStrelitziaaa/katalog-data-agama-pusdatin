@@ -1,5 +1,6 @@
 import { read, utils } from 'xlsx';
 import { IndicatorItem, YearlyDataPoint } from '@/types/indicator';
+import { TAHUN_DATA } from '@/lib/catalog';
 
 export interface ValidationResult {
   isValid: boolean;
@@ -98,14 +99,14 @@ export function validateAndParseExcel(
   // Cek apakah kolom penting ada
   const hasIdCol = keys.some(k => /kode|id/i.test(k));
   const hasNamaCol = keys.some(k => /nama/i.test(k));
-  const hasYearCol = keys.some(k => /2020|2021|2022|2023|2024/i.test(k));
+  const hasYearCol = keys.some(k => /2020|2021|2022|2023|2024|2025/i.test(k));
 
   if (!hasIdCol && !hasNamaCol) {
     errors.push('Struktur header Excel tidak sesuai template resmi Pusdatin. Kolom "Kode Indikator" atau "Nama Indikator" tidak ditemukan.');
   }
 
   if (!hasYearCol) {
-    warnings.push('Tidak ditemukan kolom tahunan (2020–2024). Data yang diimpor mungkin tidak memiliki angka capaian deret waktu.');
+    warnings.push('Tidak ditemukan kolom tahunan (2020–2025). Data yang diimpor mungkin tidak memiliki angka capaian deret waktu.');
   }
 
   if (errors.length > 0) {
@@ -161,8 +162,8 @@ export function validateAndParseExcel(
       return;
     }
 
-    // Parsing & Validasi Angka Tahunan (2020 s.d. 2024)
-    const years = ['2020', '2021', '2022', '2023', '2024'];
+    // Parsing & Validasi Angka Tahunan (2020 s.d. 2025)
+    const years = TAHUN_DATA;
     const trenData: YearlyDataPoint[] = [];
 
     years.forEach(yr => {

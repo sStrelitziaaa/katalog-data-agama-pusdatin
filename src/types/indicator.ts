@@ -65,4 +65,7 @@ export interface CatalogStats {
   persentaseTerisi: number;
   totalKategori: number;
   totalBimas: number;
+  totalDeretTahun?: number;
+  rentangTahun?: string;
+  rataRataTahun?: number;
 }

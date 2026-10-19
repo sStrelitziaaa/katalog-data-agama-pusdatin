@@ -43,13 +43,14 @@ export default function AddIndicatorModal({
   const [sumberData, setSumberData] = useState('');
   const [deskripsi, setDeskripsi] = useState('');
 
-  // Nilai tren tahunan (2020-2024)
+  // Nilai tren tahunan (2020-2025)
   const [yearlyValues, setYearlyValues] = useState<Record<string, string>>({
     '2020': '',
     '2021': '',
     '2022': '',
     '2023': '',
     '2024': '',
+    '2025': '',
   });
 
   const [loading, setLoading] = useState(false);
@@ -120,7 +121,7 @@ export default function AddIndicatorModal({
       setPic('');
       setSumberData('');
       setDeskripsi('');
-      setYearlyValues({ '2020': '', '2021': '', '2022': '', '2023': '', '2024': '' });
+      setYearlyValues({ '2020': '', '2021': '', '2022': '', '2023': '', '2024': '', '2025': '' });
 
       onCreated(json.data);
       onClose();

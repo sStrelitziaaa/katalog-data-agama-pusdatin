@@ -49,8 +49,8 @@ export const FREKUENSI_UPDATE_LIST: IndicatorItem['frekuensiUpdate'][] = [
   'Real-time',
 ];
 
-/** Tahun deret waktu yang dikelola CMS. */
-export const TAHUN_DATA = ['2020', '2021', '2022', '2023', '2024'];
+/** Tahun deret waktu yang dikelola CMS (2020 s/d 2025). */
+export const TAHUN_DATA = ['2020', '2021', '2022', '2023', '2024', '2025'];
 
 /** Agama default yang paling sesuai untuk tiap produsen data. */
 export const DEFAULT_AGAMA_BY_BIMAS: Record<BimasType, AgamaType> = {
@@ -138,6 +138,34 @@ export function getCatalogStats(indicators: IndicatorItem[]): CatalogStats {
   const totalIndikator = indicators.length;
   const totalTerisi = indicators.filter(item => item.terisi).length;
 
+  // Analisis deret waktu tahunan dari seluruh indikator
+  const allRecordedYears = indicators.flatMap(item =>
+    (item.trenData || [])
+      .filter(pt => typeof pt.nilai === 'number' && pt.nilai > 0)
+      .map(pt => parseInt(String(pt.tahun), 10))
+      .filter(y => !isNaN(y) && y >= 2000 && y <= 2099)
+  );
+
+  let totalDeretTahun = 6; // Standar 2020-2025 (6 tahun)
+  let rentangTahun = 'Tren 2020 s/d 2025';
+  let rataRataTahun = 6;
+
+  if (allRecordedYears.length > 0) {
+    const minYear = Math.min(...allRecordedYears);
+    const maxYear = Math.max(...allRecordedYears);
+    totalDeretTahun = Math.max(1, maxYear - minYear + 1);
+    rentangTahun = minYear === maxYear ? `Tahun ${minYear}` : `Tren ${minYear} s/d ${maxYear}`;
+
+    // Hitung rata-rata tahun terisi per indikator yang memiliki data
+    const yearsPerItem = indicators
+      .map(item => (item.trenData || []).filter(pt => typeof pt.nilai === 'number' && pt.nilai > 0).length)
+      .filter(cnt => cnt > 0);
+
+    if (yearsPerItem.length > 0) {
+      rataRataTahun = Number((yearsPerItem.reduce((a, b) => a + b, 0) / yearsPerItem.length).toFixed(1));
+    }
+  }
+
   return {
     totalIndikator,
     totalTerisi,
@@ -145,6 +173,9 @@ export function getCatalogStats(indicators: IndicatorItem[]): CatalogStats {
     persentaseTerisi: totalIndikator > 0 ? Math.round((totalTerisi / totalIndikator) * 100) : 0,
     totalKategori: new Set(indicators.map(item => item.kategori)).size,
     totalBimas: new Set(indicators.map(item => item.bimas)).size,
+    totalDeretTahun,
+    rentangTahun,
+    rataRataTahun,
   };
 }
 

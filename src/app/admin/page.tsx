@@ -471,7 +471,7 @@ export default function AdminPage() {
                 <th scope="col" className="px-3 py-2.5 whitespace-nowrap">Produsen / Bimas</th>
                 <th scope="col" className="px-3 py-2.5 whitespace-nowrap">Kategori</th>
                 <th scope="col" className="px-3 py-2.5 text-center whitespace-nowrap">Status</th>
-                <th scope="col" className="px-3 py-2.5 text-right whitespace-nowrap">Nilai Terakhir (2024)</th>
+                <th scope="col" className="px-3 py-2.5 text-right whitespace-nowrap">Nilai Terakhir</th>
                 <th scope="col" className="px-3 py-2.5 text-center w-44 whitespace-nowrap">Aksi Administrator</th>
               </tr>
             </thead>
@@ -523,7 +523,7 @@ export default function AdminPage() {
                         )}
                       </td>
                       <td className="px-3 py-2.5 text-right font-mono font-bold text-[#286084] whitespace-nowrap">
-                        {latestPoint && latestPoint.nilai > 0 ? latestPoint.nilai.toLocaleString('id-ID') : '-'}
+                        {latestPoint && latestPoint.nilai > 0 ? `${latestPoint.nilai.toLocaleString('id-ID')} (${latestPoint.tahun})` : '-'}
                       </td>
                       <td className="px-3 py-2.5 text-center whitespace-nowrap">
                         <div className="inline-flex items-center space-x-1.5">

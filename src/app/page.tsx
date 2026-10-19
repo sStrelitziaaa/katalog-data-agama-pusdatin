@@ -181,11 +181,20 @@ export default async function HomePage() {
             {/* Stat 3 */}
             <div className="flex flex-col items-center justify-center p-4 rounded-2xl bg-white border border-[#D3E4F1] shadow-2xs hover:border-[#8EBEDE] transition-all">
               <div className="flex items-baseline space-x-1">
-                <span className="text-3xl sm:text-4xl font-black text-[#181E24] tracking-tight">5</span>
+                <span className="text-3xl sm:text-4xl font-black text-[#181E24] tracking-tight">
+                  {stats.totalDeretTahun ?? 6}
+                </span>
                 <span className="text-lg font-bold text-[#286084]">Tahun</span>
               </div>
               <p className="text-xs font-semibold uppercase tracking-wider text-[#55606D] mt-1">Deret Waktu</p>
-              <p className="text-[11px] text-[#7E8B99] mt-0.5">Tren 2020 s/d 2024</p>
+              <p className="text-[11px] text-[#7E8B99] mt-0.5 text-center leading-tight">
+                <span>{stats.rentangTahun ?? 'Tren 2020 s/d 2025'}</span>
+                {stats.rataRataTahun && stats.rataRataTahun > 0 && stats.rataRataTahun !== stats.totalDeretTahun ? (
+                  <span className="block text-[10px] text-[#55606D] font-medium mt-0.5">
+                    (Rata-rata: {stats.rataRataTahun} thn/data)
+                  </span>
+                ) : null}
+              </p>
             </div>
 
             {/* Stat 4 */}
