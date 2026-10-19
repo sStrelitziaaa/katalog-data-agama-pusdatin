@@ -1,16 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
-import { 
-  Database, 
-  Search, 
-  CheckCircle2, 
-  Clock, 
-  Layers, 
-  ArrowRight, 
-  BarChart3, 
-  ShieldCheck, 
-  Download, 
-  FileSpreadsheet, 
+import {
+  Database,
+  Search,
+  CheckCircle2,
+  Clock,
+  Layers,
+  ArrowRight,
+  BarChart3,
+  ShieldCheck,
+  Download,
+  FileSpreadsheet,
   Compass,
   TrendingUp,
   FileText
@@ -316,7 +316,7 @@ export default function HomePage() {
                   Eksplorasi Lengkap & Ekspor Dataset ke Excel atau CSV
                 </h3>
                 <p className="text-sm sm:text-base text-white/85 leading-relaxed">
-                  Masyarakat, akademisi, dan instansi dapat melihat seluruh indikator keagamaan secara transparan, melihat visualisasi tren 5 tahun, dan mengunduh data dalam format Microsoft Excel (.xlsx) atau CSV secara bebas.
+                  Masyarakat, akademisi, dan instansi dapat melihat seluruh indikator keagamaan secara transparan, melihat visualisasi tren tahunan, dan mengunduh data dalam format Excel (.xlsx) atau CSV secara bebas.
                 </p>
               </div>
 
