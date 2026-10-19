@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2, Moon, Cross, Church, Flame, Sun, BookOpen, ShieldCheck, HeartHandshake } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { BimasSummary } from '@/types/indicator';
 
 interface BimasCardProps {
@@ -27,27 +27,17 @@ export default function BimasCard({ bimas }: BimasCardProps) {
     return () => observer.disconnect();
   }, [expanded, bimas.deskripsi]);
 
-  // Map icon names
-  const renderIcon = (name: string) => {
-    switch (name) {
-      case 'Moon':
-        return <Moon className="w-5 h-5 text-emerald-600" />;
-      case 'Cross':
-        return <Cross className="w-5 h-5 text-blue-600" />;
-      case 'Church':
-        return <Church className="w-5 h-5 text-cyan-600" />;
-      case 'Flame':
-        return <Flame className="w-5 h-5 text-amber-600" />;
-      case 'Sun':
-        return <Sun className="w-5 h-5 text-orange-600" />;
-      case 'BookOpen':
-        return <BookOpen className="w-5 h-5 text-rose-600" />;
-      case 'HeartHandshake':
-        return <HeartHandshake className="w-5 h-5 text-[#286084]" />;
-      case 'ShieldCheck':
-      default:
-        return <ShieldCheck className="w-5 h-5 text-[#286084]" />;
-    }
+  // Emoji identitas satker / bimas (sesuai pill di bawah tombol search)
+  const getBimasEmoji = (name: string, bimasNama: string) => {
+    if (bimasNama.includes('Islam') || name === 'Moon') return '🕌';
+    if (bimasNama.includes('Kristen') || name === 'Cross') return '⛪';
+    if (bimasNama.includes('Katolik') || name === 'Church') return '✝️';
+    if (bimasNama.includes('Hindu') || name === 'Flame') return '🛕';
+    if (bimasNama.includes('Buddha') || name === 'Sun') return '☸️';
+    if (bimasNama.includes('Khonghucu') || name === 'BookOpen') return '⛩️';
+    if (bimasNama.includes('Kerukunan') || bimasNama.includes('PKUB') || name === 'HeartHandshake') return '🤝';
+    if (bimasNama.includes('Setjen') || bimasNama.includes('Sekretariat') || name === 'ShieldCheck') return '🏛️';
+    return '🏛️';
   };
 
   return (
@@ -61,8 +51,10 @@ export default function BimasCard({ bimas }: BimasCardProps) {
       <div>
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-center space-x-3">
-            <div className="w-11 h-11 rounded-xl bg-[#E7F1F8] border border-[#D3E4F1] group-hover:border-[#8EBEDE] flex items-center justify-center shrink-0 transition-colors">
-              {renderIcon(bimas.iconName)}
+            <div className="w-11 h-11 rounded-xl bg-[#E7F1F8] border border-[#D3E4F1] group-hover:border-[#8EBEDE] flex items-center justify-center shrink-0 transition-colors text-2xl select-none">
+              <span role="img" aria-label={bimas.shortName}>
+                {getBimasEmoji(bimas.iconName, bimas.nama)}
+              </span>
             </div>
             <div>
               <h3 className="text-base font-bold text-[#181E24] group-hover:text-[#286084] transition-colors leading-snug">
