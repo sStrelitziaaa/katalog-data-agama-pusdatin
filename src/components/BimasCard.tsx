@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, Moon, Cross, Church, Flame, Sun, BookOpen, ShieldCheck, HeartHandshake } from 'lucide-react';
 import { BimasSummary } from '@/types/indicator';
@@ -8,6 +10,23 @@ interface BimasCardProps {
 }
 
 export default function BimasCard({ bimas }: BimasCardProps) {
+  const descRef = useRef<HTMLParagraphElement>(null);
+  const [expanded, setExpanded] = useState(false);
+  const [isTruncated, setIsTruncated] = useState(false);
+
+  // Tampilkan tombol "Selengkapnya" hanya jika deskripsi terpotong
+  useEffect(() => {
+    const el = descRef.current;
+    if (!el) return;
+    const check = () => {
+      if (!expanded) setIsTruncated(el.scrollHeight > el.clientHeight + 1);
+    };
+    check();
+    const observer = new ResizeObserver(check);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [expanded, bimas.deskripsi]);
+
   // Map icon names
   const renderIcon = (name: string) => {
     switch (name) {
@@ -32,10 +51,13 @@ export default function BimasCard({ bimas }: BimasCardProps) {
   };
 
   return (
-    <Link
-      href={`/eksplorasi?bimas=${encodeURIComponent(bimas.nama)}`}
-      className="group relative flex flex-col justify-between p-5 sm:p-6 rounded-2xl bg-white border border-[#D3E4F1] hover:border-[#8EBEDE] shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-200"
-    >
+    <div className="group relative flex flex-col justify-between p-5 sm:p-6 rounded-2xl bg-white border border-[#D3E4F1] hover:border-[#8EBEDE] shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-200">
+      {/* Link menutupi seluruh kartu; tombol "Selengkapnya" berada di atasnya */}
+      <Link
+        href={`/eksplorasi?bimas=${encodeURIComponent(bimas.nama)}`}
+        aria-label={`Lihat data ${bimas.shortName}`}
+        className="absolute inset-0 z-0 rounded-2xl"
+      />
       <div>
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-center space-x-3">
@@ -58,9 +80,22 @@ export default function BimasCard({ bimas }: BimasCardProps) {
           </div>
         </div>
 
-        <p className="text-xs text-[#55606D] line-clamp-2 mt-3 leading-relaxed">
+        <p
+          ref={descRef}
+          className={`text-xs text-[#55606D] mt-3 leading-relaxed ${expanded ? '' : 'line-clamp-3'}`}
+        >
           {bimas.deskripsi}
         </p>
+        {(isTruncated || expanded) && (
+          <button
+            type="button"
+            onClick={() => setExpanded((v) => !v)}
+            aria-expanded={expanded}
+            className="relative z-10 mt-1 text-[11px] font-semibold text-[#286084] hover:text-[#1D4661] hover:underline"
+          >
+            {expanded ? 'Tampilkan lebih sedikit' : 'Selengkapnya'}
+          </button>
+        )}
       </div>
 
       <div className="mt-4 pt-3 border-t border-[#D3E4F1]">
@@ -80,10 +115,10 @@ export default function BimasCard({ bimas }: BimasCardProps) {
         </div>
 
         <div className="mt-3 flex items-center justify-between text-xs font-bold text-[#286084] group-hover:text-[#1D4661] transition-colors">
-          <span className="tracking-wide">Lihat Data Agency</span>
+          <span className="tracking-wide">Lihat Data</span>
           <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
         </div>
       </div>
-    </Link>
+    </div>
   );
 }
