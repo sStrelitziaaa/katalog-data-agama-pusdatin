@@ -1,0 +1,4594 @@
+[
+  {
+    "id": "IND-001",
+    "no": 1,
+    "nama": "Rumah Ibadah Islam, Masjid",
+    "kategori": "Rumah Ibadah",
+    "agama": "Islam",
+    "bimas": "Ditjen Bimas Islam",
+    "pic": "Winda",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "SIMAS (Sistem Informasi Masjid)",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Rumah Ibadah Islam, Masjid yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari SIMAS (Sistem Informasi Masjid) untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 237800,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 255200,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 269700,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 284200,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 301600,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Rumah Ibadah",
+      "Islam",
+      "Ditjen Bimas Islam",
+      "Winda",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-002",
+    "no": 2,
+    "nama": "Rumah Ibadah Islam, Musolla",
+    "kategori": "Rumah Ibadah",
+    "agama": "Islam",
+    "bimas": "Ditjen Bimas Islam",
+    "pic": "Winda",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "SIMAS (Sistem Informasi Masjid)",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Rumah Ibadah Islam, Musolla yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari SIMAS (Sistem Informasi Masjid) untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 254200,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 272800,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 288300,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 303800,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 322400,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Rumah Ibadah",
+      "Islam",
+      "Ditjen Bimas Islam",
+      "Winda",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-003",
+    "no": 3,
+    "nama": "Jumlah Perpustakaan Masjid",
+    "kategori": "Rumah Ibadah",
+    "agama": "Islam",
+    "bimas": "Ditjen Bimas Islam",
+    "pic": "Winda",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "SIMAS (Sistem Informasi Masjid)",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Jumlah Perpustakaan Masjid yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari SIMAS (Sistem Informasi Masjid) untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 237800,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 255200,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 269700,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 284200,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 301600,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Rumah Ibadah",
+      "Islam",
+      "Ditjen Bimas Islam",
+      "Winda",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-004",
+    "no": 4,
+    "nama": "Rumah Ibadah Kristen",
+    "kategori": "Rumah Ibadah",
+    "agama": "Kristen",
+    "bimas": "Ditjen Bimas Kristen",
+    "pic": "Winda",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Rumah Ibadah Kristen yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 55760,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 59840,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 63240,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 66640,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 70720,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Rumah Ibadah",
+      "Kristen",
+      "Ditjen Bimas Kristen",
+      "Winda",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-005",
+    "no": 5,
+    "nama": "Rumah Ibadah Katolik",
+    "kategori": "Rumah Ibadah",
+    "agama": "Katolik",
+    "bimas": "Ditjen Bimas Katolik",
+    "pic": "Winda",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Rumah Ibadah Katolik yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 11890,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 12760,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 13485,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 14210,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 15080,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Rumah Ibadah",
+      "Katolik",
+      "Ditjen Bimas Katolik",
+      "Winda",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-006",
+    "no": 6,
+    "nama": "Rumah Ibadah Hindu",
+    "kategori": "Rumah Ibadah",
+    "agama": "Hindu",
+    "bimas": "Ditjen Bimas Hindu",
+    "pic": "Winda",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Rumah Ibadah Hindu yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 22140,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 23760,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 25110,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 26460,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 28080,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Rumah Ibadah",
+      "Hindu",
+      "Ditjen Bimas Hindu",
+      "Winda",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-007",
+    "no": 7,
+    "nama": "Rumah Ibadah Buddha",
+    "kategori": "Rumah Ibadah",
+    "agama": "Buddha",
+    "bimas": "Ditjen Bimas Buddha",
+    "pic": "Winda",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Rumah Ibadah Buddha yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 4264,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 4576,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 4836,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 5096,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 5408,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Rumah Ibadah",
+      "Buddha",
+      "Ditjen Bimas Buddha",
+      "Winda",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-008",
+    "no": 8,
+    "nama": "Rumah Ibadah Konghucu",
+    "kategori": "Rumah Ibadah",
+    "agama": "Khonghucu",
+    "bimas": "Pusbimdik Khonghucu",
+    "pic": "Winda",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Rumah Ibadah Konghucu yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 984,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 1056,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 1116,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 1176,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 1248,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Rumah Ibadah",
+      "Khonghucu",
+      "Pusbimdik Khonghucu",
+      "Winda",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-009",
+    "no": 9,
+    "nama": "Penyuluh Islam",
+    "kategori": "Penyuluh Agama",
+    "agama": "Islam",
+    "bimas": "Ditjen Bimas Islam",
+    "pic": "Ghozy",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "e-Penyuluh / SIMBI / SIMPATIKA",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Jiwa / Orang",
+    "deskripsi": "Indikator data resmi Penyuluh Islam yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari e-Penyuluh / SIMBI / SIMPATIKA untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 36900,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 39600,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 41850,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 44100,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 46800,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Penyuluh Agama",
+      "Islam",
+      "Ditjen Bimas Islam",
+      "Ghozy",
+      "Jiwa / Orang"
+    ]
+  },
+  {
+    "id": "IND-010",
+    "no": 10,
+    "nama": "Penyuluh Kristen",
+    "kategori": "Penyuluh Agama",
+    "agama": "Kristen",
+    "bimas": "Ditjen Bimas Kristen",
+    "pic": "Ghozy",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "e-Penyuluh / SIMBI / SIMPATIKA",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Jiwa / Orang",
+    "deskripsi": "Indikator data resmi Penyuluh Kristen yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari e-Penyuluh / SIMBI / SIMPATIKA untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 55760,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 59840,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 63240,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 66640,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 70720,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Penyuluh Agama",
+      "Kristen",
+      "Ditjen Bimas Kristen",
+      "Ghozy",
+      "Jiwa / Orang"
+    ]
+  },
+  {
+    "id": "IND-011",
+    "no": 11,
+    "nama": "Penyuluh Katolik",
+    "kategori": "Penyuluh Agama",
+    "agama": "Katolik",
+    "bimas": "Ditjen Bimas Katolik",
+    "pic": "Ghozy",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "e-Penyuluh / SIMBI / SIMPATIKA",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Jiwa / Orang",
+    "deskripsi": "Indikator data resmi Penyuluh Katolik yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari e-Penyuluh / SIMBI / SIMPATIKA untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 11890,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 12760,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 13485,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 14210,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 15080,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Penyuluh Agama",
+      "Katolik",
+      "Ditjen Bimas Katolik",
+      "Ghozy",
+      "Jiwa / Orang"
+    ]
+  },
+  {
+    "id": "IND-012",
+    "no": 12,
+    "nama": "Penyuluh Hindu",
+    "kategori": "Penyuluh Agama",
+    "agama": "Hindu",
+    "bimas": "Ditjen Bimas Hindu",
+    "pic": "Ghozy",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "e-Penyuluh / SIMBI / SIMPATIKA",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Jiwa / Orang",
+    "deskripsi": "Indikator data resmi Penyuluh Hindu yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari e-Penyuluh / SIMBI / SIMPATIKA untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 22140,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 23760,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 25110,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 26460,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 28080,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Penyuluh Agama",
+      "Hindu",
+      "Ditjen Bimas Hindu",
+      "Ghozy",
+      "Jiwa / Orang"
+    ]
+  },
+  {
+    "id": "IND-013",
+    "no": 13,
+    "nama": "Penyuluh Buddha",
+    "kategori": "Penyuluh Agama",
+    "agama": "Buddha",
+    "bimas": "Ditjen Bimas Buddha",
+    "pic": "Ghozy",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "e-Penyuluh / SIMBI / SIMPATIKA",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Jiwa / Orang",
+    "deskripsi": "Indikator data resmi Penyuluh Buddha yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari e-Penyuluh / SIMBI / SIMPATIKA untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 4264,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 4576,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 4836,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 5096,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 5408,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Penyuluh Agama",
+      "Buddha",
+      "Ditjen Bimas Buddha",
+      "Ghozy",
+      "Jiwa / Orang"
+    ]
+  },
+  {
+    "id": "IND-014",
+    "no": 14,
+    "nama": "Penyuluh Konghucu",
+    "kategori": "Penyuluh Agama",
+    "agama": "Khonghucu",
+    "bimas": "Pusbimdik Khonghucu",
+    "pic": "Ghozy",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "e-Penyuluh / SIMBI / SIMPATIKA",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Jiwa / Orang",
+    "deskripsi": "Indikator data resmi Penyuluh Konghucu yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari e-Penyuluh / SIMBI / SIMPATIKA untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 984,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 1056,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 1116,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 1176,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 1248,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Penyuluh Agama",
+      "Khonghucu",
+      "Pusbimdik Khonghucu",
+      "Ghozy",
+      "Jiwa / Orang"
+    ]
+  },
+  {
+    "id": "IND-015",
+    "no": 15,
+    "nama": "Penghulu",
+    "kategori": "Penghulu",
+    "agama": "Islam",
+    "bimas": "Ditjen Bimas Islam",
+    "pic": "Dessy",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "SIMKAH & Ditjen Bimas Islam",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Jiwa / Orang",
+    "deskripsi": "Indikator data resmi Penghulu yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari SIMKAH & Ditjen Bimas Islam untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 4756,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 5104,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 5394,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 5684,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 6032,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Penghulu",
+      "Islam",
+      "Ditjen Bimas Islam",
+      "Dessy",
+      "Jiwa / Orang"
+    ]
+  },
+  {
+    "id": "IND-016",
+    "no": 16,
+    "nama": "Rohaniwan Islam",
+    "kategori": "Rohaniwan",
+    "agama": "Islam",
+    "bimas": "Ditjen Bimas Islam",
+    "pic": "Mukhlis",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Jiwa / Orang",
+    "deskripsi": "Indikator data resmi Rohaniwan Islam yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 3067,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 3291,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 3478,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 3665,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 3890,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Rohaniwan",
+      "Islam",
+      "Ditjen Bimas Islam",
+      "Mukhlis",
+      "Jiwa / Orang"
+    ]
+  },
+  {
+    "id": "IND-017",
+    "no": 17,
+    "nama": "Rohaniwan Kristen",
+    "kategori": "Rohaniwan",
+    "agama": "Kristen",
+    "bimas": "Ditjen Bimas Kristen",
+    "pic": "Mukhlis",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Jiwa / Orang",
+    "deskripsi": "Indikator data resmi Rohaniwan Kristen yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 55760,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 59840,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 63240,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 66640,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 70720,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Rohaniwan",
+      "Kristen",
+      "Ditjen Bimas Kristen",
+      "Mukhlis",
+      "Jiwa / Orang"
+    ]
+  },
+  {
+    "id": "IND-018",
+    "no": 18,
+    "nama": "Rohaniwan Katolik",
+    "kategori": "Rohaniwan",
+    "agama": "Katolik",
+    "bimas": "Ditjen Bimas Katolik",
+    "pic": "Mukhlis",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Jiwa / Orang",
+    "deskripsi": "Indikator data resmi Rohaniwan Katolik yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 11890,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 12760,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 13485,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 14210,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 15080,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Rohaniwan",
+      "Katolik",
+      "Ditjen Bimas Katolik",
+      "Mukhlis",
+      "Jiwa / Orang"
+    ]
+  },
+  {
+    "id": "IND-019",
+    "no": 19,
+    "nama": "Rohaniwan Hindu",
+    "kategori": "Rohaniwan",
+    "agama": "Hindu",
+    "bimas": "Ditjen Bimas Hindu",
+    "pic": "Mukhlis",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Jiwa / Orang",
+    "deskripsi": "Indikator data resmi Rohaniwan Hindu yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 22140,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 23760,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 25110,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 26460,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 28080,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Rohaniwan",
+      "Hindu",
+      "Ditjen Bimas Hindu",
+      "Mukhlis",
+      "Jiwa / Orang"
+    ]
+  },
+  {
+    "id": "IND-020",
+    "no": 20,
+    "nama": "Rohaniwan Buddha",
+    "kategori": "Rohaniwan",
+    "agama": "Buddha",
+    "bimas": "Ditjen Bimas Buddha",
+    "pic": "Mukhlis",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Jiwa / Orang",
+    "deskripsi": "Indikator data resmi Rohaniwan Buddha yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 4264,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 4576,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 4836,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 5096,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 5408,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Rohaniwan",
+      "Buddha",
+      "Ditjen Bimas Buddha",
+      "Mukhlis",
+      "Jiwa / Orang"
+    ]
+  },
+  {
+    "id": "IND-021",
+    "no": 21,
+    "nama": "Rohaniwan Konghucu",
+    "kategori": "Rohaniwan",
+    "agama": "Khonghucu",
+    "bimas": "Pusbimdik Khonghucu",
+    "pic": "Mukhlis",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Jiwa / Orang",
+    "deskripsi": "Indikator data resmi Rohaniwan Konghucu yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 984,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 1056,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 1116,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 1176,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 1248,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Rohaniwan",
+      "Khonghucu",
+      "Pusbimdik Khonghucu",
+      "Mukhlis",
+      "Jiwa / Orang"
+    ]
+  },
+  {
+    "id": "IND-022",
+    "no": 22,
+    "nama": "Peristiwa Nikah",
+    "kategori": "Layanan KUA & Keluarga",
+    "agama": "Umum",
+    "bimas": "Setjen",
+    "pic": "Inan Adnan",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "SIMKAH (Sistem Informasi Manajemen Nikah)",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Peristiwa / Pasang",
+    "deskripsi": "Indikator data resmi Peristiwa Nikah yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari SIMKAH (Sistem Informasi Manajemen Nikah) untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 1517000,
+        "satuan": "Peristiwa / Pasang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 1628000,
+        "satuan": "Peristiwa / Pasang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 1720500,
+        "satuan": "Peristiwa / Pasang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 1813000,
+        "satuan": "Peristiwa / Pasang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 1924000,
+        "satuan": "Peristiwa / Pasang",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Layanan KUA & Keluarga",
+      "Umum",
+      "Setjen",
+      "Inan Adnan",
+      "Peristiwa / Pasang"
+    ]
+  },
+  {
+    "id": "IND-023",
+    "no": 23,
+    "nama": "Penyuuh Islam",
+    "kategori": "Umum & Tata Kelola",
+    "agama": "Islam",
+    "bimas": "Ditjen Bimas Islam",
+    "pic": "Inan Adnan",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Penyuuh Islam yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 3768,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 4044,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 4273,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 4503,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 4779,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Umum & Tata Kelola",
+      "Islam",
+      "Ditjen Bimas Islam",
+      "Inan Adnan",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-024",
+    "no": 24,
+    "nama": "Bimbinga Perkawinan Kristen",
+    "kategori": "Bimbingan Perkawinan",
+    "agama": "Kristen",
+    "bimas": "Ditjen Bimas Kristen",
+    "pic": "Syamsudin",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Bimbinga Perkawinan Kristen yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 55760,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 59840,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 63240,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 66640,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 70720,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Bimbingan Perkawinan",
+      "Kristen",
+      "Ditjen Bimas Kristen",
+      "Syamsudin",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-025",
+    "no": 25,
+    "nama": "Bimbinga Perkawinan Katolik",
+    "kategori": "Bimbingan Perkawinan",
+    "agama": "Katolik",
+    "bimas": "Ditjen Bimas Katolik",
+    "pic": "Syamsudin",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Bimbinga Perkawinan Katolik yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 11890,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 12760,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 13485,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 14210,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 15080,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Bimbingan Perkawinan",
+      "Katolik",
+      "Ditjen Bimas Katolik",
+      "Syamsudin",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-026",
+    "no": 26,
+    "nama": "Bimbinga Perkawinan Hindu",
+    "kategori": "Bimbingan Perkawinan",
+    "agama": "Hindu",
+    "bimas": "Ditjen Bimas Hindu",
+    "pic": "Syamsudin",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Bimbinga Perkawinan Hindu yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 22140,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 23760,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 25110,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 26460,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 28080,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Bimbingan Perkawinan",
+      "Hindu",
+      "Ditjen Bimas Hindu",
+      "Syamsudin",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-027",
+    "no": 27,
+    "nama": "Bimbinga Perkawinan Buddha",
+    "kategori": "Bimbingan Perkawinan",
+    "agama": "Buddha",
+    "bimas": "Ditjen Bimas Buddha",
+    "pic": "Syamsudin",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Bimbinga Perkawinan Buddha yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 4264,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 4576,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 4836,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 5096,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 5408,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Bimbingan Perkawinan",
+      "Buddha",
+      "Ditjen Bimas Buddha",
+      "Syamsudin",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-028",
+    "no": 28,
+    "nama": "Bimbinga Perkawinan Konghucu",
+    "kategori": "Bimbingan Perkawinan",
+    "agama": "Khonghucu",
+    "bimas": "Pusbimdik Khonghucu",
+    "pic": "Syamsudin",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Bimbinga Perkawinan Konghucu yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 984,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 1056,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 1116,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 1176,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 1248,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Bimbingan Perkawinan",
+      "Khonghucu",
+      "Pusbimdik Khonghucu",
+      "Syamsudin",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-029",
+    "no": 29,
+    "nama": "Bimbingan Keluarga Sakinah",
+    "kategori": "Layanan KUA & Keluarga",
+    "agama": "Umum",
+    "bimas": "Setjen",
+    "pic": "Inan Adnan",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Peristiwa / Pasang",
+    "deskripsi": "Indikator data resmi Bimbingan Keluarga Sakinah yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 3842,
+        "satuan": "Peristiwa / Pasang",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 4123,
+        "satuan": "Peristiwa / Pasang",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 4357,
+        "satuan": "Peristiwa / Pasang",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 4591,
+        "satuan": "Peristiwa / Pasang",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 4872,
+        "satuan": "Peristiwa / Pasang",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Layanan KUA & Keluarga",
+      "Umum",
+      "Setjen",
+      "Inan Adnan",
+      "Peristiwa / Pasang"
+    ]
+  },
+  {
+    "id": "IND-030",
+    "no": 30,
+    "nama": "Bimbingan Remaja Usia Sekolah",
+    "kategori": "Layanan KUA & Keluarga",
+    "agama": "Umum",
+    "bimas": "Setjen",
+    "pic": "Inan Adnan",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Peristiwa / Pasang",
+    "deskripsi": "Indikator data resmi Bimbingan Remaja Usia Sekolah yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 779,
+        "satuan": "Peristiwa / Pasang",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 836,
+        "satuan": "Peristiwa / Pasang",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 884,
+        "satuan": "Peristiwa / Pasang",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 931,
+        "satuan": "Peristiwa / Pasang",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 988,
+        "satuan": "Peristiwa / Pasang",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Layanan KUA & Keluarga",
+      "Umum",
+      "Setjen",
+      "Inan Adnan",
+      "Peristiwa / Pasang"
+    ]
+  },
+  {
+    "id": "IND-031",
+    "no": 31,
+    "nama": "Kantor KUA",
+    "kategori": "Layanan KUA & Keluarga",
+    "agama": "Islam",
+    "bimas": "Ditjen Bimas Islam",
+    "pic": "Inan Adnan",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "SIMKAH (Sistem Informasi Manajemen Nikah)",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Kantor KUA yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari SIMKAH (Sistem Informasi Manajemen Nikah) untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 1406,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 1509,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 1595,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 1681,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 1784,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Layanan KUA & Keluarga",
+      "Islam",
+      "Ditjen Bimas Islam",
+      "Inan Adnan",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-032",
+    "no": 32,
+    "nama": "LAZ Berizin",
+    "kategori": "Zakat & Pemberdayaan",
+    "agama": "Umum",
+    "bimas": "Setjen",
+    "pic": "Dessy",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi LAZ Berizin yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 2034,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 2182,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 2306,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 2430,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 2579,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Zakat & Pemberdayaan",
+      "Umum",
+      "Setjen",
+      "Dessy",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-033",
+    "no": 33,
+    "nama": "Pengumpulan ZIS dan Dana Sosial Keagamaan Lainnya",
+    "kategori": "Zakat & Pemberdayaan",
+    "agama": "Umum",
+    "bimas": "Setjen",
+    "pic": "Dessy",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Rupiah (Miliar)",
+    "deskripsi": "Indikator data resmi Pengumpulan ZIS dan Dana Sosial Keagamaan Lainnya yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 2661,
+        "satuan": "Rupiah (Miliar)",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 2856,
+        "satuan": "Rupiah (Miliar)",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 3018,
+        "satuan": "Rupiah (Miliar)",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 3180,
+        "satuan": "Rupiah (Miliar)",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 3375,
+        "satuan": "Rupiah (Miliar)",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Zakat & Pemberdayaan",
+      "Umum",
+      "Setjen",
+      "Dessy",
+      "Rupiah (Miliar)"
+    ]
+  },
+  {
+    "id": "IND-034",
+    "no": 34,
+    "nama": "Penyaluran ZIS dan Dana Sosial Keagamaan Lainnya",
+    "kategori": "Zakat & Pemberdayaan",
+    "agama": "Umum",
+    "bimas": "Setjen",
+    "pic": "Dessy",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Rupiah (Miliar)",
+    "deskripsi": "Indikator data resmi Penyaluran ZIS dan Dana Sosial Keagamaan Lainnya yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 3288,
+        "satuan": "Rupiah (Miliar)",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 3529,
+        "satuan": "Rupiah (Miliar)",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 3729,
+        "satuan": "Rupiah (Miliar)",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 3930,
+        "satuan": "Rupiah (Miliar)",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 4170,
+        "satuan": "Rupiah (Miliar)",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Zakat & Pemberdayaan",
+      "Umum",
+      "Setjen",
+      "Dessy",
+      "Rupiah (Miliar)"
+    ]
+  },
+  {
+    "id": "IND-035",
+    "no": 35,
+    "nama": "Kampung Zakat",
+    "kategori": "Zakat & Pemberdayaan",
+    "agama": "Islam",
+    "bimas": "Ditjen Bimas Islam",
+    "pic": "Dessy",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "SIMZAT / BAZNAS & Ditjen Bimas Islam",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Kampung Zakat yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari SIMZAT / BAZNAS & Ditjen Bimas Islam untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 3915,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 4202,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 4441,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 4680,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 4966,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Zakat & Pemberdayaan",
+      "Islam",
+      "Ditjen Bimas Islam",
+      "Dessy",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-036",
+    "no": 36,
+    "nama": "Mustahik (Penerima Zakat)",
+    "kategori": "Zakat & Pemberdayaan",
+    "agama": "Islam",
+    "bimas": "Ditjen Bimas Islam",
+    "pic": "Dessy",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "SIMZAT / BAZNAS & Ditjen Bimas Islam",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Jiwa / Orang",
+    "deskripsi": "Indikator data resmi Mustahik (Penerima Zakat) yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari SIMZAT / BAZNAS & Ditjen Bimas Islam untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 853,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 915,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 967,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 1019,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 1082,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Zakat & Pemberdayaan",
+      "Islam",
+      "Ditjen Bimas Islam",
+      "Dessy",
+      "Jiwa / Orang"
+    ]
+  },
+  {
+    "id": "IND-037",
+    "no": 37,
+    "nama": "Nazir",
+    "kategori": "Wakaf",
+    "agama": "Umum",
+    "bimas": "Setjen",
+    "pic": "Dessy",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Jiwa / Orang",
+    "deskripsi": "Indikator data resmi Nazir yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 1480,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 1588,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 1679,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 1769,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 1877,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Wakaf",
+      "Umum",
+      "Setjen",
+      "Dessy",
+      "Jiwa / Orang"
+    ]
+  },
+  {
+    "id": "IND-038",
+    "no": 38,
+    "nama": "Muzaki",
+    "kategori": "Zakat & Pemberdayaan",
+    "agama": "Umum",
+    "bimas": "Setjen",
+    "pic": "Dessy",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Jiwa / Orang",
+    "deskripsi": "Indikator data resmi Muzaki yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 2107,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 2262,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 2390,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 2519,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 2673,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Zakat & Pemberdayaan",
+      "Umum",
+      "Setjen",
+      "Dessy",
+      "Jiwa / Orang"
+    ]
+  },
+  {
+    "id": "IND-039",
+    "no": 39,
+    "nama": "Lembaga Keuangan Syariah Penerima Wakaf Uang (LKSPWU)",
+    "kategori": "Wakaf",
+    "agama": "Islam",
+    "bimas": "Ditjen Bimas Islam",
+    "pic": "Dessy",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "SIWAK (Sistem Informasi Wakaf)",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Lembaga Keuangan Syariah Penerima Wakaf Uang (LKSPWU) yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari SIWAK (Sistem Informasi Wakaf) untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 2735,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 2935,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 3102,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 3268,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 3468,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Wakaf",
+      "Islam",
+      "Ditjen Bimas Islam",
+      "Dessy",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-040",
+    "no": 40,
+    "nama": "Sertifikasi Tanah Wakaf",
+    "kategori": "Wakaf",
+    "agama": "Islam",
+    "bimas": "Ditjen Bimas Islam",
+    "pic": "Dessy",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "SIWAK (Sistem Informasi Wakaf)",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Persil / Bidang",
+    "deskripsi": "Indikator data resmi Sertifikasi Tanah Wakaf yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari SIWAK (Sistem Informasi Wakaf) untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 3362,
+        "satuan": "Persil / Bidang",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 3608,
+        "satuan": "Persil / Bidang",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 3813,
+        "satuan": "Persil / Bidang",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 4018,
+        "satuan": "Persil / Bidang",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 4264,
+        "satuan": "Persil / Bidang",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Wakaf",
+      "Islam",
+      "Ditjen Bimas Islam",
+      "Dessy",
+      "Persil / Bidang"
+    ]
+  },
+  {
+    "id": "IND-041",
+    "no": 41,
+    "nama": "Kota Wakaf",
+    "kategori": "Wakaf",
+    "agama": "Islam",
+    "bimas": "Ditjen Bimas Islam",
+    "pic": "Dessy",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "SIWAK (Sistem Informasi Wakaf)",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Kota Wakaf yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari SIWAK (Sistem Informasi Wakaf) untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 3989,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 4281,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 4524,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 4768,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 5060,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Wakaf",
+      "Islam",
+      "Ditjen Bimas Islam",
+      "Dessy",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-042",
+    "no": 42,
+    "nama": "Ormas Islam",
+    "kategori": "Organisasi Kemasyarakatan (Ormas)",
+    "agama": "Islam",
+    "bimas": "Ditjen Bimas Islam",
+    "pic": "Rosyid",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Ormas Islam yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 927,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 994,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 1051,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 1107,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 1175,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Organisasi Kemasyarakatan (Ormas)",
+      "Islam",
+      "Ditjen Bimas Islam",
+      "Rosyid",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-043",
+    "no": 43,
+    "nama": "Ormas Kristen",
+    "kategori": "Organisasi Kemasyarakatan (Ormas)",
+    "agama": "Kristen",
+    "bimas": "Ditjen Bimas Kristen",
+    "pic": "Rosyid",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Ormas Kristen yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 55760,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 59840,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 63240,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 66640,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 70720,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Organisasi Kemasyarakatan (Ormas)",
+      "Kristen",
+      "Ditjen Bimas Kristen",
+      "Rosyid",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-044",
+    "no": 44,
+    "nama": "Ormas Katolik",
+    "kategori": "Organisasi Kemasyarakatan (Ormas)",
+    "agama": "Katolik",
+    "bimas": "Ditjen Bimas Katolik",
+    "pic": "Rosyid",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Ormas Katolik yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 11890,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 12760,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 13485,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 14210,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 15080,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Organisasi Kemasyarakatan (Ormas)",
+      "Katolik",
+      "Ditjen Bimas Katolik",
+      "Rosyid",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-045",
+    "no": 45,
+    "nama": "Ormas Hindu",
+    "kategori": "Organisasi Kemasyarakatan (Ormas)",
+    "agama": "Hindu",
+    "bimas": "Ditjen Bimas Hindu",
+    "pic": "Rosyid",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Ormas Hindu yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 22140,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 23760,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 25110,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 26460,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 28080,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Organisasi Kemasyarakatan (Ormas)",
+      "Hindu",
+      "Ditjen Bimas Hindu",
+      "Rosyid",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-046",
+    "no": 46,
+    "nama": "Ormas Buddha",
+    "kategori": "Organisasi Kemasyarakatan (Ormas)",
+    "agama": "Buddha",
+    "bimas": "Ditjen Bimas Buddha",
+    "pic": "Rosyid",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Ormas Buddha yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 4264,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 4576,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 4836,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 5096,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 5408,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Organisasi Kemasyarakatan (Ormas)",
+      "Buddha",
+      "Ditjen Bimas Buddha",
+      "Rosyid",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-047",
+    "no": 47,
+    "nama": "Ormas Konghucu",
+    "kategori": "Organisasi Kemasyarakatan (Ormas)",
+    "agama": "Khonghucu",
+    "bimas": "Pusbimdik Khonghucu",
+    "pic": "Rosyid",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Ormas Konghucu yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 984,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 1056,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 1116,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 1176,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 1248,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Organisasi Kemasyarakatan (Ormas)",
+      "Khonghucu",
+      "Pusbimdik Khonghucu",
+      "Rosyid",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-048",
+    "no": 48,
+    "nama": "Lembaga Keagamaan Islam",
+    "kategori": "Lembaga Keagamaan",
+    "agama": "Islam",
+    "bimas": "Ditjen Bimas Islam",
+    "pic": "Rosyid",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Lembaga Keagamaan Islam yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 1000,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 1074,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 1135,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 1196,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 1269,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Lembaga Keagamaan",
+      "Islam",
+      "Ditjen Bimas Islam",
+      "Rosyid",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-049",
+    "no": 49,
+    "nama": "Lembaga Keagamaan Kristen",
+    "kategori": "Lembaga Keagamaan",
+    "agama": "Kristen",
+    "bimas": "Ditjen Bimas Kristen",
+    "pic": "Rosyid",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Lembaga Keagamaan Kristen yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 55760,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 59840,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 63240,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 66640,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 70720,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Lembaga Keagamaan",
+      "Kristen",
+      "Ditjen Bimas Kristen",
+      "Rosyid",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-050",
+    "no": 50,
+    "nama": "Lembaga Keagamaan Katolik",
+    "kategori": "Lembaga Keagamaan",
+    "agama": "Katolik",
+    "bimas": "Ditjen Bimas Katolik",
+    "pic": "Rosyid",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Lembaga Keagamaan Katolik yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 11890,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 12760,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 13485,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 14210,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 15080,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Lembaga Keagamaan",
+      "Katolik",
+      "Ditjen Bimas Katolik",
+      "Rosyid",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-051",
+    "no": 51,
+    "nama": "Lembaga Keagamaan Hindu",
+    "kategori": "Lembaga Keagamaan",
+    "agama": "Hindu",
+    "bimas": "Ditjen Bimas Hindu",
+    "pic": "Rosyid",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Lembaga Keagamaan Hindu yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 22140,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 23760,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 25110,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 26460,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 28080,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Lembaga Keagamaan",
+      "Hindu",
+      "Ditjen Bimas Hindu",
+      "Rosyid",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-052",
+    "no": 52,
+    "nama": "Lembaga Keagamaan Buddha",
+    "kategori": "Lembaga Keagamaan",
+    "agama": "Buddha",
+    "bimas": "Ditjen Bimas Buddha",
+    "pic": "Rosyid",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Lembaga Keagamaan Buddha yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 4264,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 4576,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 4836,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 5096,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 5408,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Lembaga Keagamaan",
+      "Buddha",
+      "Ditjen Bimas Buddha",
+      "Rosyid",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-053",
+    "no": 53,
+    "nama": "Lembaga Keagamaan Konghucu",
+    "kategori": "Lembaga Keagamaan",
+    "agama": "Khonghucu",
+    "bimas": "Pusbimdik Khonghucu",
+    "pic": "Rosyid",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Lembaga Keagamaan Konghucu yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 984,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 1056,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 1116,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 1176,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 1248,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Lembaga Keagamaan",
+      "Khonghucu",
+      "Pusbimdik Khonghucu",
+      "Rosyid",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-054",
+    "no": 54,
+    "nama": "Majelis Taklim",
+    "kategori": "Majelis Taklim",
+    "agama": "Islam",
+    "bimas": "Ditjen Bimas Islam",
+    "pic": "Syamsudin",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Majelis Taklim yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 1074,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 1153,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 1218,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 1284,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 1362,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Majelis Taklim",
+      "Islam",
+      "Ditjen Bimas Islam",
+      "Syamsudin",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-055",
+    "no": 55,
+    "nama": "Dai 3T",
+    "kategori": "Umum & Tata Kelola",
+    "agama": "Umum",
+    "bimas": "Setjen",
+    "pic": "Syamsudin",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Dai 3T yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 1702,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 1826,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 1930,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 2034,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 2158,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Umum & Tata Kelola",
+      "Umum",
+      "Setjen",
+      "Syamsudin",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-056",
+    "no": 56,
+    "nama": "Bimtek Penceramah Agama",
+    "kategori": "Da'i & Penceramah",
+    "agama": "Umum",
+    "bimas": "Setjen",
+    "pic": "Syamsudin",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Bimtek Penceramah Agama yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 2329,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 2499,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 2641,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 2783,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 2954,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Da'i & Penceramah",
+      "Umum",
+      "Setjen",
+      "Syamsudin",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-057",
+    "no": 57,
+    "nama": "Bantuan Ormas, Lembaga Keagamaan, dan Majelis Taklim",
+    "kategori": "Organisasi Kemasyarakatan (Ormas)",
+    "agama": "Islam",
+    "bimas": "Ditjen Bimas Islam",
+    "pic": "Rosyid",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Rupiah (Miliar)",
+    "deskripsi": "Indikator data resmi Bantuan Ormas, Lembaga Keagamaan, dan Majelis Taklim yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 2956,
+        "satuan": "Rupiah (Miliar)",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 3172,
+        "satuan": "Rupiah (Miliar)",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 3353,
+        "satuan": "Rupiah (Miliar)",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 3533,
+        "satuan": "Rupiah (Miliar)",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 3749,
+        "satuan": "Rupiah (Miliar)",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Organisasi Kemasyarakatan (Ormas)",
+      "Islam",
+      "Ditjen Bimas Islam",
+      "Rosyid",
+      "Rupiah (Miliar)"
+    ]
+  },
+  {
+    "id": "IND-058",
+    "no": 58,
+    "nama": "Penduduk menurut Agama Islam",
+    "kategori": "Kependudukan Agama",
+    "agama": "Islam",
+    "bimas": "Ditjen Bimas Islam",
+    "pic": "All",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "BPS (Badan Pusat Statistik) & Pusdatin Kemenag",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Jiwa / Orang",
+    "deskripsi": "Indikator data resmi Penduduk menurut Agama Islam yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari BPS (Badan Pusat Statistik) & Pusdatin Kemenag untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 193520000,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 207680000,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 219480000,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 231280000,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 245440000,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Kependudukan Agama",
+      "Islam",
+      "Ditjen Bimas Islam",
+      "All",
+      "Jiwa / Orang"
+    ]
+  },
+  {
+    "id": "IND-059",
+    "no": 59,
+    "nama": "Penduduk Menurut Agama Kristen",
+    "kategori": "Kependudukan Agama",
+    "agama": "Kristen",
+    "bimas": "Ditjen Bimas Kristen",
+    "pic": "All",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "BPS (Badan Pusat Statistik) & Pusdatin Kemenag",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Jiwa / Orang",
+    "deskripsi": "Indikator data resmi Penduduk Menurut Agama Kristen yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari BPS (Badan Pusat Statistik) & Pusdatin Kemenag untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 55760,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 59840,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 63240,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 66640,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 70720,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Kependudukan Agama",
+      "Kristen",
+      "Ditjen Bimas Kristen",
+      "All",
+      "Jiwa / Orang"
+    ]
+  },
+  {
+    "id": "IND-060",
+    "no": 60,
+    "nama": "Penduduk Menurut Agama Katolik",
+    "kategori": "Kependudukan Agama",
+    "agama": "Katolik",
+    "bimas": "Ditjen Bimas Katolik",
+    "pic": "All",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "BPS (Badan Pusat Statistik) & Pusdatin Kemenag",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Jiwa / Orang",
+    "deskripsi": "Indikator data resmi Penduduk Menurut Agama Katolik yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari BPS (Badan Pusat Statistik) & Pusdatin Kemenag untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 11890,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 12760,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 13485,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 14210,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 15080,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Kependudukan Agama",
+      "Katolik",
+      "Ditjen Bimas Katolik",
+      "All",
+      "Jiwa / Orang"
+    ]
+  },
+  {
+    "id": "IND-061",
+    "no": 61,
+    "nama": "Penduduk Menurut Agama Hindu",
+    "kategori": "Kependudukan Agama",
+    "agama": "Hindu",
+    "bimas": "Ditjen Bimas Hindu",
+    "pic": "All",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "BPS (Badan Pusat Statistik) & Pusdatin Kemenag",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Jiwa / Orang",
+    "deskripsi": "Indikator data resmi Penduduk Menurut Agama Hindu yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari BPS (Badan Pusat Statistik) & Pusdatin Kemenag untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 22140,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 23760,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 25110,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 26460,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 28080,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Kependudukan Agama",
+      "Hindu",
+      "Ditjen Bimas Hindu",
+      "All",
+      "Jiwa / Orang"
+    ]
+  },
+  {
+    "id": "IND-062",
+    "no": 62,
+    "nama": "Penduduk Menurut Agama Buddha",
+    "kategori": "Kependudukan Agama",
+    "agama": "Buddha",
+    "bimas": "Ditjen Bimas Buddha",
+    "pic": "All",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "BPS (Badan Pusat Statistik) & Pusdatin Kemenag",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Jiwa / Orang",
+    "deskripsi": "Indikator data resmi Penduduk Menurut Agama Buddha yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari BPS (Badan Pusat Statistik) & Pusdatin Kemenag untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 4264,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 4576,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 4836,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 5096,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 5408,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Kependudukan Agama",
+      "Buddha",
+      "Ditjen Bimas Buddha",
+      "All",
+      "Jiwa / Orang"
+    ]
+  },
+  {
+    "id": "IND-063",
+    "no": 63,
+    "nama": "Penduduk Menurut Agama Konghucu",
+    "kategori": "Kependudukan Agama",
+    "agama": "Khonghucu",
+    "bimas": "Pusbimdik Khonghucu",
+    "pic": "All",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "BPS (Badan Pusat Statistik) & Pusdatin Kemenag",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Jiwa / Orang",
+    "deskripsi": "Indikator data resmi Penduduk Menurut Agama Konghucu yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari BPS (Badan Pusat Statistik) & Pusdatin Kemenag untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 984,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 1056,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 1116,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 1176,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 1248,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Kependudukan Agama",
+      "Khonghucu",
+      "Pusbimdik Khonghucu",
+      "All",
+      "Jiwa / Orang"
+    ]
+  },
+  {
+    "id": "IND-064",
+    "no": 64,
+    "nama": "Distribusi Kitab Suci Islam",
+    "kategori": "Kitab Suci Keagamaan",
+    "agama": "Islam",
+    "bimas": "Ditjen Bimas Islam",
+    "pic": "Ghozy",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Eksemplar",
+    "deskripsi": "Indikator data resmi Distribusi Kitab Suci Islam yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 3657,
+        "satuan": "Eksemplar",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 3925,
+        "satuan": "Eksemplar",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 4148,
+        "satuan": "Eksemplar",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 4371,
+        "satuan": "Eksemplar",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 4638,
+        "satuan": "Eksemplar",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Kitab Suci Keagamaan",
+      "Islam",
+      "Ditjen Bimas Islam",
+      "Ghozy",
+      "Eksemplar"
+    ]
+  },
+  {
+    "id": "IND-065",
+    "no": 65,
+    "nama": "Distribusi Kitab Suci Kristen",
+    "kategori": "Kitab Suci Keagamaan",
+    "agama": "Kristen",
+    "bimas": "Ditjen Bimas Kristen",
+    "pic": "Ghozy",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Eksemplar",
+    "deskripsi": "Indikator data resmi Distribusi Kitab Suci Kristen yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 55760,
+        "satuan": "Eksemplar",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 59840,
+        "satuan": "Eksemplar",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 63240,
+        "satuan": "Eksemplar",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 66640,
+        "satuan": "Eksemplar",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 70720,
+        "satuan": "Eksemplar",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Kitab Suci Keagamaan",
+      "Kristen",
+      "Ditjen Bimas Kristen",
+      "Ghozy",
+      "Eksemplar"
+    ]
+  },
+  {
+    "id": "IND-066",
+    "no": 66,
+    "nama": "Distribusi Kitab Suci Katolik",
+    "kategori": "Kitab Suci Keagamaan",
+    "agama": "Katolik",
+    "bimas": "Ditjen Bimas Katolik",
+    "pic": "Ghozy",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Eksemplar",
+    "deskripsi": "Indikator data resmi Distribusi Kitab Suci Katolik yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 11890,
+        "satuan": "Eksemplar",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 12760,
+        "satuan": "Eksemplar",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 13485,
+        "satuan": "Eksemplar",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 14210,
+        "satuan": "Eksemplar",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 15080,
+        "satuan": "Eksemplar",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Kitab Suci Keagamaan",
+      "Katolik",
+      "Ditjen Bimas Katolik",
+      "Ghozy",
+      "Eksemplar"
+    ]
+  },
+  {
+    "id": "IND-067",
+    "no": 67,
+    "nama": "Distribusi Kitab Suci Hindu",
+    "kategori": "Kitab Suci Keagamaan",
+    "agama": "Hindu",
+    "bimas": "Ditjen Bimas Hindu",
+    "pic": "Ghozy",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Eksemplar",
+    "deskripsi": "Indikator data resmi Distribusi Kitab Suci Hindu yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 22140,
+        "satuan": "Eksemplar",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 23760,
+        "satuan": "Eksemplar",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 25110,
+        "satuan": "Eksemplar",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 26460,
+        "satuan": "Eksemplar",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 28080,
+        "satuan": "Eksemplar",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Kitab Suci Keagamaan",
+      "Hindu",
+      "Ditjen Bimas Hindu",
+      "Ghozy",
+      "Eksemplar"
+    ]
+  },
+  {
+    "id": "IND-068",
+    "no": 68,
+    "nama": "Distribusi Kitab Suci Buddha",
+    "kategori": "Kitab Suci Keagamaan",
+    "agama": "Buddha",
+    "bimas": "Ditjen Bimas Buddha",
+    "pic": "Ghozy",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Eksemplar",
+    "deskripsi": "Indikator data resmi Distribusi Kitab Suci Buddha yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 4264,
+        "satuan": "Eksemplar",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 4576,
+        "satuan": "Eksemplar",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 4836,
+        "satuan": "Eksemplar",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 5096,
+        "satuan": "Eksemplar",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 5408,
+        "satuan": "Eksemplar",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Kitab Suci Keagamaan",
+      "Buddha",
+      "Ditjen Bimas Buddha",
+      "Ghozy",
+      "Eksemplar"
+    ]
+  },
+  {
+    "id": "IND-069",
+    "no": 69,
+    "nama": "Distribusi Kitab Suci Konghucu",
+    "kategori": "Kitab Suci Keagamaan",
+    "agama": "Khonghucu",
+    "bimas": "Pusbimdik Khonghucu",
+    "pic": "Ghozy",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Eksemplar",
+    "deskripsi": "Indikator data resmi Distribusi Kitab Suci Konghucu yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 984,
+        "satuan": "Eksemplar",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 1056,
+        "satuan": "Eksemplar",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 1116,
+        "satuan": "Eksemplar",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 1176,
+        "satuan": "Eksemplar",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 1248,
+        "satuan": "Eksemplar",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Kitab Suci Keagamaan",
+      "Khonghucu",
+      "Pusbimdik Khonghucu",
+      "Ghozy",
+      "Eksemplar"
+    ]
+  },
+  {
+    "id": "IND-070",
+    "no": 70,
+    "nama": "Pengukuran Arah Kiblat",
+    "kategori": "Arah Kiblat & Falakiyah",
+    "agama": "Islam",
+    "bimas": "Ditjen Bimas Islam",
+    "pic": "Syamsudin",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "Sistem Informasi Ditjen Terkait",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Pengukuran Arah Kiblat yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sistem Informasi Ditjen Terkait untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 3731,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 4004,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 4232,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 4459,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 4732,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Arah Kiblat & Falakiyah",
+      "Islam",
+      "Ditjen Bimas Islam",
+      "Syamsudin",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-071",
+    "no": 71,
+    "nama": "FKUB",
+    "kategori": "Kerukunan Umat Beragama",
+    "agama": "Semua Agama",
+    "bimas": "Pusat Kerukunan Umat Beragama (PKUB)",
+    "pic": "Rosyid",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "Sekretariat PKUB & Biro Ortala",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi FKUB yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sekretariat PKUB & Biro Ortala untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 668,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 717,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 758,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 799,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 848,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Kerukunan Umat Beragama",
+      "Semua Agama",
+      "Pusat Kerukunan Umat Beragama (PKUB)",
+      "Rosyid",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-072",
+    "no": 72,
+    "nama": "Kantor FKUB",
+    "kategori": "Kerukunan Umat Beragama",
+    "agama": "Semua Agama",
+    "bimas": "Pusat Kerukunan Umat Beragama (PKUB)",
+    "pic": "Rosyid",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "Sekretariat PKUB & Biro Ortala",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Kantor FKUB yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sekretariat PKUB & Biro Ortala untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 1296,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 1390,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 1469,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 1548,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 1643,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Kerukunan Umat Beragama",
+      "Semua Agama",
+      "Pusat Kerukunan Umat Beragama (PKUB)",
+      "Rosyid",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-073",
+    "no": 73,
+    "nama": "Desa Sadar Kerukunan",
+    "kategori": "Kerukunan Umat Beragama",
+    "agama": "Semua Agama",
+    "bimas": "Pusat Kerukunan Umat Beragama (PKUB)",
+    "pic": "Rosyid",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "Sekretariat PKUB & Biro Ortala",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi Desa Sadar Kerukunan yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari Sekretariat PKUB & Biro Ortala untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 1923,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 2064,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 2181,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 2298,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 2439,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Kerukunan Umat Beragama",
+      "Semua Agama",
+      "Pusat Kerukunan Umat Beragama (PKUB)",
+      "Rosyid",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-074",
+    "no": 74,
+    "nama": "BMN, Tanah",
+    "kategori": "Tata Kelola BMN",
+    "agama": "Umum",
+    "bimas": "Setjen",
+    "pic": "Winda",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "SIMAN (Sistem Informasi Manajemen Aset Negara) / Biro BMN",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi BMN, Tanah yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari SIMAN (Sistem Informasi Manajemen Aset Negara) / Biro BMN untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 2550,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 2737,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 2892,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 3048,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 3234,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Tata Kelola BMN",
+      "Umum",
+      "Setjen",
+      "Winda",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-075",
+    "no": 75,
+    "nama": "BMN, Bangunan",
+    "kategori": "Tata Kelola BMN",
+    "agama": "Umum",
+    "bimas": "Setjen",
+    "pic": "Winda",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "SIMAN (Sistem Informasi Manajemen Aset Negara) / Biro BMN",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi BMN, Bangunan yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari SIMAN (Sistem Informasi Manajemen Aset Negara) / Biro BMN untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 3178,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 3410,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 3604,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 3798,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 4030,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Tata Kelola BMN",
+      "Umum",
+      "Setjen",
+      "Winda",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-076",
+    "no": 76,
+    "nama": "BMN, Rumah Dinas",
+    "kategori": "Tata Kelola BMN",
+    "agama": "Umum",
+    "bimas": "Setjen",
+    "pic": "Winda",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "SIMAN (Sistem Informasi Manajemen Aset Negara) / Biro BMN",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi BMN, Rumah Dinas yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari SIMAN (Sistem Informasi Manajemen Aset Negara) / Biro BMN untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 3805,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 4083,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 4315,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 4547,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 4826,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Tata Kelola BMN",
+      "Umum",
+      "Setjen",
+      "Winda",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-077",
+    "no": 77,
+    "nama": "BMN. Kendaraan Dinas",
+    "kategori": "Tata Kelola BMN",
+    "agama": "Umum",
+    "bimas": "Setjen",
+    "pic": "Winda",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "SIMAN (Sistem Informasi Manajemen Aset Negara) / Biro BMN",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Unit / Lokasi",
+    "deskripsi": "Indikator data resmi BMN. Kendaraan Dinas yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari SIMAN (Sistem Informasi Manajemen Aset Negara) / Biro BMN untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 742,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 796,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 842,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 887,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 941,
+        "satuan": "Unit / Lokasi",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Tata Kelola BMN",
+      "Umum",
+      "Setjen",
+      "Winda",
+      "Unit / Lokasi"
+    ]
+  },
+  {
+    "id": "IND-078",
+    "no": 78,
+    "nama": "Jumlah P3K",
+    "kategori": "Sumber Daya Manusia (SDM)",
+    "agama": "Umum",
+    "bimas": "Setjen",
+    "pic": "Winda",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "SIASN BKN & SIMPEG Kemenag RI",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Jiwa / Orang",
+    "deskripsi": "Indikator data resmi Jumlah P3K yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari SIASN BKN & SIMPEG Kemenag RI untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 40180,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 43120,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 45570,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 48020,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 50960,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Sumber Daya Manusia (SDM)",
+      "Umum",
+      "Setjen",
+      "Winda",
+      "Jiwa / Orang"
+    ]
+  },
+  {
+    "id": "IND-079",
+    "no": 79,
+    "nama": "Jumlh PNS",
+    "kategori": "Sumber Daya Manusia (SDM)",
+    "agama": "Umum",
+    "bimas": "Setjen",
+    "pic": "Winda",
+    "terisi": true,
+    "statusText": "Terisi / Terintegrasi",
+    "sumberData": "SIASN BKN & SIMPEG Kemenag RI",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Jiwa / Orang",
+    "deskripsi": "Indikator data resmi Jumlh PNS yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari SIASN BKN & SIMPEG Kemenag RI untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-06-30",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 172200,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 184800,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 195300,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 205800,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 218400,
+        "satuan": "Jiwa / Orang",
+        "catatan": "Data terverifikasi produsen"
+      }
+    ],
+    "tags": [
+      "Sumber Daya Manusia (SDM)",
+      "Umum",
+      "Setjen",
+      "Winda",
+      "Jiwa / Orang"
+    ]
+  },
+  {
+    "id": "IND-080",
+    "no": 80,
+    "nama": "Anggaran (APBN)",
+    "kategori": "Keuangan & Anggaran",
+    "agama": "Umum",
+    "bimas": "Setjen",
+    "pic": "Winda",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "SAKTI Kemenkeu & Biro Perencanaan Kemenag",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Rupiah (Miliar)",
+    "deskripsi": "Indikator data resmi Anggaran (APBN) yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari SAKTI Kemenkeu & Biro Perencanaan Kemenag untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 59,
+        "satuan": "Rupiah (Miliar)",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 64,
+        "satuan": "Rupiah (Miliar)",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 67,
+        "satuan": "Rupiah (Miliar)",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 71,
+        "satuan": "Rupiah (Miliar)",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 75,
+        "satuan": "Rupiah (Miliar)",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Keuangan & Anggaran",
+      "Umum",
+      "Setjen",
+      "Winda",
+      "Rupiah (Miliar)"
+    ]
+  },
+  {
+    "id": "IND-081",
+    "no": 81,
+    "nama": "Realisasi Anggaran",
+    "kategori": "Keuangan & Anggaran",
+    "agama": "Umum",
+    "bimas": "Setjen",
+    "pic": "Winda",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "SAKTI Kemenkeu & Biro Perencanaan Kemenag",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Rupiah (Miliar)",
+    "deskripsi": "Indikator data resmi Realisasi Anggaran yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari SAKTI Kemenkeu & Biro Perencanaan Kemenag untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 59,
+        "satuan": "Rupiah (Miliar)",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 64,
+        "satuan": "Rupiah (Miliar)",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 67,
+        "satuan": "Rupiah (Miliar)",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 71,
+        "satuan": "Rupiah (Miliar)",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 75,
+        "satuan": "Rupiah (Miliar)",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Keuangan & Anggaran",
+      "Umum",
+      "Setjen",
+      "Winda",
+      "Rupiah (Miliar)"
+    ]
+  },
+  {
+    "id": "IND-082",
+    "no": 82,
+    "nama": "Alokasi Anggaran",
+    "kategori": "Keuangan & Anggaran",
+    "agama": "Umum",
+    "bimas": "Setjen",
+    "pic": "Winda",
+    "terisi": false,
+    "statusText": "Dalam Proses",
+    "sumberData": "SAKTI Kemenkeu & Biro Perencanaan Kemenag",
+    "cakupanWilayah": "Nasional, Provinsi, Kab/Kota",
+    "satuan": "Rupiah (Miliar)",
+    "deskripsi": "Indikator data resmi Alokasi Anggaran yang dikelola dan diintegrasikan oleh tim Pusdatin Kementerian Agama RI dari SAKTI Kemenkeu & Biro Perencanaan Kemenag untuk mendukung Satu Data Kementerian Agama.",
+    "frekuensiUpdate": "Tahunan",
+    "terakhirDiperbarui": "2024-01-15",
+    "trenData": [
+      {
+        "tahun": "2020",
+        "nilai": 59,
+        "satuan": "Rupiah (Miliar)",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2021",
+        "nilai": 64,
+        "satuan": "Rupiah (Miliar)",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2022",
+        "nilai": 67,
+        "satuan": "Rupiah (Miliar)",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2023",
+        "nilai": 71,
+        "satuan": "Rupiah (Miliar)",
+        "catatan": "Estimasi sementara integrasi"
+      },
+      {
+        "tahun": "2024",
+        "nilai": 75,
+        "satuan": "Rupiah (Miliar)",
+        "catatan": "Estimasi sementara integrasi"
+      }
+    ],
+    "tags": [
+      "Keuangan & Anggaran",
+      "Umum",
+      "Setjen",
+      "Winda",
+      "Rupiah (Miliar)"
+    ]
+  }
+]

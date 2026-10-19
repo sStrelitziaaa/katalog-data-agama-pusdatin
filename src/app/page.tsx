@@ -15,13 +15,18 @@ import {
   TrendingUp,
   FileText
 } from 'lucide-react';
-import { getCatalogStats, getBimasSummaries, getAllCategories } from '@/lib/data-loader';
+import { getCatalogStats, getBimasSummaries, getAllCategories } from '@/lib/catalog';
+import { getIndicatorsWithFallback } from '@/lib/db/indicators';
 import BimasCard from '@/components/BimasCard';
 
-export default function HomePage() {
-  const stats = getCatalogStats();
-  const bimasList = getBimasSummaries();
-  const categories = getAllCategories();
+export const dynamic = 'force-dynamic';
+
+export default async function HomePage() {
+  const indicators = await getIndicatorsWithFallback();
+  const stats = getCatalogStats(indicators);
+  const bimasList = getBimasSummaries(indicators);
+  const categories = getAllCategories(indicators);
+  const firstIndicatorId = indicators[0]?.id;
 
   // Produsen Data Bimas & Unit Kerja Kemenag
   const floatingPillsRow1 = [
@@ -203,7 +208,9 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           <div className="text-center max-w-3xl mx-auto space-y-2">
             <h2 className="text-2xl sm:text-4xl font-black text-[#181E24] tracking-tight">
-              {stats.totalIndikator}+ indikator dari {stats.totalBimas} unit kerja & direktorat jenderal
+              {stats.totalIndikator > 0
+                ? `${stats.totalIndikator}+ indikator dari ${stats.totalBimas} unit kerja & direktorat jenderal`
+                : 'Katalog Indikator Terpadu Lintas Unit Kerja & Ditjen Bimas'}
             </h2>
             <p className="text-sm sm:text-base text-[#55606D]">
               Pilih direktorat jenderal bimbingan masyarakat atau unit kerja untuk melihat indikator data terintegrasi
@@ -221,7 +228,7 @@ export default function HomePage() {
               href="/eksplorasi"
               className="inline-flex items-center space-x-2 text-sm font-bold text-[#286084] hover:text-[#1D4661] transition-colors"
             >
-              <span>Lihat semua {stats.totalIndikator} indikator di Eksplorasi Data</span>
+              <span>{stats.totalIndikator > 0 ? `Lihat semua ${stats.totalIndikator} indikator di Eksplorasi Data` : 'Buka Halaman Eksplorasi Data'}</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -253,7 +260,7 @@ export default function HomePage() {
                   Pengambilan keputusan berbasis data keagamaan akurat
                 </h3>
                 <p className="text-sm text-[#55606D] leading-relaxed">
-                  Akses 82+ indikator resmi dari seluruh Ditjen Bimas dan unit kerja Kementerian Agama RI secara gratis dan terstandarisasi.
+                  Akses seluruh indikator resmi dari seluruh Ditjen Bimas dan unit kerja Kementerian Agama RI secara transparan dan terstandarisasi.
                 </p>
               </div>
 
@@ -278,16 +285,16 @@ export default function HomePage() {
                   Eksplorasi visualisasi & tren deret waktu interaktif
                 </h3>
                 <p className="text-sm text-[#55606D] leading-relaxed">
-                  Pahami dinamika tren 2020 s/d 2024 dengan grafik visual yang informatif, lengkap dengan indikator pertumbuhan tahunan.
+                  Pahami dinamika tren tahunan dengan grafik visual yang informatif, lengkap dengan indikator pertumbuhan.
                 </p>
               </div>
 
               <div>
                 <Link
-                  href="/indikator/IND-001"
+                  href={firstIndicatorId ? `/indikator/${firstIndicatorId}` : '/eksplorasi'}
                   className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-xl border border-[#286084] text-[#286084] text-xs sm:text-sm font-bold hover:bg-[#286084] hover:text-white transition-all shadow-2xs"
                 >
-                  <span>Contoh Detail Visualisasi</span>
+                  <span>{firstIndicatorId ? 'Contoh Detail Visualisasi' : 'Eksplorasi Indikator'}</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>

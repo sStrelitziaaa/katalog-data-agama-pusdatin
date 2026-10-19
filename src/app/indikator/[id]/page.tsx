@@ -1,6 +1,8 @@
 import React from 'react';
-import { getAllIndicators, getIndicatorById } from '@/lib/data-loader';
+import { getIndicatorsWithFallback } from '@/lib/db/indicators';
 import IndicatorDetailView from '@/components/IndicatorDetailView';
+
+export const dynamicParams = true;
 
 // Next.js 15 dynamic route params
 interface PageProps {
@@ -8,7 +10,7 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  const indicators = getAllIndicators();
+  const indicators = await getIndicatorsWithFallback();
   return indicators.map(item => ({
     id: item.id,
   }));
@@ -16,8 +18,8 @@ export async function generateStaticParams() {
 
 export default async function IndicatorDetailPage({ params }: PageProps) {
   const { id } = await params;
-  const indicator = getIndicatorById(id);
-  const allIndicators = getAllIndicators();
+  const allIndicators = await getIndicatorsWithFallback();
+  const indicator = allIndicators.find(item => item.id.toLowerCase() === id.toLowerCase());
 
   return (
     <IndicatorDetailView

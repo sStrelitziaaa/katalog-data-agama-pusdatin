@@ -32,11 +32,27 @@ function EksplorasiContent() {
   const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
   const [notification, setNotification] = useState<string | null>(null);
 
-  // Sync dengan data yang diunggah di browser
+  // Sync dengan data database & yang diunggah di browser
   useEffect(() => {
-    const { merged, customCount: count } = mergeWithStoredIndicators(baseData);
-    setAllData(merged);
-    setCustomCount(count);
+    let isMounted = true;
+    fetch('/api/indicators')
+      .then(res => res.json())
+      .then(json => {
+        if (!isMounted) return;
+        if (json?.data && Array.isArray(json.data)) {
+          const { merged, customCount: count } = mergeWithStoredIndicators(json.data);
+          setAllData(merged);
+          setCustomCount(count);
+        }
+      })
+      .catch(() => {
+        const { merged, customCount: count } = mergeWithStoredIndicators(baseData);
+        setAllData(merged);
+        setCustomCount(count);
+      });
+    return () => {
+      isMounted = false;
+    };
   }, [baseData]);
 
   const categories = useMemo(() => Array.from(new Set(allData.map(item => item.kategori))).sort(), [allData]);

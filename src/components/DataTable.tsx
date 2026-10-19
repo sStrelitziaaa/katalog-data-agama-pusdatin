@@ -13,7 +13,9 @@ import {
   FileText,
   UploadCloud,
   FileDown,
-  RotateCcw
+  RotateCcw,
+  Database,
+  ShieldCheck
 } from 'lucide-react';
 import { IndicatorItem } from '@/types/indicator';
 import { exportToExcel, exportToCSV } from '@/lib/export-utils';
@@ -299,6 +301,25 @@ export default function DataTable({
                   </tr>
                 );
               })
+            ) : totalRaw === 0 ? (
+              <tr>
+                <td colSpan={7} className="py-16 text-center text-[#7E8B99]">
+                  <Database className="w-10 h-10 mx-auto text-[#8EBEDE] mb-3" />
+                  <p className="text-sm font-bold text-[#181E24]">Katalog Indikator Masih Kosong</p>
+                  <p className="text-xs text-[#55606D] mt-1 max-w-md mx-auto">
+                    Belum ada data indikator yang terdaftar di katalog. Administrator dapat menambahkan indikator baru melalui Portal Admin.
+                  </p>
+                  <div className="mt-4">
+                    <Link
+                      href="/admin"
+                      className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-xl bg-[#286084] text-white text-xs font-bold hover:bg-[#1D4661] shadow-2xs transition-all"
+                    >
+                      <ShieldCheck className="w-3.5 h-3.5" />
+                      <span>Masuk ke Portal Admin</span>
+                    </Link>
+                  </div>
+                </td>
+              </tr>
             ) : (
               <tr>
                 <td colSpan={7} className="py-12 text-center text-[#7E8B99]">

@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { getIndicatorsWithFallback } from '@/lib/db/indicators';
-import { getCatalogStats } from '@/lib/data-loader';
+import { getCatalogStats } from '@/lib/catalog';
+
+export const dynamic = 'force-dynamic';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -9,7 +11,8 @@ export async function GET(request: Request) {
   const kategori = searchParams.get('kategori');
   const terisi = searchParams.get('terisi');
 
-  let indicators = await getIndicatorsWithFallback();
+  const allIndicators = await getIndicatorsWithFallback();
+  let indicators = allIndicators;
 
   if (q) {
     indicators = indicators.filter(
@@ -38,12 +41,12 @@ export async function GET(request: Request) {
     {
       status: 'success',
       total: indicators.length,
-      stats: getCatalogStats(),
+      stats: getCatalogStats(allIndicators),
       data: indicators,
     },
     {
       headers: {
-        'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
+        'Cache-Control': 'no-store, must-revalidate',
       },
     }
   );

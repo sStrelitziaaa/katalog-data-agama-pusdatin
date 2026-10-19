@@ -1,6 +1,7 @@
 import { getDbPool } from './pool';
 import { IndicatorItem, YearlyDataPoint } from '@/types/indicator';
 import { getAllIndicators as getFallbackIndicators } from '@/lib/data-loader';
+import { NewIndicatorInput } from '@/lib/indicator-input';
 
 /**
  * Mengambil seluruh indikator dari Database PostgreSQL.
@@ -196,3 +197,165 @@ export async function upsertIndicatorsTransaction(
     client.release();
   }
 }
+
+/**
+ * Menambahkan indikator baru secara manual dari Portal Admin.
+ * Otomatis menghasilkan ID sekuensial (IND-001, IND-002, dst) dan nomor urut berikutnya.
+ */
+export async function createIndicatorInDb(
+  input: NewIndicatorInput
+): Promise<{ success: boolean; indicator?: IndicatorItem; error?: string }> {
+  const pool = getDbPool();
+  if (!pool) {
+    return {
+      success: false,
+      error: 'DATABASE_URL belum dikonfigurasi.',
+    };
+  }
+
+  const client = await pool.connect();
+  try {
+    await client.query('BEGIN');
+
+    // 1. Tentukan nomor urut berikutnya
+    const maxRes = await client.query(`
+      SELECT COALESCE(MAX(no), 0) AS max_no FROM indicators
+    `);
+    const nextNo = Number(maxRes.rows[0]?.max_no || 0) + 1;
+
+    // Cari ID unik berikutnya (IND-001, IND-002, dst)
+    let candidateId = `IND-${String(nextNo).padStart(3, '0')}`;
+    let counter = nextNo;
+    while (true) {
+      const exists = await client.query('SELECT 1 FROM indicators WHERE id = $1', [candidateId]);
+      if (exists.rows.length === 0) break;
+      counter++;
+      candidateId = `IND-${String(counter).padStart(3, '0')}`;
+    }
+
+    const today = new Date().toISOString().split('T')[0];
+    const hasValue = input.trenData && input.trenData.some(d => d.nilai > 0);
+    const terisi = input.terisi || Boolean(hasValue);
+    const statusText = terisi ? 'Terisi / Terintegrasi' : 'Dalam Proses';
+
+    // 2. Insert ke tabel indicators
+    await client.query(`
+      INSERT INTO indicators (
+        id, no, nama, kategori, agama, bimas, satuan, 
+        cakupan_wilayah, frekuensi_update, sumber_data, 
+        deskripsi, pic, terisi, status_text, terakhir_diperbarui
+      ) VALUES (
+        $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15
+      );
+    `, [
+      candidateId,
+      nextNo,
+      input.nama,
+      input.kategori,
+      input.agama,
+      input.bimas,
+      input.satuan,
+      input.cakupanWilayah,
+      input.frekuensiUpdate,
+      input.sumberData,
+      input.deskripsi || '',
+      input.pic,
+      terisi,
+      statusText,
+      today,
+    ]);
+
+    // 3. Insert ke indicator_yearly_data jika ada
+    if (input.trenData && input.trenData.length > 0) {
+      for (const pt of input.trenData) {
+        await client.query(`
+          INSERT INTO indicator_yearly_data (indicator_id, tahun, nilai, satuan, catatan)
+          VALUES ($1, $2, $3, $4, $5);
+        `, [
+          candidateId,
+          String(pt.tahun),
+          pt.nilai,
+          pt.satuan || input.satuan,
+          pt.catatan || null,
+        ]);
+      }
+    }
+
+    // 4. Catat ke audit log
+    await client.query(`
+      INSERT INTO upload_audit_logs (filename, upload_mode, total_records, status, message)
+      VALUES ($1, $2, $3, $4, $5);
+    `, [
+      `manual-create:${candidateId}`,
+      'single-create',
+      1,
+      'SUCCESS',
+      `Berhasil menambahkan indikator baru [${candidateId}] ${input.nama}`,
+    ]);
+
+    await client.query('COMMIT');
+
+    const created: IndicatorItem = {
+      id: candidateId,
+      no: nextNo,
+      nama: input.nama,
+      kategori: input.kategori,
+      agama: input.agama,
+      bimas: input.bimas,
+      satuan: input.satuan,
+      cakupanWilayah: input.cakupanWilayah,
+      frekuensiUpdate: input.frekuensiUpdate,
+      sumberData: input.sumberData,
+      deskripsi: input.deskripsi || '',
+      pic: input.pic,
+      terisi,
+      statusText,
+      terakhirDiperbarui: today,
+      trenData: input.trenData || [],
+      tags: [input.kategori, input.agama, input.bimas].filter(Boolean),
+    };
+
+    return { success: true, indicator: created };
+  } catch (error: any) {
+    await client.query('ROLLBACK');
+    console.error('[createIndicatorInDb Error]:', error);
+    return { success: false, error: error.message };
+  } finally {
+    client.release();
+  }
+}
+
+/**
+ * Menghapus satu indikator dari database
+ */
+export async function deleteIndicatorInDb(
+  id: string
+): Promise<{ success: boolean; error?: string }> {
+  const pool = getDbPool();
+  if (!pool) return { success: false, error: 'DATABASE_URL belum dikonfigurasi.' };
+
+  const client = await pool.connect();
+  try {
+    await client.query('BEGIN');
+    await client.query('DELETE FROM indicator_yearly_data WHERE indicator_id = $1', [id]);
+    const res = await client.query('DELETE FROM indicators WHERE id = $1', [id]);
+    await client.query(`
+      INSERT INTO upload_audit_logs (filename, upload_mode, total_records, status, message)
+      VALUES ($1, $2, $3, $4, $5);
+    `, [
+      `manual-delete:${id}`,
+      'single-delete',
+      1,
+      'SUCCESS',
+      `Berhasil menghapus indikator [${id}]`,
+    ]);
+    await client.query('COMMIT');
+    return { success: res.rowCount !== null && res.rowCount > 0 };
+  } catch (error: any) {
+    await client.query('ROLLBACK');
+    return { success: false, error: error.message };
+  } finally {
+    client.release();
+  }
+}
+

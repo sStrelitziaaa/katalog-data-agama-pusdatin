@@ -21,14 +21,17 @@ import {
   SlidersHorizontal,
   Home,
   Database,
-  Clock
+  Clock,
+  PlusCircle,
+  Trash2
 } from 'lucide-react';
-import { getAllIndicators, getCatalogStats } from '@/lib/data-loader';
+import { getAllIndicators } from '@/lib/data-loader';
 import { mergeWithStoredIndicators, saveStoredIndicators, resetStoredIndicators } from '@/lib/storage-utils';
 import { downloadExcelTemplate, downloadIndicatorTemplate } from '@/lib/excel-template-utils';
 import { exportToExcel } from '@/lib/export-utils';
 import { useAdminAuth, DEFAULT_ADMIN_PASSCODE } from '@/lib/admin-auth';
 import UploadExcelModal from '@/components/UploadExcelModal';
+import AddIndicatorModal from '@/components/AddIndicatorModal';
 import { IndicatorItem } from '@/types/indicator';
 
 export default function AdminPage() {
@@ -43,16 +46,33 @@ export default function AdminPage() {
   const [allData, setAllData] = useState<IndicatorItem[]>(baseData);
   const [customCount, setCustomCount] = useState<number>(0);
   const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [selectedIndicatorForUpload, setSelectedIndicatorForUpload] = useState<IndicatorItem | undefined>(undefined);
   const [searchQuery, setSearchQuery] = useState('');
   const [filterBimas, setFilterBimas] = useState('');
   const [notification, setNotification] = useState<string | null>(null);
 
-  // Sync data dari storage browser
+  // Sync data dari database & storage browser
   useEffect(() => {
-    const { merged, customCount: count } = mergeWithStoredIndicators(baseData);
-    setAllData(merged);
-    setCustomCount(count);
+    let isMounted = true;
+    fetch('/api/indicators')
+      .then(res => res.json())
+      .then(json => {
+        if (!isMounted) return;
+        if (json?.data && Array.isArray(json.data)) {
+          const { merged, customCount: count } = mergeWithStoredIndicators(json.data);
+          setAllData(merged);
+          setCustomCount(count);
+        }
+      })
+      .catch(() => {
+        const { merged, customCount: count } = mergeWithStoredIndicators(baseData);
+        setAllData(merged);
+        setCustomCount(count);
+      });
+    return () => {
+      isMounted = false;
+    };
   }, [baseData]);
 
   // Handle Login Submit
@@ -77,13 +97,42 @@ export default function AdminPage() {
     setTimeout(() => setNotification(null), 6000);
   };
 
+  // Handle Add Indicator Success
+  const handleAddSuccess = (newIndicator: IndicatorItem) => {
+    setAllData(prev => [newIndicator, ...prev]);
+    setNotification(`Berhasil menambahkan indikator [${newIndicator.id}] ${newIndicator.nama}!`);
+    setTimeout(() => setNotification(null), 6000);
+  };
+
+  // Handle Delete Indicator
+  const handleDeleteIndicator = async (item: IndicatorItem) => {
+    if (typeof window !== 'undefined' && window.confirm(`Apakah Anda yakin ingin menghapus indikator [${item.id}] ${item.nama}? Tindakan ini permanen.`)) {
+      try {
+        const res = await fetch(`/api/admin/indicators?id=${encodeURIComponent(item.id)}`, {
+          method: 'DELETE',
+          headers: { 'x-admin-auth': 'true' },
+        });
+        const json = await res.json();
+        if (json.success) {
+          setAllData(prev => prev.filter(i => i.id !== item.id));
+          setNotification(`Indikator [${item.id}] berhasil dihapus.`);
+          setTimeout(() => setNotification(null), 5000);
+        } else {
+          alert(json.message || 'Gagal menghapus indikator.');
+        }
+      } catch (err: any) {
+        alert('Gagal menghubungi server: ' + err.message);
+      }
+    }
+  };
+
   // Handle Reset to Default
   const handleResetData = () => {
-    if (typeof window !== 'undefined' && window.confirm('Kembalikan seluruh data ke 82 indikator acuan standar bawaan?')) {
+    if (typeof window !== 'undefined' && window.confirm('Kembalikan seluruh data ke acuan standar bawaan?')) {
       resetStoredIndicators();
       setAllData(baseData);
       setCustomCount(0);
-      setNotification('Data telah berhasil dikembalikan ke 82 indikator acuan standar.');
+      setNotification('Data telah berhasil direset.');
       setTimeout(() => setNotification(null), 5000);
     }
   };
@@ -150,7 +199,7 @@ export default function AdminPage() {
                   Portal Administrator CMS
                 </h1>
                 <p className="text-xs text-[#55606D] mt-1 leading-relaxed">
-                  Masuk untuk mengelola dataset, memperbarui nilai indikator, dan mengunggah berkas Excel resmi.
+                  Masuk untuk mengelola dataset, menambah indikator baru, dan mengunggah berkas Excel resmi.
                 </p>
               </div>
             </div>
@@ -213,7 +262,10 @@ export default function AdminPage() {
   // =========================================================================
   // VIEW 2: DASHBOARD ADMINISTRATOR (JIKA SUDAH LOGIN SEBAGAI ADMIN)
   // =========================================================================
-  const stats = getCatalogStats();
+  const totalCount = allData.length;
+  const filledCount = allData.filter(i => i.terisi).length;
+  const pendingCount = totalCount - filledCount;
+  const filledPercent = totalCount > 0 ? Math.round((filledCount / totalCount) * 100) : 0;
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
@@ -257,25 +309,34 @@ export default function AdminPage() {
               <span>Pusat Data dan Teknologi Informasi (Pusdatin) • CMS Administrator</span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-black text-[#132E40] tracking-tight">
-              Manajemen Dataset & Unggah Excel
+              Manajemen Dataset & Indikator Agama
             </h1>
             <p className="text-xs sm:text-sm text-[#55697A] font-medium leading-relaxed">
-              Sebagai Administrator Pusdatin, Anda memiliki hak penuh untuk memperbarui angka nilai tahunan (2020–2024), mengimpor file Excel resmi secara terpilah per indikator, per kategori, maupun bulk impor.
+              Sebagai Administrator Pusdatin, Anda dapat menambahkan indikator baru secara bertahap, memperbarui angka nilai tahunan (2020–2024), dan mengimpor file Excel resmi.
             </p>
           </div>
 
-          {/* Quick Action: Open Master Upload Modal */}
-          <div className="shrink-0 flex flex-col sm:flex-row gap-2.5">
+          {/* Quick Actions: Tambah Indikator, Unggah Excel, Download Template */}
+          <div className="shrink-0 flex flex-wrap sm:flex-nowrap gap-2.5">
+            <button
+              type="button"
+              onClick={() => setIsAddModalOpen(true)}
+              className="inline-flex items-center justify-center space-x-2 px-5 py-3 rounded-2xl bg-[#286084] hover:bg-[#1D4661] text-white text-xs sm:text-sm font-bold shadow-md transition-all active:scale-[0.98]"
+            >
+              <PlusCircle className="w-4 h-4" />
+              <span>Tambah Indikator</span>
+            </button>
+
             <button
               type="button"
               onClick={() => {
                 setSelectedIndicatorForUpload(undefined);
                 setIsUploadModalOpen(true);
               }}
-              className="inline-flex items-center justify-center space-x-2 px-5 py-3 rounded-2xl bg-[#286084] hover:bg-[#1D4661] text-white text-xs sm:text-sm font-bold shadow-md transition-all active:scale-[0.98]"
+              className="inline-flex items-center justify-center space-x-2 px-4 py-3 rounded-2xl bg-[#E7F1F8] hover:bg-[#D3E4F1] border border-[#D3E4F1] text-[#1D4661] text-xs sm:text-sm font-bold shadow-2xs transition-all active:scale-[0.98]"
             >
-              <UploadCloud className="w-4 h-4" />
-              <span>Unggah Berkas Excel (CMS)</span>
+              <UploadCloud className="w-4 h-4 text-[#286084]" />
+              <span>Unggah Excel</span>
             </button>
 
             <button
@@ -284,7 +345,7 @@ export default function AdminPage() {
               className="inline-flex items-center justify-center space-x-2 px-4 py-3 rounded-2xl bg-[#F6EBC8] hover:bg-[#EEDFA7] border border-[#E3CF7E] text-[#4D410E] text-xs sm:text-sm font-bold shadow-2xs transition-all"
             >
               <FileDown className="w-4 h-4 text-[#4D410E]" />
-              <span>Download Master Template</span>
+              <span>Master Template</span>
             </button>
           </div>
         </div>
@@ -294,19 +355,19 @@ export default function AdminPage() {
           <div className="p-3.5 bg-[#F5F9FD] rounded-2xl border border-[#D3E4F1]">
             <span className="text-[11px] font-bold text-[#7E8B99] uppercase tracking-wider block">Total Indikator</span>
             <strong className="text-lg sm:text-2xl font-black text-[#181E24] mt-0.5 block">
-              {allData.length}
+              {totalCount}
             </strong>
           </div>
           <div className="p-3.5 bg-emerald-50/60 rounded-2xl border border-emerald-200/60">
             <span className="text-[11px] font-bold text-emerald-800 uppercase tracking-wider block">Data Terisi</span>
             <strong className="text-lg sm:text-2xl font-black text-emerald-900 mt-0.5 block">
-              {allData.filter(i => i.terisi).length} <span className="text-xs font-semibold text-emerald-700">({Math.round((allData.filter(i => i.terisi).length / allData.length) * 100)}%)</span>
+              {filledCount} <span className="text-xs font-semibold text-emerald-700">({filledPercent}%)</span>
             </strong>
           </div>
           <div className="p-3.5 bg-amber-50/60 rounded-2xl border border-amber-200/60">
             <span className="text-[11px] font-bold text-amber-800 uppercase tracking-wider block">Belum Terisi</span>
             <strong className="text-lg sm:text-2xl font-black text-amber-900 mt-0.5 block">
-              {allData.filter(i => !i.terisi).length}
+              {pendingCount}
             </strong>
           </div>
           <div className="p-3.5 bg-[#E7F1F8] rounded-2xl border border-[#D3E4F1]">
@@ -343,7 +404,7 @@ export default function AdminPage() {
               Katalog Master Dataset Agama
             </h2>
             <p className="text-xs text-[#55606D] mt-0.5">
-              Menampilkan {filteredData.length} dari total {allData.length} indikator. Klik perbarui untuk mengunggah Excel spesifik per indikator.
+              Menampilkan {filteredData.length} dari total {allData.length} indikator.
             </p>
           </div>
 
@@ -361,26 +422,30 @@ export default function AdminPage() {
             </div>
 
             {/* Bimas Filter */}
-            <select
-              value={filterBimas}
-              onChange={e => setFilterBimas(e.target.value)}
-              className="text-xs px-3 py-2 rounded-xl border border-[#D3E4F1] bg-white text-[#181E24] focus:outline-hidden"
-            >
-              <option value="">Semua Produsen Data</option>
-              {uniqueBimas.map(b => (
-                <option key={b} value={b}>{b}</option>
-              ))}
-            </select>
+            {uniqueBimas.length > 0 && (
+              <select
+                value={filterBimas}
+                onChange={e => setFilterBimas(e.target.value)}
+                className="text-xs px-3 py-2 rounded-xl border border-[#D3E4F1] bg-white text-[#181E24] focus:outline-hidden"
+              >
+                <option value="">Semua Produsen Data</option>
+                {uniqueBimas.map(b => (
+                  <option key={b} value={b}>{b}</option>
+                ))}
+              </select>
+            )}
 
             {/* Export All Excel Button */}
-            <button
-              type="button"
-              onClick={() => exportToExcel(filteredData, 'master-data-agama-pusdatin.xlsx')}
-              className="inline-flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-white border border-[#D3E4F1] text-xs font-semibold text-[#181E24] hover:bg-[#F5F9FD]"
-            >
-              <FileSpreadsheet className="w-3.5 h-3.5 text-[#286084]" />
-              <span>Export Excel</span>
-            </button>
+            {filteredData.length > 0 && (
+              <button
+                type="button"
+                onClick={() => exportToExcel(filteredData, 'master-data-agama-pusdatin.xlsx')}
+                className="inline-flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-white border border-[#D3E4F1] text-xs font-semibold text-[#181E24] hover:bg-[#F5F9FD]"
+              >
+                <FileSpreadsheet className="w-3.5 h-3.5 text-[#286084]" />
+                <span>Export Excel</span>
+              </button>
+            )}
 
             {/* Reset Button */}
             {customCount > 0 && (
@@ -388,10 +453,10 @@ export default function AdminPage() {
                 type="button"
                 onClick={handleResetData}
                 className="inline-flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-rose-50 border border-rose-200 text-xs font-bold text-rose-700 hover:bg-rose-100"
-                title="Hapus data kustom yang diunggah dan kembalikan ke 82 indikator acuan"
+                title="Hapus data kustom yang diunggah"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
-                <span>Reset ke Standar</span>
+                <span>Reset Kustom</span>
               </button>
             )}
           </div>
@@ -407,96 +472,128 @@ export default function AdminPage() {
                 <th scope="col" className="px-3 py-2.5 whitespace-nowrap">Kategori</th>
                 <th scope="col" className="px-3 py-2.5 text-center whitespace-nowrap">Status</th>
                 <th scope="col" className="px-3 py-2.5 text-right whitespace-nowrap">Nilai Terakhir (2024)</th>
-                <th scope="col" className="px-3 py-2.5 text-center w-40 whitespace-nowrap">Aksi Administrator</th>
+                <th scope="col" className="px-3 py-2.5 text-center w-44 whitespace-nowrap">Aksi Administrator</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-[#D3E4F1]/60">
-              {filteredData.map(item => {
-                const latestPoint = item.trenData?.[item.trenData.length - 1];
-                return (
-                  <tr key={item.id} className="hover:bg-[#F5F9FD]/60 transition-colors">
-                    <td className="px-3 py-2.5">
-                      <div className="flex items-baseline space-x-2">
-                        <span className="px-1.5 py-0.5 rounded font-mono text-[10px] font-bold bg-[#E7F1F8] text-[#1D4661] border border-[#D3E4F1] shrink-0">
-                          {item.id}
+              {filteredData.length > 0 ? (
+                filteredData.map(item => {
+                  const latestPoint = item.trenData?.[item.trenData.length - 1];
+                  return (
+                    <tr key={item.id} className="hover:bg-[#F5F9FD]/60 transition-colors">
+                      <td className="px-3 py-2.5">
+                        <div className="flex items-baseline space-x-2">
+                          <span className="px-1.5 py-0.5 rounded font-mono text-[10px] font-bold bg-[#E7F1F8] text-[#1D4661] border border-[#D3E4F1] shrink-0">
+                            {item.id}
+                          </span>
+                          <Link
+                            href={`/indikator/${item.id}`}
+                            className="font-bold text-[#181E24] hover:text-[#286084] transition-colors text-xs sm:text-[13px] leading-snug"
+                          >
+                            {item.nama}
+                          </Link>
+                        </div>
+                        <span className="text-[11px] text-[#7E8B99] flex flex-wrap items-center gap-x-2 gap-y-0.5 mt-0.5 font-normal leading-tight">
+                          <span>PIC: <strong className="text-[#55606D] font-medium">{item.pic}</strong></span>
+                          <span>•</span>
+                          <span>Satuan: {item.satuan}</span>
+                          <span>•</span>
+                          <span>{item.cakupanWilayah}</span>
                         </span>
-                        <Link
-                          href={`/indikator/${item.id}`}
-                          className="font-bold text-[#181E24] hover:text-[#286084] transition-colors text-xs sm:text-[13px] leading-snug"
-                        >
-                          {item.nama}
-                        </Link>
-                      </div>
-                      <span className="text-[11px] text-[#7E8B99] flex flex-wrap items-center gap-x-2 gap-y-0.5 mt-0.5 font-normal leading-tight">
-                        <span>PIC: <strong className="text-[#55606D] font-medium">{item.pic}</strong></span>
-                        <span>•</span>
-                        <span>Satuan: {item.satuan}</span>
-                        <span>•</span>
-                        <span>{item.cakupanWilayah}</span>
-                      </span>
-                    </td>
-                    <td className="px-3 py-2.5 whitespace-nowrap">
-                      <span className="px-2 py-0.5 rounded-md bg-[#F0EEE9] border border-[#D3E4F1] text-[11px] font-medium text-[#181E24]">
-                        {item.bimas}
-                      </span>
-                    </td>
-                    <td className="px-3 py-2.5 whitespace-nowrap text-[#55606D]">
-                      {item.kategori}
-                    </td>
-                    <td className="px-3 py-2.5 text-center whitespace-nowrap">
-                      {item.terisi ? (
-                        <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-[10px] font-bold border border-emerald-200">
-                          <CheckCircle2 className="w-3 h-3 text-emerald-600" />
-                          <span>Terisi</span>
+                      </td>
+                      <td className="px-3 py-2.5 whitespace-nowrap">
+                        <span className="px-2 py-0.5 rounded-md bg-[#F0EEE9] border border-[#D3E4F1] text-[11px] font-medium text-[#181E24]">
+                          {item.bimas}
                         </span>
-                      ) : (
-                        <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 text-[10px] font-bold border border-amber-200">
-                          <Clock className="w-3 h-3 text-amber-600" />
-                          <span>Pending</span>
-                        </span>
-                      )}
-                    </td>
-                    <td className="px-3 py-2.5 text-right font-mono font-bold text-[#286084] whitespace-nowrap">
-                      {latestPoint && latestPoint.nilai > 0 ? latestPoint.nilai.toLocaleString('id-ID') : '-'}
-                    </td>
-                    <td className="px-3 py-2.5 text-center whitespace-nowrap">
-                      <div className="inline-flex items-center space-x-1.5">
-                        {/* Tombol Perbarui / Upload Khusus Indikator Ini */}
-                        <button
-                          type="button"
-                          onClick={() => {
-                            setSelectedIndicatorForUpload(item);
-                            setIsUploadModalOpen(true);
-                          }}
-                          className="px-2.5 py-1.5 rounded-lg bg-[#286084] text-white text-[11px] font-bold hover:bg-[#1D4661] transition-colors shadow-2xs"
-                          title="Unggah Excel atau input cepat nilai indikator ini"
-                        >
-                          Perbarui
-                        </button>
+                      </td>
+                      <td className="px-3 py-2.5 whitespace-nowrap text-[#55606D]">
+                        {item.kategori}
+                      </td>
+                      <td className="px-3 py-2.5 text-center whitespace-nowrap">
+                        {item.terisi ? (
+                          <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-[10px] font-bold border border-emerald-200">
+                            <CheckCircle2 className="w-3 h-3 text-emerald-600" />
+                            <span>Terisi</span>
+                          </span>
+                        ) : (
+                          <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 text-[10px] font-bold border border-amber-200">
+                            <Clock className="w-3 h-3 text-amber-600" />
+                            <span>Pending</span>
+                          </span>
+                        )}
+                      </td>
+                      <td className="px-3 py-2.5 text-right font-mono font-bold text-[#286084] whitespace-nowrap">
+                        {latestPoint && latestPoint.nilai > 0 ? latestPoint.nilai.toLocaleString('id-ID') : '-'}
+                      </td>
+                      <td className="px-3 py-2.5 text-center whitespace-nowrap">
+                        <div className="inline-flex items-center space-x-1.5">
+                          {/* Tombol Perbarui / Upload Khusus Indikator Ini */}
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setSelectedIndicatorForUpload(item);
+                              setIsUploadModalOpen(true);
+                            }}
+                            className="px-2 py-1 rounded-lg bg-[#286084] text-white text-[11px] font-bold hover:bg-[#1D4661] transition-colors shadow-2xs"
+                            title="Unggah Excel nilai indikator ini"
+                          >
+                            Update
+                          </button>
 
-                        {/* Unduh Template Khusus */}
-                        <button
-                          type="button"
-                          onClick={() => downloadIndicatorTemplate(item)}
-                          className="px-2 py-1.5 rounded-lg bg-[#F6EBC8] text-[#4D410E] border border-[#E3CF7E] text-[11px] font-bold hover:bg-[#EEDFA7] transition-colors"
-                          title="Download template Excel khusus indikator ini"
-                        >
-                          Template
-                        </button>
+                          {/* Unduh Template Khusus */}
+                          <button
+                            type="button"
+                            onClick={() => downloadIndicatorTemplate(item)}
+                            className="px-2 py-1 rounded-lg bg-[#F6EBC8] text-[#4D410E] border border-[#E3CF7E] text-[11px] font-bold hover:bg-[#EEDFA7] transition-colors"
+                            title="Download template Excel khusus indikator ini"
+                          >
+                            Template
+                          </button>
 
-                        {/* Lihat Detail Publik */}
-                        <Link
-                          href={`/indikator/${item.id}`}
-                          className="p-1.5 rounded-lg border border-[#D3E4F1] text-[#7E8B99] hover:text-[#286084] hover:bg-[#F5F9FD] transition-colors"
-                          title="Lihat halaman indikator publik"
-                        >
-                          <Eye className="w-3.5 h-3.5" />
-                        </Link>
-                      </div>
-                    </td>
-                  </tr>
-                );
-              })}
+                          {/* Lihat Detail Publik */}
+                          <Link
+                            href={`/indikator/${item.id}`}
+                            className="p-1 rounded-lg border border-[#D3E4F1] text-[#7E8B99] hover:text-[#286084] hover:bg-[#F5F9FD] transition-colors"
+                            title="Lihat halaman indikator publik"
+                          >
+                            <Eye className="w-3.5 h-3.5" />
+                          </Link>
+
+                          {/* Hapus Indikator */}
+                          <button
+                            type="button"
+                            onClick={() => handleDeleteIndicator(item)}
+                            className="p-1 rounded-lg border border-rose-200 text-rose-600 hover:bg-rose-50 transition-colors"
+                            title="Hapus indikator ini"
+                          >
+                            <Trash2 className="w-3.5 h-3.5" />
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  );
+                })
+              ) : (
+                <tr>
+                  <td colSpan={6} className="py-16 text-center text-[#7E8B99]">
+                    <Database className="w-10 h-10 mx-auto text-[#8EBEDE] mb-3" />
+                    <p className="text-sm font-bold text-[#181E24]">Belum Ada Indikator di Katalog</p>
+                    <p className="text-xs text-[#55606D] mt-1 max-w-md mx-auto">
+                      Katalog saat ini masih kosong (0 indikator). Klik tombol di bawah untuk menambahkan indikator data pertama.
+                    </p>
+                    <div className="mt-4">
+                      <button
+                        type="button"
+                        onClick={() => setIsAddModalOpen(true)}
+                        className="inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl bg-[#286084] hover:bg-[#1D4661] text-white text-xs font-bold shadow-md transition-all active:scale-95"
+                      >
+                        <PlusCircle className="w-4 h-4" />
+                        <span>Tambah Indikator Baru</span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              )}
             </tbody>
           </table>
         </div>
@@ -512,6 +609,13 @@ export default function AdminPage() {
         onImportSuccess={handleImportSuccess}
         existingIndicators={allData}
         initialIndicatorId={selectedIndicatorForUpload?.id}
+      />
+
+      {/* Modal Tambah Indikator Baru */}
+      <AddIndicatorModal
+        isOpen={isAddModalOpen}
+        onClose={() => setIsAddModalOpen(false)}
+        onCreated={handleAddSuccess}
       />
     </div>
   );

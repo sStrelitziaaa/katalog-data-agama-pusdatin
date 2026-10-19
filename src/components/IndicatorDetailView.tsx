@@ -91,9 +91,13 @@ export default function IndicatorDetailView({
     .slice(0, 4);
 
   // Growth calculation (2020 vs 2024)
-  const firstVal = indicator.trenData[0]?.nilai || 1;
-  const lastVal = indicator.trenData[indicator.trenData.length - 1]?.nilai || 1;
-  const growthRate = Math.round(((lastVal - firstVal) / firstVal) * 100);
+  const hasTren = Array.isArray(indicator.trenData) && indicator.trenData.length > 0;
+  const firstVal = hasTren ? indicator.trenData[0]?.nilai : undefined;
+  const lastVal = hasTren ? indicator.trenData[indicator.trenData.length - 1]?.nilai : undefined;
+  const growthRate =
+    firstVal !== undefined && lastVal !== undefined && firstVal > 0
+      ? Math.round(((lastVal - firstVal) / firstVal) * 100)
+      : null;
 
   const formatNumber = (val: number) => {
     return new Intl.NumberFormat('id-ID').format(val);
@@ -194,13 +198,13 @@ export default function IndicatorDetailView({
           <div className="p-3 bg-[#F5F9FD] rounded-xl border border-[#D3E4F1]">
             <span className="text-[11px] text-[#7E8B99] font-bold uppercase tracking-wider block">Nilai Terbaru (2024)</span>
             <strong className="text-xs sm:text-sm text-[#286084] mt-0.5 block truncate">
-              {formatNumber(lastVal)} {indicator.satuan}
+              {lastVal !== undefined && lastVal > 0 ? `${formatNumber(lastVal)} ${indicator.satuan}` : '-'}
             </strong>
           </div>
           <div className="p-3 bg-[#F5F9FD] rounded-xl border border-[#D3E4F1]">
             <span className="text-[11px] text-[#7E8B99] font-bold uppercase tracking-wider block">Pertumbuhan 5 Thn</span>
-            <strong className={`text-xs sm:text-sm mt-0.5 block truncate ${growthRate >= 0 ? 'text-emerald-700' : 'text-rose-700'}`}>
-              {growthRate >= 0 ? `+${growthRate}%` : `${growthRate}%`}
+            <strong className={`text-xs sm:text-sm mt-0.5 block truncate ${growthRate !== null && growthRate >= 0 ? 'text-emerald-700' : 'text-rose-700'}`}>
+              {growthRate !== null ? (growthRate >= 0 ? `+${growthRate}%` : `${growthRate}%`) : '-'}
             </strong>
           </div>
         </div>
